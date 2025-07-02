@@ -1,0 +1,85 @@
+:root {
+  --color-primary: #14b8a6;
+  --color-secondary: #64748b;
+  --color-bg: #fff;
+  --color-text: #222;
+  --color-accent: #fbbf24;
+
+  --font-serif: 'Merriweather', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Perfect Fourth Typescale (1.333 ratio) */
+  /* Base: 16px */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.333rem;   /* 21.33px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.778rem;  /* 28.44px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+
+  /* Font Weight System */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* 4px-based Spacing System */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Legacy spacing tokens (keeping for backward compatibility) */
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-4);
+  --space-lg: var(--space-8);
+  --space-xl: var(--space-16);
+
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 32px;
+
+  /* Line Height System */
+  --line-height-tight: 1.1;    /* For main headings */
+  --line-height-heading: 1.2;  /* For section headings */
+  --line-height-normal: 1.6;   /* Baseline for body text */
+  --line-height-relaxed: 1.7;  /* For feature descriptions */
+
+  /* Container Widths */
+  --container-xl: 1200px;      /* Main containers */
+  --container-lg: 800px;       /* Medium containers */
+  --container-md: 700px;       /* Content width for paragraphs */
+  --container-sm: 600px;       /* Narrow content */
+
+  /* Component Dimensions */
+  --component-card: 350px;     /* Card widths */
+  --component-min: 300px;      /* Minimum flex widths */
+  --component-process: 48px;   /* Process indicators */
+  --component-impact: 400px;   /* Impact card max width */
+
+  /* Image Heights */
+  --image-hero: 384px;         /* Hero images */
+  --image-gallery: 256px;      /* Gallery images */
+  --image-card: 200px;         /* Card images */
+
+  /* Icon Sizes */
+  --icon-xs: 16px;             /* Small icons (inline links) */
+  --icon-sm: 20px;             /* Medium icons (navigation) */
+  --icon-md: 24px;             /* Large icons (section icons, social) */
+} 
