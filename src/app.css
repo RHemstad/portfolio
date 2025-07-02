@@ -6,9 +6,10 @@ body {
   background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
+  font-size: var(--font-size-base);
 }
 
-.section {
+section {
   padding: var(--space-xl) var(--space-lg);
   max-width: var(--container-xl);
   margin: 0 auto;

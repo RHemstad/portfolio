@@ -1,3 +1,107 @@
+  /* ===== WORK SECTION ===== */
+.work .text-center p {
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+.work-card img {
+  width: 100%;
+  height: var(--image-card);
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+
+.work-card .flex {
+  margin-bottom: var(--space-2);
+}
+
+.work-card .text--xs {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.work-card .text--small {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-2);
+  font-style: italic;
+}
+  
+  
+  
+  
+  
+
+/* ************************** */
+/* ===== FEATURED WORK SECTION ===== */
+/* ************************** */
+.work-section {
+  background: #fafaf9;
+}
+
+.work-intro {
+  font-size: var(--font-size-xl);
+  color: var(--color-secondary);
+  max-width: var(--container-md);
+  margin: 0 auto;
+}
+
+.work-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  justify-content: center;
+}
+
+.work-card {
+  width: var(--component-card);
+}
+
+.work-card-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.work-card-image {
+  width: 100%;
+  height: var(--image-card);
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.work-card-content {
+  padding: var(--space-md) 0;
+}
+
+.work-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.work-card-year {
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.work-card-client {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-2);
+  font-style: italic;
+}
+
+.work-toggle-button {
+  cursor: pointer;
+}
+  
+  
+  
    {/* SELECTED WORK */}
       <section id="work" className="section section--alt work">
 
