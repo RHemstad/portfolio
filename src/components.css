@@ -46,14 +46,8 @@
   margin-bottom: var(--space-2);
 }
 
-.card-title--large {
-  font-size: var(--font-size-2xl);
-  margin: var(--space-3) 0;
-}
 
-.card-title--medium {
-  font-size: var(--font-size-xl);
-}
+
 
 .card-title-link {
   color: inherit;
@@ -81,14 +75,7 @@
 /* ************************** */
 /* ===== HERO SECTION ===== */
 /* ************************** */
-.hero-subtitle {
-  color: var(--color-primary);
-  font-weight: var(--font-weight-medium);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: var(--font-size-base);
-  margin-bottom: var(--space-md);
-}
+
 
 .hero-description {
   font-size: var(--font-size-xl);
@@ -96,22 +83,7 @@
   margin-bottom: var(--space-md);
 }
 
-.hero-subdescription {
-  font-size: var(--font-size-lg);
-  color: var(--color-secondary);
-}
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  margin-top: var(--space-lg);
-}
-
-.hero-content-container {
-  max-width: var(--container-sm);
-  margin-bottom: var(--space-lg);
-}
 
 /* ************************** */
 /* ===== FEATURED WORK SECTION ===== */

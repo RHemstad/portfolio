@@ -12,64 +12,28 @@ import {
 const projects = [
   {
     id: 1,
-    title: "AI-Powered Design System",
-    client: "TechCorp",
+    title: "Token Architecture",
     category: "Design System",
-    year: "2024",
-    description: "Led the architecture and implementation of a comprehensive design system that scales across 50+ products, featuring AI-assisted component generation and automated accessibility testing.",
+    description: "Designing semantic token naming systems that scale across platforms and maintain consistency while supporting complex design requirements.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
     link: "/case-study/ai-design-system"
   },
   {
     id: 2,
-    title: "Machine Learning Interface",
-    client: "DataFlow Inc",
-    category: "AI/ML UI",
-    year: "2024",
-    description: "Designed intuitive interfaces for complex machine learning workflows, making advanced AI capabilities accessible to non-technical users through thoughtful UX patterns.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-    link: "/case-study/ml-interface"
+    title: "AI/ML Interface Design",
+    category: "Design System",
+    description: "Creating intuitive interfaces for artificial intelligence features that make complex capabilities accessible and empowering for users.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+    link: "/case-study/ai-design-system"
   },
   {
     id: 3,
-    title: "Design Token Architecture",
-    client: "DesignCo",
+    title: "System Governance",
     category: "Design System",
-    year: "2023",
-    description: "Established semantic token naming conventions and governance frameworks that enable consistent design across distributed teams and multiple platforms.",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=300&fit=crop",
-    link: "/case-study/token-architecture"
-  },
-  {
-    id: 4,
-    title: "AI Assistant Dashboard",
-    client: "ProductAI",
-    category: "AI/ML UI",
-    year: "2023",
-    description: "Created user-friendly dashboards for AI-powered product recommendations, focusing on transparency and user control over algorithmic decisions.",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop",
-    link: "/case-study/ai-dashboard"
-  },
-  {
-    id: 5,
-    title: "Design System Governance",
-    client: "Enterprise Corp",
-    category: "Design System",
-    year: "2023",
-    description: "Developed processes and frameworks for design system adoption across 200+ designers and developers, ensuring quality and consistency at scale.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-    link: "/case-study/system-governance"
-  },
-  {
-    id: 6,
-    title: "Predictive Analytics UI",
-    client: "Analytics Pro",
-    category: "AI/ML UI",
-    year: "2022",
-    description: "Designed interfaces for predictive analytics tools that help users understand and trust AI-generated insights through clear visualizations.",
+    description: "Establishing processes and frameworks that ensure design system adoption and maintain quality across distributed teams and products.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-    link: "/case-study/predictive-analytics"
-  }
+    link: "/case-study/ai-design-system"
+  },
 ];
 
 const writing = [
@@ -151,20 +115,15 @@ function Home() {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* ***************************** */}
+      {/* ********* HERO ********** */}
+      {/* ***************************** */}
       <section className="section hero">
         <div className="container container--sm">
          
           <h1>Rebecca L.<br /><span className="text-accent">Hemstad</span></h1>
-          <h2>Principal Visual Designer</h2>
 
-          <p>I craft design systems and user experiences for artificial intelligence products, 
-            bridging the gap between complex AI capabilities and intuitive human interfaces 
-            with over a decade of expertise in enterprise-scale digital products.</p>
-
-          <p>Currently leading design system architecture and AI/ML UI design, I specialize in 
-            creating cohesive visual languages that make artificial intelligence accessible 
-            and empowering across complex product ecosystems.</p>
+          <p>Currently leading design system architecture and AI/ML UI design, I specialize in creating cohesive visual languages that make artificial intelligence accessible and empowering across complex product ecosystems.</p>
 
           <div className="flex">
             <a href="#work" className="button-primary">View Selected Work</a>
@@ -173,57 +132,45 @@ function Home() {
         </div>
       </section>
 
-      {/* SELECTED WORK */}
-      <section id="work" className="section section--alt work">
-
+      {/* ***************************** */}
+      {/* ********* DESIGN SYSTEM ********** */}
+      {/* ***************************** */}
+        <section className="section section--alt design-system">
         <div className="container">
+          <div className="flex">
+            <div>
+              <h2>Design System<br /><span className="text-accent">Architecture</span></h2>
+              <div className="text--medium">
+                <p>My approach to design system architecture is rooted in systematic thinking and deep understanding of how design tokens, components, and patterns work together to create scalable, maintainable design languages.</p>
 
-          <div className="text-center mb-lg">
-            <h2>Selected Work</h2>
-            <p>A selection of projects focused on AI/ML interface design, design system architecture, and scalable design patterns.</p>
-          </div>
+                <p>I've established token naming conventions, component architecture, and governance frameworks that enable teams to build consistent, accessible interfaces across complex product ecosystems while maintaining design integrity at scale.</p>
+              </div>
+            </div>
+            <div>
 
-          <div className="grid grid--center">
+      
             {displayedProjects.map((project) => (
-              <article key={project.id} className="card work-card">
-                <img src={project.image} alt={project.title} />
-                <div>
-                  <div className="flex flex--between flex--center">
-                    <span className={`badge`}>{project.category} </span>
-                    <span className="text--xs">{project.year}</span>
-                  </div>
-
+              <article key={project.id} className="card">
                   <h3>{project.title}</h3>
-                  <p className="text--small">{project.client}</p>
                   <p className="text">{project.description}</p>
                   <Link to={project.link} className="link">View Case Study <ExternalLink className="link__icon" /></Link>
-                </div>
               </article>
             ))}
-          </div>
-          <div className="text-center mt-lg">
-            {!showAllProjects ? (
-              <button 
-                onClick={() => setShowAllProjects(true)}
-                className="button-secondary button"
-              >
-                Show More Projects
-              </button>
-            ) : (
-              <button 
-                onClick={() => setShowAllProjects(false)}
-                className="button-secondary button"
-              >
-                Show Less
-              </button>
-            )}
+
+
+
+
+
+            </div>
           </div>
         </div>
       </section>
 
 
 
-      {/* Writing & Speaking Section */}
+      {/* ***************************** */}
+      {/* ********* WRITING & SPEAKING ********** */}
+      {/* ***************************** */}
       <section className="section writing">
         <div className="container container--lg">
           <div className="text-center mb-lg">
@@ -282,50 +229,15 @@ function Home() {
               )}
             </div>
             
-            <div className="writing-inquiries">
-              <a href="#" className="link">
-                Speaking Inquiries <Mail className="link__icon" />
-              </a>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Design System Architecture Section */}
-      <section className="section section--alt design-system">
-        <div className="container">
-          <div className="flex">
-            <div>
-              <h2>Design System<br /><span className="text-accent">Architecture</span></h2>
-              <div className="text--medium">
-                <p>My approach to design system architecture is rooted in systematic thinking and 
-                  deep understanding of how design tokens, components, and patterns work together 
-                  to create scalable, maintainable design languages.</p>
 
-                <p>I've established token naming conventions, component architecture, and governance 
-                  frameworks that enable teams to build consistent, accessible interfaces across 
-                  complex product ecosystems while maintaining design integrity at scale.</p>
-              </div>
-            </div>
-            <div>
-              <div className="card">
-                <h3>Token Architecture</h3>
-                <p className="text">Designing semantic token naming systems that scale across platforms and maintain consistency while supporting complex design requirements.</p>
-              </div>
-              <div className="card">
-                <h3>AI/ML Interface Design</h3>
-                <p className="text">Creating intuitive interfaces for artificial intelligence features that make complex capabilities accessible and empowering for users.</p>
-              </div>
-              <div className="card">
-                <h3>System Governance</h3>
-                <p className="text">Establishing processes and frameworks that ensure design system adoption and maintain quality across distributed teams and products.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Contact Footer */}
+      {/* ***************************** */}
+      {/* ********* CONTACT ********** */}
+      {/* ***************************** */}
       <footer id="contact" className="section section--dark contact">
         <div className="container">
           <div className="flex">

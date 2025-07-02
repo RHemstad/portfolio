@@ -26,38 +26,34 @@ body {
 /* ********* HEADINGS ********** */
 /* ***************************** */
 
-.heading-main {
+h1, h2, h3 {
   font-family: var(--font-serif);
+}
+
+h1 {
   font-size: 3rem;
-  font-weight: var(--font-weight-light);
   color: var(--color-text);
   margin-bottom: var(--space-lg);
-  border: 2px solid red;
+}
+
+h2 {
+  font-size: var(--font-size-2xl);
+  margin: var(--space-3) 0;
+}
+
+h3  {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-2);
 }
 
 .heading-accent {
   color: var(--color-primary);
 }
 
-.heading {
-  font-family: var(--font-serif);
-  color: var(--color-text);
-}
 
-h2, .heading--large {
-  font-size: var(--font-size-2xl);
-  margin: var(--space-3) 0;
-}
-h3, .heading--medium {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--space-2);
-}
 
-.heading--small {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-2);
-}
+
+
 
 /* ***************************** */
 /* ********* BUTTONS ********** */
