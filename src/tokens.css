@@ -4,6 +4,7 @@
   --color-bg: #fff;
   --color-text: #222;
   --color-accent: #fbbf24;
+  --color-tertiary: rgb(13 148 136 / var(--tw-text-opacity, 1));
 
   --font-serif: 'Merriweather', serif;
   --font-sans: 'Inter', sans-serif;
@@ -44,12 +45,7 @@
   --space-24: 96px;
   --space-32: 128px;
 
-  /* Legacy spacing tokens (keeping for backward compatibility) */
-  --space-xs: var(--space-1);
-  --space-sm: var(--space-2);
-  --space-md: var(--space-4);
-  --space-lg: var(--space-8);
-  --space-xl: var(--space-16);
+
 
   --radius-sm: 4px;
   --radius-md: 12px;

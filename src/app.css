@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -7,10 +5,11 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   font-size: var(--font-size-base);
+  
 }
 
 section {
-  padding: var(--space-xl) var(--space-lg);
+  padding: var(--space-16) var(--space-8);
   max-width: var(--container-xl);
   margin: 0 auto;
   border: 1px solid blue;
@@ -32,19 +31,19 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 6rem;
   color: var(--color-text);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-8);
 }
 
 h2 {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-4xl);
   margin: var(--space-3) 0;
 }
 
 h3  {
   font-size: var(--font-size-xl);
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-8);
 }
 
 .heading-accent {
@@ -63,7 +62,7 @@ h3  {
 .button-primary {
   display: inline-flex;
   align-items: center;
-  padding: var(--space-md) var(--space-xl);
+  padding: var(--space-4) var(--space-16);
   background: var(--color-primary);
   color: #fff;
   border-radius: var(--radius-lg);
@@ -84,7 +83,7 @@ h3  {
 .button-secondary {
   display: inline-flex;
   align-items: center;
-  padding: var(--space-md) var(--space-xl);
+  padding: var(--space-4) var(--space-16);
   background: transparent;
   color: var(--color-primary);
   border: 2px solid var(--color-primary);
@@ -126,20 +125,20 @@ h3  {
   flex-wrap: wrap;
 }
 .gap-md {
-  gap: var(--space-md);
+  gap: var(--space-4);
 }
 .gap-lg {
-  gap: var(--space-lg);
+  gap: var(--space-8);
 }
 .mt-lg {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-8);
 }
 .mb-lg {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-8);
 }
 .pt-lg {
-  padding-top: var(--space-lg);
+  padding-top: var(--space-8);
 }
 .pb-lg {
-  padding-bottom: var(--space-lg);
+  padding-bottom: var(--space-8);
 } 

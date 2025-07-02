@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { projects } from '../data/projects';
 import { writing } from '../data/writing';
+import FallingGlyphsBackground from './FallingGlyphsBackground';
 
 function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -33,17 +34,25 @@ function Home() {
       {/* ********* HERO ********** */}
       {/* ***************************** */}
       <section className="hero">
+  <FallingGlyphsBackground /> {/* <- We'll build this next */}
 
-          <h1>Rebecca L.<br /><span className="text-accent">Hemstad</span></h1>
+  <div className="hero-content">
+    <h1>
+      Rebecca L.<br />
+      <span className="text-accent">Hemstad</span>
+    </h1>
 
-          <p>Currently leading design system architecture and AI/ML UI design, I specialize in creating cohesive visual languages that make artificial intelligence accessible and empowering across complex product ecosystems.</p>
+    <p>
+      Currently leading design system architecture and AI/ML UI design, I specialize in creating cohesive visual languages that make artificial intelligence accessible and empowering across complex product ecosystems.
+    </p>
 
-          <div className="flex">
-            <a href="#work" className="button-primary">View Selected Work</a>
-            <a href="#contact" className="button-secondary">Get in Touch</a>
-          </div>
+    <div className="flex">
+      <a href="#work" className="button-primary">View Selected Work</a>
+      <a href="#contact" className="button-secondary">Get in Touch</a>
+    </div>
+  </div>
+</section>
 
-      </section>
 
       {/* ***************************** */}
       {/* ********* DESIGN SYSTEM ********** */}
