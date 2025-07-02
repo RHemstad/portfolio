@@ -1033,6 +1033,7 @@ main {
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+
 }
 
 @keyframes fall {

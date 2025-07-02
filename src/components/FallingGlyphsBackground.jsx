@@ -7,7 +7,12 @@ const FallingGlyphsBackground = () => {
     // Create an array of glyphs with random properties
     const createGlyphs = () => {
       const glyphsArray = [];
-      const glyphCharacters = ['{', '}', '[', ']', '<', '>', '/', '\\', '|', '=', '+', '-', '*', '&', '#', '@', '!', '?', '~', '^'];
+
+      const glyphCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+
+      
+      
+      //const glyphCharacters = ['{', '}', '[', ']', '<', '>', '/', '\\', '|', '=', '+', '-', '*', '&', '#', '@', '!', '?', '~', '^'];
       
       for (let i = 0; i < 20; i++) {
         glyphsArray.push({
@@ -16,7 +21,9 @@ const FallingGlyphsBackground = () => {
           left: Math.random() * 100, // Random horizontal position
           animationDuration: 8 + Math.random() * 12, // Random duration between 8-20s
           animationDelay: Math.random() * 10, // Random delay
-          fontSize: 12 + Math.random() * 24, // Random font size between 12-36px
+          fontSize: 12 + Math.random() * 50, // Random font size between 12-62px
+          fontFamily: Math.random() > 0.5 ? 'var(--font-serif)' : 'var(--font-sans)',
+
         });
       }
       return glyphsArray;
@@ -36,6 +43,7 @@ const FallingGlyphsBackground = () => {
             animationDuration: `${glyph.animationDuration}s`,
             animationDelay: `${glyph.animationDelay}s`,
             fontSize: `${glyph.fontSize}px`,
+            fontFamily: glyph.fontFamily
           }}
         >
           {glyph.character}
