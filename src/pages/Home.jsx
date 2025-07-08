@@ -10,6 +10,8 @@ import {
 import { projects } from '../data/projects';
 import { writing } from '../data/writing';
 import FallingGlyphsBackground from './FallingGlyphsBackground';
+import { motion } from 'framer-motion';
+
 
 function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -17,6 +19,26 @@ function Home() {
 
   const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
   const displayedWriting = showAllWriting ? writing : writing.slice(0, 3);
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeOut',
+        when: 'beforeChildren',
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+  
 
   const getTypeLabel = (type) => {
     const labels = {
@@ -29,10 +51,13 @@ function Home() {
   };
 
   return (
+
+
     <main>
       {/* ***************************** */}
       {/* ********* HERO ********** */}
       {/* ***************************** */}
+
       <section className="hero">
   <FallingGlyphsBackground /> {/* <- We'll build this next */}
 
@@ -57,29 +82,31 @@ function Home() {
       {/* ***************************** */}
       {/* ********* DESIGN SYSTEM ********** */}
       {/* ***************************** */}
-      <section className="design-system">
+      <motion.section
+  className="design-system"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={sectionVariants}
+>
+  <motion.h2 variants={cardVariants}>Selected Work</motion.h2>
 
-            <div>
-              <h2>Design System<br /><span className="text-accent">Architecture</span></h2>
-              <div className="text--medium">
-                <p>My approach to design system architecture is rooted in systematic thinking and deep understanding of how design tokens, components, and patterns work together to create scalable, maintainable design languages.</p>
-
-                <p>I've established token naming conventions, component architecture, and governance frameworks that enable teams to build consistent, accessible interfaces across complex product ecosystems while maintaining design integrity at scale.</p>
-              </div>
-            </div>
-
-
-            <div>
-            {displayedProjects.map((project) => (
-              <article key={project.id} className="card">
-                  <h3>{project.title}</h3>
-                  <p className="text">{project.description}</p>
-                  <Link to={project.link} className="link">View Case Study <ExternalLink className="link__icon" /></Link>
-              </article>
-            ))}
-            </div>
-
-      </section>
+  <div className="cards">
+    {displayedProjects.map((project) => (
+      <motion.article
+        key={project.id}
+        className="card"
+        variants={cardVariants}
+      >
+        <h3>{project.title}</h3>
+        <p className="text">{project.description}</p>
+        <Link to={project.link} className="link">
+          View Case Study <ExternalLink className="link__icon" />
+        </Link>
+      </motion.article>
+    ))}
+  </div>
+</motion.section>
 
 
 
@@ -87,65 +114,48 @@ function Home() {
       {/* ********* WRITING & SPEAKING ********** */}
       {/* ***************************** */}
       <section className="writing">
-     
-          <div>
-            <h2>Writing & Speaking</h2>
-            <p>
-              Sharing insights on design system architecture, AI/ML interface design, and building scalable design languages through articles and academic presentations.
-            </p>
-          </div>
+  <motion.h2
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+  >
+    Writing & Speaking
+  </motion.h2>
 
-          <div>
-            {displayedWriting.map((item) => (
-              <article key={item.id} className="card">
-                  <div className="flex flex--center">
-                    <span className="badge">{getTypeLabel(item.type)}</span>
-                    <span className="text--xs">{item.date}</span>
-                  </div>
-             
-                
-                <h3><a href={item.link} className="link">{item.title}</a></h3>
-                
-                <p>
-                  {item.type === 'article' ? (
-                    <span>{item.publication}</span>
-                  ) : (
-                    <span>{item.event} • {item.location}</span>
-                  )}
-                </p>
-                
-                <p className="text">
-                  {item.description}
-                </p>
-                
-                <a href={item.link} className="link">
-                  {item.type === 'article' ? 'Read Article' : 'Event Details'} 
-                  <ExternalLink className="link__icon" />
-                </a>
-              </article>
-            ))}
-            
-            <div className="text-center mt-lg">
-              {!showAllWriting ? (
-                <button 
-                  onClick={() => setShowAllWriting(true)}
-                  className="button-secondary button"
-                >
-                  Show More Articles & Talks
-                </button>
-              ) : (
-                <button 
-                  onClick={() => setShowAllWriting(false)}
-                  className="button-secondary button"
-                >
-                  Show Less
-                </button>
-              )}
-            </div>
-            
-          </div>
+  <p className="writing-intro">
+    Insights on design-system architecture, AI/UI, and inclusive design—
+    shared through articles, talks, and workshops.
+  </p>
 
-      </section>
+  <div className="writing-strip">
+    {displayedWriting.map((item) => (
+      <article key={item.id} className="writing-card">
+        <header>
+          <span className="badge">{getTypeLabel(item.type)}</span>
+          <span className="date">{item.date}</span>
+        </header>
+
+        <h3 className="title">
+          <a href={item.link}>{item.title}</a>
+        </h3>
+
+        <p className="meta">
+          {item.type === 'article'
+            ? item.publication
+            : `${item.event} • ${item.location}`}
+        </p>
+
+        <a href={item.link} className="cta">
+          {item.type === 'article' ? 'Read' : 'Details'}
+          <ExternalLink size={16} />
+        </a>
+      </article>
+    ))}
+  </div>
+
+  {/* Toggle button stays the same, or hide it if you keep them all inline */}
+</section>
+
 
 
 

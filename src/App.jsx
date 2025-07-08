@@ -1,10 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './components/Home.jsx';
-import CaseStudy from './components/CaseStudy.jsx';
+import Home from './pages/Home.jsx';
+import CaseStudy from './pages/CaseStudy.jsx';
 import './tokens.css';
 import './app.css';
-import './components.css';
-
+import './pages.css';
 
 
 function App() {

@@ -28,6 +28,12 @@
   margin-bottom: var(--space-2);
   font-style: italic;
 }
+
+
+
+
+
+
   
   
   
@@ -150,3 +156,136 @@
         </div>
       </section>
 
+
+
+
+
+
+                 <div>
+              <h2>Design System<br /><span className="text-accent">Architecture</span></h2>
+              <div className="text--medium">
+                <p>My approach to design system architecture is rooted in systematic thinking and deep understanding of how design tokens, components, and patterns work together to create scalable, maintainable design languages.</p>
+
+                <p>I've established token naming conventions, component architecture, and governance frameworks that enable teams to build consistent, accessible interfaces across complex product ecosystems while maintaining design integrity at scale.</p>
+              </div>
+            </div>
+
+
+
+/* ************************** */
+/* ===== DESIGN SYSTEM SECTION ===== */
+/* ************************** */
+
+
+.design-system-section {
+  background: #fafaf9;
+}
+
+
+.design-system {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: start;
+  border: 4px solid yellow;
+  background: #fafaf9;
+}
+
+
+.design-system h2 {
+  margin-bottom: var(--space-8);
+  font-size: 2.25rem;
+}
+
+.design-system p {
+  font-size: var(--font-size-lg);
+  color: var(--color-secondary);
+}
+
+
+.design-system > div:first-child {
+  background: #fafaf9;
+  border: 1px solid blue;
+
+}
+
+.design-system .card {
+  border-radius: 0;
+  border-left: 8px solid pink;
+}
+
+.design-system-title {
+  margin-bottom: var(--space-8);
+}
+
+.design-system-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-secondary);
+}
+
+.design-system-features {
+  flex: 1;
+  min-width: var(--component-min);
+}
+
+.design-system-feature {
+  border-left: var(--space-1) solid var(--color-primary);
+  padding-left: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+.design-system-feature:last-child {
+  margin-bottom: 0;
+}
+
+.design-system-feature-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.design-system-feature-description {
+  color: var(--color-secondary);
+}
+
+
+
+.design-system {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: start;
+  border: 4px solid yellow;
+  background: #fafaf9;
+}
+
+.design-system h2 {
+  margin-bottom: var(--space-8);
+  font-size: 2.25rem;
+}
+
+.design-system p {
+  font-size: var(--font-size-lg);
+  color: var(--color-secondary);
+}
+
+.design-system div.cards {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid green;
+  gap: var(--space-8);
+
+}
+
+.design-system .card {
+  border-radius: 0;
+  border-left: 8px solid pink;
+  flex: 1; /* Make cards equal width */
+  min-width: 0; /* Allow cards to shrink below their content width */
+}
+
+.design-system-features {
+  flex: 1;
+  min-width: var(--component-min);
+}

@@ -100,78 +100,36 @@
 /* ===== DESIGN SYSTEM SECTION ===== */
 /* ************************** */
 
-
-.design-system-section {
-  background: #fafaf9;
-}
-
-
 .design-system {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-8);
-  align-items: start;
-  border: 4px solid yellow;
-  background: #fafaf9;
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden; /* prevents cards from spilling during animation */
 }
-
 
 .design-system h2 {
-  margin-bottom: var(--space-8);
-  font-size: 2.25rem;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.design-system p {
-  font-size: var(--font-size-lg);
-  color: var(--color-secondary);
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background: var(--surface, #fff);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--elevation, 0 2px 8px rgba(0, 0, 0, 0.05));
+  transition: box-shadow 0.3s ease;
+  width: 300px;
+  max-width: 100%;
 }
 
 
-.design-system > div:first-child {
-  background: #fafaf9;
-  border: 1px solid blue;
-
-}
-
-.design-system .card {
-  border-radius: 0;
-  border-left: 8px solid pink;
-}
-
-.design-system-title {
-  margin-bottom: var(--space-8);
-}
-
-.design-system-description {
-  font-size: var(--font-size-lg);
-  color: var(--color-secondary);
-}
-
-.design-system-features {
-  flex: 1;
-  min-width: var(--component-min);
-}
-
-.design-system-feature {
-  border-left: var(--space-1) solid var(--color-primary);
-  padding-left: var(--space-8);
-  margin-bottom: var(--space-6);
-}
-
-.design-system-feature:last-child {
-  margin-bottom: 0;
-}
-
-.design-system-feature-title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text);
-  margin-bottom: var(--space-2);
-}
-
-.design-system-feature-description {
-  color: var(--color-secondary);
-}
 
 
 
@@ -179,54 +137,46 @@
 /* ************************** */
 /* ===== WRITING & SPEAKING SECTION ===== */
 /* ************************** */
-
-.writing-intro {
-  font-size: var(--font-size-xl);
-  color: var(--color-secondary);
-  max-width: var(--container-md);
-  margin: 0 auto;
+/* Container */
+.writing-strip {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
 }
 
-.writing-container {
-  max-width: var(--container-lg);
-  margin: 0 auto;
-}
-
+/* Card */
 .writing-card {
-  margin-bottom: 24px;
+  flex: 0 0 320px;          /* fixed width cards */
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  scroll-snap-align: start;
+  transition: transform .3s ease, box-shadow .3s ease;
+  border: 1px solid red;
 }
 
-.writing-card-header {
+.writing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+.writing-card header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: var(--space-3);
-}
-
-.writing-card-meta {
-  display: flex;
   align-items: center;
-  gap: var(--space-3);
 }
 
-.writing-card-date {
-  font-size: var(--font-size-sm);
-  color: var(--color-secondary);
-  font-weight: var(--font-weight-medium);
-}
+.badge    { font-size: .75rem; background: var(--color-accent); color:#fff; padding: .15rem .5rem; border-radius: 4px; }
+.date     { font-size: .75rem; color: var(--text-muted); }
+.title    { font-size: 1.1rem; line-height: 1.3; }
+.meta     { font-size: .8rem; color: var(--text-muted); }
+.cta      { margin-top: auto; font-size: .85rem; display: inline-flex; align-items: center; gap: .25rem; }
 
-.writing-card-publication {
-  font-size: var(--font-size-base);
-  color: var(--color-primary);
-  margin-bottom: var(--space-3);
-}
-
-.writing-inquiries {
-  text-align: center;
-  margin-top: var(--space-8);
-  padding-top: var(--space-8);
-  border-top: 1px solid #e5e7eb;
-}
 
 /* ************************** */
 /* ===== FOOTER ===== */
