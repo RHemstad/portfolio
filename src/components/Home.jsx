@@ -57,7 +57,7 @@ function Home() {
       {/* ***************************** */}
       {/* ********* DESIGN SYSTEM ********** */}
       {/* ***************************** */}
-        <section className="design-system">
+      <section className="design-system">
 
             <div>
               <h2>Design System<br /><span className="text-accent">Architecture</span></h2>
@@ -67,9 +67,9 @@ function Home() {
                 <p>I've established token naming conventions, component architecture, and governance frameworks that enable teams to build consistent, accessible interfaces across complex product ecosystems while maintaining design integrity at scale.</p>
               </div>
             </div>
-            <div>
 
-      
+
+            <div>
             {displayedProjects.map((project) => (
               <article key={project.id} className="card">
                   <h3>{project.title}</h3>
@@ -150,9 +150,9 @@ function Home() {
 
 
       {/* ***************************** */}
-      {/* ********* CONTACT ********** */}
+      {/* ********* FOOTER ********** */}
       {/* ***************************** */}
-      <footer id="contact" className="contact">
+      <footer id="contact">
 
           <div className="flex">
             <div>
