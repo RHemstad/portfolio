@@ -1,11 +1,11 @@
 body {
   margin: 0;
   font-family: var(--font-sans);
-  background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
   font-size: var(--font-size-base);
-  
+  background: var(--color-bg);
+  background-color: #000000;
 }
 
 section {
@@ -60,6 +60,10 @@ h3  {
 /* ***************************** */
 /* ********* BUTTONS ********** */
 /* ***************************** */
+
+button {
+  cursor: pointer;
+}
 
 .button-primary {
   display: inline-flex;

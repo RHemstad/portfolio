@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Calendar, Users, Target, Award, ChevronRight } from 'lucide-react';
+import { ExternalLink, Calendar, Users, Target, Award, ChevronRight } from 'lucide-react';
+import backIcon from '../images/back.png';
 
 const caseStudyData = {
   'ai-design-system': {
@@ -103,7 +104,11 @@ function CaseStudy() {
       <nav className="section" style={{ position: 'sticky', top: 0, background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(8px)', borderBottom: '1px solid #f3f4f6', zIndex: 50 }}>
         <div className="container">
           <Link to="/" className="link">
-            <ArrowLeft style={{ width: 'var(--icon-sm)', height: 'var(--icon-sm)', marginRight: 'var(--space-2)' }} />
+            <img 
+              src={backIcon} 
+              alt="Back" 
+              style={{ width: 'var(--icon-sm)', height: 'var(--icon-sm)', marginRight: 'var(--space-2)' }} 
+            />
             Back to Portfolio
           </Link>
         </div>
