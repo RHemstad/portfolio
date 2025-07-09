@@ -1,10 +1,10 @@
 :root {
   --color-primary: #14b8a6;
   --color-secondary: #64748b;
-  --color-bg: #fff;
-  --color-text: #222;
+  --color-bg: #222;
+  --color-text: #fff;
   --color-accent: #fbbf24;
-  --color-tertiary: rgb(13 148 136 / var(--tw-text-opacity, 1));
+  --color-tertiary: rgb(13 148 136);
 
   --font-serif: 'Merriweather', serif;
   --font-sans: 'Inter', sans-serif;

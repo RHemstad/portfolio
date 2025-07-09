@@ -1,37 +1,26 @@
 
+/* ***************************** */
+/* ********* HEADER ********** */
+/* ***************************** */
+
+header h1 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+ }
+ 
+ header p {
+   margin-block-end: 0;
+   margin-block-start: 0;
+   margin-inline-end: 0;
+   margin-inline-start: 0;
+   max-width: 65ch;
+ }
+
 /* ************************** */
-/* ===== HERO SECTION ===== */
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
-
-.hero h1 {
-  --tw-text-opacity: 1;
-  color: var(--color-accent);
-  margin-bottom: var(--space-8);
-  font-size: 6rem;
-  line-height: 1;
-  color: var(--color-text);
-}
-
-.hero p {
-  font-size: var(--font-size-xl);
- font-size: 1.5rem;
-  line-height: 2rem;
-  color: var(--color-text);
-  margin-bottom: var(--space-4);
-}
-
-.hero .flex {
-  margin-top: var(--space-8);
-}
+/* ===== FALLING GLYPHS ===== */
+/* ************************** */
 
 
 .falling-glyphs-container {
@@ -82,7 +71,8 @@
   background: #fff;
   border-radius: var(--radius-md);
   box-shadow: 0 2px 8px rgba(100,116,139,0.08);
-  padding: var(--space-8);
+  padding-block: var(--space-8);
+  padding-inline: var(--space-8);
   margin-bottom: var(--space-8);
   transition: box-shadow 0.2s, transform 0.2s;
   display: flex;
@@ -93,6 +83,8 @@
   box-shadow: 0 4px 24px rgba(100,116,139,0.16);
   transform: translateY(-4px);
 }
+
+
 
 /* ************************** */
 /* ===== DESIGN SECTION ===== */
@@ -119,7 +111,8 @@
 
 .design-card {
   background: var(--surface, #fff);
-  padding: 2rem;
+  padding-block: 2rem;
+  padding-inline: 2rem;
   border-radius: 8px;
   box-shadow: var(--elevation, 0 2px 8px rgba(0, 0, 0, 0.05));
   transition: box-shadow 0.3s ease;
@@ -152,7 +145,8 @@
   flex-direction: column;
   gap: .5rem;
   background: var(--surface);
-  padding: 1.5rem;
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
   border-radius: 8px;
   transition: transform .3s ease, box-shadow .3s ease;
   min-height: 200px; /* Ensure minimum height */
@@ -198,7 +192,8 @@ footer {
 
 .badge {
   display: inline-block;
-  padding: var(--space-1) var(--space-3);
+  padding-block: var(--space-1);
+  padding-inline: var(--space-3);
   color: #fff;
   border-radius: var(--radius-sm);
   font-size: var(--font-size-xs);
