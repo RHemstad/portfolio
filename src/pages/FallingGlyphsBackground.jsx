@@ -14,7 +14,9 @@ const FallingGlyphsBackground = () => {
       
       //const glyphCharacters = ['{', '}', '[', ']', '<', '>', '/', '\\', '|', '=', '+', '-', '*', '&', '#', '@', '!', '?', '~', '^'];
       
-      for (let i = 0; i < 20; i++) {
+      const MAX_GLYPHS = window.innerWidth < 768 ? 12 : 20; // phones = 12, larger = 20
+
+      for (let i = 0; i < MAX_GLYPHS; i++) {
         glyphsArray.push({
           id: i,
           character: glyphCharacters[Math.floor(Math.random() * glyphCharacters.length)],

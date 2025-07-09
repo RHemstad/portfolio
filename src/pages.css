@@ -48,8 +48,8 @@
 .falling-glyph {
   position: absolute;
   top: -10%;
-  /*color: rgba(251, 191, 36, 0.1); */
-  /* Soft orange overlay */
+  color: rgba(251, 191, 36, 0.9);
+  /*color: orange;*/
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -65,7 +65,7 @@
     opacity: 0.3;
   }
   90% {
-    opacity: 0.3;
+    opacity: 0;
   }
   100% {
     transform: translateY(200vh) rotate(360deg); /* Fall much further */

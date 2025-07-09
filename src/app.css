@@ -5,8 +5,23 @@ body {
   line-height: 1.6;
   font-size: var(--font-size-base);
   background: var(--color-bg);
-  background-color: #000000;
+  background: url('/images/back.png') repeat-x scroll left top #000000;
+ 
 }
+
+.wrapper {
+  background: url('/images/backwrap.svg') no-repeat top left;
+  background-size: 500px;
+  min-height: 100vh;
+}
+
+header {
+  padding: var(--space-8) var(--space-8);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
 
 section {
   padding: var(--space-16) var(--space-8);
@@ -15,10 +30,12 @@ section {
   border: 1px solid blue;
 }
 
+
 footer {
   padding: var(--space-16) var(--space-8);
   max-width: var(--container-xl);
   margin: 0 auto;
+  background: #353c41 url('/images/colophon.png') repeat scroll center top;
 }
 
 
@@ -33,9 +50,10 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 4rem;
   color: var(--color-text);
   margin-bottom: var(--space-8);
+  color: white;
 }
 
 h2 {

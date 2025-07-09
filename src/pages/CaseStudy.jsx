@@ -1,6 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
 import { ExternalLink, Calendar, Users, Target, Award, ChevronRight } from 'lucide-react';
-import backIcon from '../images/back.png';
 
 const caseStudyData = {
   'ai-design-system': {
@@ -105,7 +104,7 @@ function CaseStudy() {
         <div className="container">
           <Link to="/" className="link">
             <img 
-              src={backIcon} 
+              src="/images/back.png" 
               alt="Back" 
               style={{ width: 'var(--icon-sm)', height: 'var(--icon-sm)', marginRight: 'var(--space-2)' }} 
             />
