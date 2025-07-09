@@ -6,7 +6,6 @@ body {
   font-size: var(--font-size-base);
   background: var(--color-bg);
   background: url('/images/back.png') repeat-x scroll left top #000000;
- 
 }
 
 .wrapper {
@@ -19,17 +18,13 @@ header {
   padding: var(--space-8) var(--space-8);
   max-width: var(--container-xl);
   margin: 0 auto;
-  border: 1px solid red;
 }
-
 
 section {
   padding: var(--space-16) var(--space-8);
   max-width: var(--container-xl);
   margin: 0 auto;
-  border: 1px solid blue;
 }
-
 
 footer {
   padding: var(--space-16) var(--space-8);
@@ -53,7 +48,6 @@ h1 {
   font-size: 4rem;
   color: var(--color-text);
   margin-bottom: var(--space-8);
-  color: white;
 }
 
 h2 {
