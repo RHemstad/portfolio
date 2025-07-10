@@ -70,11 +70,18 @@ function Home() {
       {/* HEADER */}
       <header>
         <FallingGlyphsBackground />
+
+<div className="logo">
+  <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
+</div>
+<div>
         <h1>Rebecca L. Hemstad</h1>
         <p>Currently leading design system architecture and AI/ML UI design, I specialize in creating cohesive visual languages that make artificial intelligence accessible and empowering across complex product ecosystems.</p>
+
+        </div>
       </header>
 
-      {/* DESIGN SYSTEM */}
+      {/* DESIGN  */}
       <motion.section
         className="design"
         initial="hidden"
@@ -90,6 +97,7 @@ function Home() {
               className="design-card"
               variants={cardVariants}
             >
+              <img className="design-card-image" src={project.image} alt={project.title} />
               <h3>{project.title}</h3>
               <p className="text">{project.description}</p>
               <Link to={project.link} className="link">
@@ -126,18 +134,22 @@ function Home() {
               variants={writingCardVariants}
               transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
             >
-              <header>
+          <div className="writing-card-meta">
                 <span className="badge">{getTypeLabel(item.type)}</span>
                 <span className="date">{item.date}</span>
-              </header>
-              <h3 className="title">
-                <a href={item.link}>{item.title}</a>
-              </h3>
-              <p className="meta">
+          </div> 
+
+              <h3><a href={item.link}>{item.title}</a></h3>
+
+              {/*  <p>
                 {item.type === 'article'
                   ? item.publication
                   : `${item.event} • ${item.location}`}
               </p>
+              */}
+
+              <p>{item.description}</p>
+
               <a href={item.link} className="cta">
                 {item.type === 'article' ? 'Read' : 'Details'}
                 <ExternalLink size={16} />
@@ -148,7 +160,6 @@ function Home() {
 
         {writing.length > 3 && (
           <motion.div 
-            className="text-center mt-lg"
             variants={writingCardVariants}
           >
             <button
@@ -163,22 +174,35 @@ function Home() {
 
       {/* FOOTER */}
       <footer>
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Let's Connect</h3>
-            <p>Interested in design systems, AI/ML interfaces, or scalable design solutions? I'd love to hear from you.</p>
-            <div className="footer-links">
-              <a href="mailto:rebecca@example.com" className="link">
-                <Mail className="link__icon" />
-                rebecca@example.com
-              </a>
-              <a href="https://linkedin.com/in/rebeccahemstad" className="link">
-                <Linkedin className="link__icon" />
-                LinkedIn
-              </a>
+
+         
+          <section className="footer-main">
+
+
+            <div className="footer-content-left">
+              <h3>Get in touch</h3>
+              <p>Interested in design systems, AI/ML interfaces, or scalable design solutions? I'd love to hear from you.</p>
             </div>
-          </div>
-        </div>
+
+            <div className="footer-content-right">
+              <div className="social-links">
+                <a href="mailto:rebecca@example.com" className="social-link" aria-label="Email Rebecca">
+                  <Mail className="social-icon" />
+                </a>
+                <a href="https://linkedin.com/in/rebeccahemstad" className="social-link" aria-label="LinkedIn Profile">
+                  <Linkedin className="social-icon" />
+                </a>
+              </div>
+            </div>
+
+
+          </section>
+
+          <section className="footer-bottom">
+            <p className="copyright">© 2025 Rebecca L. Hemstad. All rights reserved.</p>
+          </section>
+
+
       </footer>
     </main>
   );
