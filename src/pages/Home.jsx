@@ -89,7 +89,7 @@ function Home() {
         viewport={{ once: true, amount: 0.3 }}
         variants={sectionVariants}
       >
-        <motion.h2 variants={cardVariants}>Selected Work</motion.h2>
+        <motion.h2 variants={cardVariants}>Design</motion.h2>
         <div className="cards">
           {displayedProjects.map((project) => (
             <motion.article

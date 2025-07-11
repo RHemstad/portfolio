@@ -1,54 +1,52 @@
+// FallingGlyphsBackground.jsx
 import React, { useEffect, useState } from "react";
 
 const FallingGlyphsBackground = () => {
   const [glyphs, setGlyphs] = useState([]);
 
   useEffect(() => {
-    // Create an array of glyphs with random properties
     const createGlyphs = () => {
-      const glyphsArray = [];
+      const isMobile = window.innerWidth < 768;
+      const spawnWidthPct = isMobile ? 100 : 20;
+      const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
 
-      const glyphCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
-
-      
-      
-      //const glyphCharacters = ['{', '}', '[', ']', '<', '>', '/', '\\', '|', '=', '+', '-', '*', '&', '#', '@', '!', '?', '~', '^'];
-      
-      const MAX_GLYPHS = window.innerWidth < 768 ? 12 : 20; // phones = 12, larger = 20
-
-      for (let i = 0; i < MAX_GLYPHS; i++) {
-        glyphsArray.push({
-          id: i,
-          character: glyphCharacters[Math.floor(Math.random() * glyphCharacters.length)],
-          left: Math.random() * 100, // Random horizontal position
-          animationDuration: 8 + Math.random() * 12, // Random duration between 8-20s
-          animationDelay: Math.random() * 10, // Random delay
-          fontSize: 12 + Math.random() * 50, // Random font size between 12-62px
-          fontFamily: Math.random() > 0.5 ? 'var(--font-serif)' : 'var(--font-sans)',
-
-        });
-      }
-      return glyphsArray;
+      return Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        character: chars[Math.floor(Math.random() * chars.length)],
+        left: Math.random() * spawnWidthPct,  // % of viewport width
+        top: 0,                               // start at the very top
+        animationDuration: 8 + Math.random() * 12,
+        animationDelay:    Math.random() * 10,
+        fontSize:          12 + Math.random() * 50,
+        fontFamily:        Math.random() > 0.5 ? "var(--font-serif)" : "var(--font-sans)",
+      }));
     };
 
+    // initial spawn
     setGlyphs(createGlyphs());
+
+    // rebuild when viewport resizes/rotates
+    const handleResize = () => setGlyphs(createGlyphs());
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div className="falling-glyphs-container">
-      {glyphs.map((glyph) => (
+      {glyphs.map(g => (
         <div
-          key={glyph.id}
+          key={g.id}
           className="falling-glyph"
           style={{
-            left: `${glyph.left}%`,
-            animationDuration: `${glyph.animationDuration}s`,
-            animationDelay: `${glyph.animationDelay}s`,
-            fontSize: `${glyph.fontSize}px`,
-            fontFamily: glyph.fontFamily
+            left:              `${g.left}%`,
+            top:               `${g.top}%`,
+            animationDuration: `${g.animationDuration}s`,
+            animationDelay:    `${g.animationDelay}s`,
+            fontSize:          `${g.fontSize}px`,
+            fontFamily:        g.fontFamily,
           }}
         >
-          {glyph.character}
+          {g.character}
         </div>
       ))}
     </div>

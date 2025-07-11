@@ -6,12 +6,22 @@ body {
   font-size: var(--font-size-base);
   background: var(--color-bg);
   background: url('/images/back.png') repeat-x scroll left top #000000;
+
 }
 
 .wrapper {
   background: url('/images/backwrap.svg') no-repeat top left;
   background-size: 500px;
-  min-height: 100vh;
+  width: 100%;
+}
+
+
+
+
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -19,6 +29,15 @@ header {
   padding-inline: var(--space-8);
   max-width: var(--container-xl);
   margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+ justify-content: flex-start;
+  align-items: center;
+  border: 1px solid orange;
+  gap: 1rem;
 }
 
 section {
@@ -35,7 +54,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 1px solid red;
+  border: 1px solid pink;
   position: relative;
 }
 
