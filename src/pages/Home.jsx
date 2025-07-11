@@ -81,7 +81,9 @@ function Home() {
         </div>
       </header>
 
-      {/* DESIGN  */}
+{/* ************************** */}
+{/* ===== DESIGN ===== */}
+{/* ************************** */}
       <motion.section
         className="design"
         initial="hidden"
@@ -108,7 +110,10 @@ function Home() {
         </div>
       </motion.section>
 
-      {/* WRITING & SPEAKING */}
+
+{/* ************************** */}
+{/* ===== WRITING & SPEAKING ===== */}
+{/* ************************** */}
       <motion.section
         className="writing"
         initial="hidden"
@@ -161,6 +166,7 @@ function Home() {
         {writing.length > 3 && (
           <motion.div 
             variants={writingCardVariants}
+            className="button-center"
           >
             <button
               onClick={() => setShowAllWriting(!showAllWriting)}
@@ -172,7 +178,9 @@ function Home() {
         )}
       </motion.section>
 
-      {/* FOOTER */}
+{/* ************************** */}
+{/* ===== FOOTER ===== */}
+{/* ************************** */}
       <footer>
 
          

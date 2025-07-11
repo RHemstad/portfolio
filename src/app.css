@@ -6,7 +6,6 @@ body {
   font-size: var(--font-size-base);
   background: var(--color-bg);
   background: url('/images/back.png') repeat-x scroll left top #000000;
-
 }
 
 .wrapper {
@@ -14,10 +13,6 @@ body {
   background-size: 500px;
   width: 100%;
 }
-
-
-
-
 
 main {
   display: flex;
@@ -36,7 +31,6 @@ header {
   flex-direction: row;
  justify-content: flex-start;
   align-items: center;
-  border: 1px solid orange;
   gap: 1rem;
 }
 
@@ -45,6 +39,7 @@ section {
   padding-inline: var(--space-8);
   max-width: var(--container-xl);
   margin: 0 auto;
+  z-index: 100000;
 }
 
 footer {
@@ -54,8 +49,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  border: 1px solid pink;
   position: relative;
+  z-index: 100001;
 }
 
 footer::after {
@@ -96,15 +91,6 @@ h3  {
   font-size: var(--font-size-xl);
   margin-block: 0;
 }
-
-.heading-accent {
-  color: var(--color-primary);
-}
-
-
-
-
-
 
 /* ***************************** */
 /* ********* BUTTONS ********** */
@@ -164,6 +150,10 @@ button {
 /* ***************************** */
 
 
+
+.text-center {
+  text-align: center;
+}
 
 .mt-lg {
   margin-block-start: var(--space-8);
