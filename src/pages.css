@@ -440,6 +440,7 @@
 /* ===== CASE STUDY ===== */
 /* ************************** */
 
+
 .case-study-header {
   display: flex;
   flex-direction: row;
@@ -537,11 +538,41 @@
   outline-offset: 2px;
 }
 
+
+
+.case-study-main {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  border: 4px solid green;
+  margin: 0 auto;
+  max-width: var(--container-xl);
+}
+
+
 .case-study-hero {
   width: 100%;
   height: auto;
   border-radius: var(--radius-md);
 }
+
+
+
+.left-column {
+  width: 80%;
+  border: 1px solid red;
+
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.right-column {
+  width: 20%;
+  border: 1px solid blue;
+  min-width: 100px;
+}
+
+
 
 .case-study-details {
   display: flex;

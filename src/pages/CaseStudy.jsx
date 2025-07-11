@@ -63,7 +63,9 @@ function CaseStudy() {
 {/* ===== HEADER ===== */}
 {/* ************************** */}
 
-<main>
+<main className="case-study-main">
+
+<div className="left-column">
 
 {/* ************************** */}
 {/* ===== TITLE & OVERVIEW ===== */}
@@ -75,6 +77,10 @@ function CaseStudy() {
 <p>{caseStudy.overview} Note you might need a table of contents at some point</p>
 </div>
 </section>
+
+
+
+
 
 {/* ************************** */}
 {/* ===== DETAILS ===== */}
@@ -122,13 +128,12 @@ function CaseStudy() {
 
 
 
-      <div>
-      <Award style={{ width: 'var(--icon-lg)', height: 'var(--icon-lg)', color: 'var(--color-primary)', marginBottom: 'var(--space-4)' }} />
+
       
       <h2>The Solution</h2>
       <p className="text--large">{caseStudy.solution}</p>
       
-      </div>
+
             
       </section>
 
@@ -193,6 +198,13 @@ function CaseStudy() {
           </div>
         </div>
       </section>
+
+
+
+      </div>
+      <div className="right-column">right column toc</div>
+
+
 
       </main>
 
