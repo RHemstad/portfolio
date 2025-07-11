@@ -12,6 +12,22 @@ function CaseStudy() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Navigation items for the case study sections
+  const caseStudyNavItems = [
+    { id: 'overview', label: 'Overview' },
+    { id: 'details', label: 'Details' },
+    { id: 'challenge', label: 'Challenge & Solution' },
+    { id: 'process', label: 'Process' },
+    { id: 'gallery', label: 'Gallery' }
+  ];
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   if (!caseStudy) {
     return (
       <div className="section">
@@ -71,7 +87,7 @@ function CaseStudy() {
 {/* ===== TITLE & OVERVIEW ===== */}
 {/* ************************** */}
 
-<section>
+<section id="overview" className="case-study-title-overview-section">
 <div>
 <h2>{caseStudy.title}</h2>
 <p>{caseStudy.overview} Note you might need a table of contents at some point</p>
@@ -86,7 +102,7 @@ function CaseStudy() {
 {/* ===== DETAILS ===== */}
 {/* ************************** */}
 
-<section className="case-study-details">
+<section id="details" className="case-study-details">
 
 <img 
   src={caseStudy.heroImage}
@@ -121,7 +137,7 @@ function CaseStudy() {
 {/* ===== CHALLENGE & SOLUTION ===== */}
 {/* ************************** */}
 
-      <section>
+      <section id="challenge">
         <Target style={{ width: 'var(--icon-lg)', height: 'var(--icon-lg)', color: 'var(--color-primary)', marginBottom: 'var(--space-4)' }} />
         <h2>The Challenge</h2>
         <p className="text--large">{caseStudy.challenge}</p>
@@ -138,7 +154,7 @@ function CaseStudy() {
       </section>
 
       {/* Process Section */}
-      <section className="section">
+      <section id="process" className="section">
         <div className="container">
           <div className="text-center mb-lg">
             <h2 className="heading heading--large">Process</h2>
@@ -174,7 +190,7 @@ function CaseStudy() {
       </section>
 
       {/* Gallery Section */}
-      <section className="section section--alt">
+      <section id="gallery" className="section section--alt">
         <div className="container">
           <div className="text-center mb-lg">
             <h2>Gallery</h2>
@@ -202,7 +218,20 @@ function CaseStudy() {
 
 
       </div>
-      <div className="right-column">right column toc</div>
+      <div className="right-column">
+        <nav className="toc-navigation">
+          <h3>Table of Contents</h3>
+          {caseStudyNavItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="toc-nav-item"
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+      </div>
 
 
 
