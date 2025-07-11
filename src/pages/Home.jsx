@@ -129,7 +129,7 @@ function Home() {
           </p>
         </motion.div>
 
-        <div className="writing-strip">
+        <div className="writing-cards">
           {displayedWriting.map((item, index) => (
             <motion.article
               key={item.id}
