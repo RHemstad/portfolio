@@ -49,6 +49,8 @@ function CaseStudy() {
   {/* ************************** */}
 
   <header className="case-study-header">
+
+    
     <Link to="/" className="case-study-header-link">
       <div className="case-study-header">
         <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />

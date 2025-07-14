@@ -19,6 +19,10 @@ main {
   flex-direction: column;
 }
 
+header, footer, section {
+  z-index: 100001;
+}
+
 header {
   padding-block: var(--space-16);
   padding-inline: var(--space-8);
@@ -39,7 +43,6 @@ section {
   padding-inline: var(--space-8);
   max-width: var(--container-xl);
   margin: 0 auto;
-  z-index: 100000;
   border: 1px solid red;
   width: 100%;
   box-sizing: border-box;
@@ -53,7 +56,6 @@ footer {
   align-items: center;
   flex-direction: column;
   position: relative;
-  z-index: 100001;
 }
 
 footer::after {

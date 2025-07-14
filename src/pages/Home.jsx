@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ExternalLink, 
@@ -10,14 +10,34 @@ import { writing } from '../data/writing';
 import FallingGlyphsBackground from './FallingGlyphsBackground';
 import { motion } from 'framer-motion';
 
+// Custom hook to detect mobile viewport
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  return isMobile;
+};
+
 function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllWriting, setShowAllWriting] = useState(false);
+  const isMobile = useIsMobile();
 
   const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
   const displayedWriting = showAllWriting ? writing : writing.slice(0, 3);
 
-  const sectionVariants = {
+  // Disable animations on mobile
+  const sectionVariants = isMobile ? {} : {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -31,12 +51,12 @@ function Home() {
     },
   };
   
-  const cardVariants = {
+  const cardVariants = isMobile ? {} : {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
 
-  const writingSectionVariants = {
+  const writingSectionVariants = isMobile ? {} : {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -50,7 +70,7 @@ function Home() {
     },
   };
 
-  const writingCardVariants = {
+  const writingCardVariants = isMobile ? {} : {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
@@ -86,8 +106,8 @@ function Home() {
 {/* ************************** */}
       <motion.section
         className="design"
-        initial="hidden"
-        whileInView="visible"
+        initial={isMobile ? false : "hidden"}
+        whileInView={isMobile ? false : "visible"}
         viewport={{ once: true, amount: 0.3 }}
         variants={sectionVariants}
       >
@@ -116,8 +136,8 @@ function Home() {
 {/* ************************** */}
       <motion.section
         className="writing"
-        initial="hidden"
-        whileInView="visible"
+        initial={isMobile ? false : "hidden"}
+        whileInView={isMobile ? false : "visible"}
         viewport={{ once: true, amount: 0.3 }}
         variants={writingSectionVariants}
       >
@@ -134,8 +154,8 @@ function Home() {
             <motion.article
               key={item.id}
               className="writing-card"
-              initial="hidden"
-              animate="visible"
+              initial={isMobile ? false : "hidden"}
+              animate={isMobile ? false : "visible"}
               variants={writingCardVariants}
               transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
             >
