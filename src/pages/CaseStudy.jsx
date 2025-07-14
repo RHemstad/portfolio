@@ -50,15 +50,14 @@ function CaseStudy() {
 
   <header className="case-study-header">
 
-    
     <Link to="/" className="case-study-header-link">
-      <div className="case-study-header">
+      <div className="case-study-header-title">
         <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
         <h1>Rebecca L. Hemstad</h1>
       </div>
     </Link>
 
-    <nav className={`case-study-nav ${isMenuOpen ? 'nav-open' : ''}`}>
+    <nav className={`mobile-nav ${isMenuOpen ? 'nav-open' : ''}`}>
       <Link to="/#about" className="nav-link">About</Link>
       <Link to="/#design" className="nav-link">Design</Link>
       <Link to="/#writing" className="nav-link">Writing</Link>
@@ -78,7 +77,7 @@ function CaseStudy() {
 
 
 {/* ************************** */}
-{/* ===== HEADER ===== */}
+{/* ===== CONTENT ===== */}
 {/* ************************** */}
 
 <main className="case-study-main">
@@ -92,12 +91,9 @@ function CaseStudy() {
 <section id="overview" className="case-study-title-overview-section">
 <div>
 <h2>{caseStudy.title}</h2>
-<p>{caseStudy.overview} Note you might need a table of contents at some point</p>
+<p>{caseStudy.overview}</p>
 </div>
 </section>
-
-
-
 
 
 {/* ************************** */}
@@ -143,19 +139,17 @@ function CaseStudy() {
         <Target style={{ width: 'var(--icon-lg)', height: 'var(--icon-lg)', color: 'var(--color-primary)', marginBottom: 'var(--space-4)' }} />
         <h2>The Challenge</h2>
         <p className="text--large">{caseStudy.challenge}</p>
-
-
-
-
-      
+ 
       <h2>The Solution</h2>
       <p className="text--large">{caseStudy.solution}</p>
-      
-
-            
+       
       </section>
 
-      {/* Process Section */}
+  {/* ************************** */}
+  {/* ===== PROCESS ===== */}
+  {/* ************************** */}
+
+  
       <section id="process" className="section">
         <div className="container">
           <div className="text-center mb-lg">
@@ -191,7 +185,11 @@ function CaseStudy() {
         </div>
       </section>
 
-      {/* Gallery Section */}
+
+  {/* ************************** */}
+  {/* ===== GALLERY ===== */}
+  {/* ************************** */}
+
       <section id="gallery" className="section section--alt">
         <div className="container">
           <div className="text-center mb-lg">
@@ -217,21 +215,32 @@ function CaseStudy() {
         </div>
       </section>
 
-
-
       </div>
+
+  {/* ************************** */}
+  {/* ===== TOC ===== */}
+  {/* ************************** */}
+
+
       <div className="right-column">
         <nav className="toc-navigation">
           <h3>Table of Contents</h3>
-          {caseStudyNavItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="toc-nav-item"
-            >
-              {item.label}
-            </button>
-          ))}
+          <ul className="toc-nav-list">
+            {caseStudyNavItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                  }}
+                  className="toc-nav-link"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
       </div>
 

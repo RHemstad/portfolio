@@ -9,6 +9,26 @@
   --font-serif: 'Merriweather', serif;
   --font-sans: 'Inter', sans-serif;
 
+--color-link-primary-default: #D7C042;
+--color-link-primary-hover: #BBA64A;
+--color-link-primary-active:  #7A6B36; /* pressed */
+--color-link-primary-stroke: #7A6B36;
+--transition-fast: 180ms cubic-bezier(.4,0,.2,1);
+
+
+--color-link-toc-default: #EBEDED;
+--color-link-toc-hover: #FFFFFF;
+--color-link-toc-active:  #D7C042; /* pressed */
+--color-link-toc-stroke: #425457;
+--space-toc-v:            0.375rem;   /* vertical padding */
+--radius-toc:             0.375rem;
+--transition-fast:        200ms cubic-bezier(.4,0,.2,1);
+
+
+/* ************************** */
+/* ********* SPACING ********** */
+/* ************************** */
+
   /* Perfect Fourth Typescale (1.333 ratio) */
   /* Base: 16px */
   --font-size-xs: 0.75rem;    /* 12px */
@@ -20,6 +40,10 @@
   --font-size-3xl: 1.778rem;  /* 28.44px */
   --font-size-4xl: 2.25rem;   /* 36px */
   --font-size-5xl: 3rem;      /* 48px */
+
+/* ************************** */
+/* ********* FONT SIZE ********** */
+/* ************************** */
 
   /* Font Weight System */
   --font-weight-light: 300;
@@ -47,9 +71,19 @@
 
 
 
+/* ************************** */
+/* ********* RADIUS ********** */
+/* ************************** */
+
   --radius-sm: 4px;
   --radius-md: 12px;
   --radius-lg: 32px;
+
+
+
+/* ************************** */
+/* ********* LINE HEIGHT ********** */
+/* ************************** */
 
   /* Line Height System */
   --line-height-tight: 1.1;    /* For main headings */
@@ -57,11 +91,21 @@
   --line-height-normal: 1.6;   /* Baseline for body text */
   --line-height-relaxed: 1.7;  /* For feature descriptions */
 
+
+/* ************************** */
+/* ********* CONTAINER ********** */
+/* ************************** */
+
   /* Container Widths */
   --container-xl: 1200px;      /* Main containers */
   --container-lg: 800px;       /* Medium containers */
   --container-md: 700px;       /* Content width for paragraphs */
   --container-sm: 600px;       /* Narrow content */
+
+
+/* ************************** */
+/* ********* CARDS ********** */
+/* ************************** */
 
   /* Component Dimensions */
   --component-card: 300px;     /* Card widths */
@@ -69,25 +113,49 @@
   --component-process: 48px;   /* Process indicators */
   --component-impact: 400px;   /* Impact card max width */
 
+
+/* ************************** */
+/* ********* IMAGES ********** */
+/* ************************** */
+
   /* Image Heights */
   --image-hero: 384px;         /* Hero images */
   --image-gallery: 256px;      /* Gallery images */
   --image-card: 200px;         /* Card images */
+
+
+/* ************************** */
+/* ********* ICONS ********** */
+/* ************************** */
 
   /* Icon Sizes */
   --icon-xs: 16px;             /* Small icons (inline links) */
   --icon-sm: 20px;             /* Medium icons (navigation) */
   --icon-md: 24px;             /* Large icons (section icons, social) */
 
+
+/* ************************** */
+/* ********* COLORS ********** */
+/* ************************** */
+
   /* Additional Colors */
-  --color-surface: #fff;        /* Surface/background color */
-  --color-surface-dark: #000;   /* Dark surface color */
+      /* Surface/background color */
+
   --color-border-light: rgba(255, 255, 255, 0.1);
   --color-border-medium: rgba(255, 255, 255, 0.2);
   --color-text-muted: rgba(255, 255, 255, 0.7);
   --color-text-muted-dark: rgba(255, 255, 255, 0.9);
   --color-footer-bg: #353c41;
   --color-overlay: rgba(25, 39, 46, 0.9);
+
+
+  --color-surface-dark: #03161B;   /* Body background */
+  --color-surface-subtle: #18292C;
+  --color-surface-default: #2C3E42; /* Card background */
+  --color-surface-alt: #425457; /* Card background */
+
+
+  --color-surface-border: #fff;    
 
   /* Shadow System */
   --shadow-sm: 0 2px 8px rgba(20, 184, 166, 0.10);

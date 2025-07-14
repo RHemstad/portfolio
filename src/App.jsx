@@ -10,10 +10,10 @@ function App() {
   return (
     <div className="wrapper">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/case-study/:id" element={<CaseStudy />} />
-        </Routes>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/case-study/:id" element={<CaseStudy />} />
+    </Routes>
       </BrowserRouter>
     </div>
   );

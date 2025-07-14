@@ -1,59 +1,55 @@
 export const writing = [
   {
     id: 1,
-    title: "Designing for AI: Principles for Human-Centered Machine Learning Interfaces",
+    title: "Integrating Localization Into Design Systems",
     type: "article",
-    publication: "Design Systems Journal",
-    date: "December 2024",
-    description: "Exploring the unique challenges and opportunities in designing interfaces for AI-powered features, with practical guidelines for creating intuitive ML experiences.",
-    link: "#"
+    publication: "Smashing Magazine",
+    date: "May 2025",
+    description: "A hands-on case study reveals how leveraging Figma Variables and semantic design tokens empowered the SAS Filament Design System to seamlessly switch languages, themes, and densities while overcoming text overflow, RTL layouts, and other localization challenges.",
+    link: "https://www.smashingmagazine.com/2025/05/integrating-localization-into-design-systems/"
   },
   {
     id: 2,
-    title: "Token Architecture: Building Scalable Design Systems",
-    type: "keynote",
-    event: "Design Systems Conference",
-    location: "San Francisco",
-    date: "November 2024",
-    description: "A deep dive into semantic token naming conventions and how they enable design systems to scale across complex product ecosystems.",
-    link: "#"
+    title: "Refactoring Design System Tokens for a Multidimensional Future",
+    type: "article",
+    publication: "Medium",
+    date: "July 2024",
+    description: "A case study shows how re-architecting token JSONs to add independent density variants—alongside themes and languages—transforms a design system into a truly multidimensional framework, giving users control over compact or comfortable layouts without sacrificing consistency or accessibility.",
+    link: "https://medium.com/@rebecca.hemstad/refactoring-design-system-tokens-for-a-multidimensional-future-22a1957b6a5e"
   },
   {
     id: 3,
-    title: "The Future of Design System Governance",
-    type: "workshop",
-    event: "UX Design Summit",
-    location: "Austin",
-    date: "October 2024",
-    description: "Hands-on workshop covering strategies for maintaining design system quality and adoption across distributed teams and multiple products.",
-    link: "#"
+    title: "Refactoring Token Names for Seamless Design System Maintenance",
+    type: "ARticle",
+    publication: "Medium",
+    date: "September 2023",
+    description: "A practical blueprint for refactoring design tokens illustrates how establishing a clear, semantic naming convention—backed by Figma Variables and a centralized Token Depot—streamlines collaboration, eases maintenance, and keeps a design system scalable across themes, densities, and languages.",
+    link: "https://medium.com/@rebecca.hemstad/refactoring-token-names-for-seamless-design-system-maintenance-dda22ef7bf66"
   },
   {
     id: 4,
-    title: "AI/ML Interface Patterns: A Comprehensive Guide",
+    title: "Lorem Ipsum",
     type: "article",
     publication: "UX Collective",
     date: "September 2024",
-    description: "A comprehensive overview of interface patterns specifically designed for machine learning features, with real-world examples and best practices.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     link: "#"
   },
   {
     id: 5,
-    title: "Designing Trustworthy AI Experiences",
+    title: "Lorem Ipsum",
     type: "presentation",
-    event: "AI/UX Symposium",
-    location: "Seattle",
+    event: "North Carolina State University",
+    location: "Raleigh",
     date: "August 2024",
-    description: "How to design AI interfaces that build user trust through transparency, control, and clear communication of algorithmic capabilities.",
-    link: "#"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     id: 6,
-    title: "Scaling Design Systems: Lessons from Enterprise Implementation",
+    title: "Lorem Ipsum",
     type: "article",
     publication: "Design Leadership Forum",
     date: "July 2024",
-    description: "Case study of implementing design systems at enterprise scale, covering challenges, solutions, and measurable outcomes across large organizations.",
-    link: "#"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   }
 ]; 

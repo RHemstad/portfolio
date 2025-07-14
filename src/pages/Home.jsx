@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { 
   ExternalLink, 
   Mail, 
-  Linkedin
+  Linkedin,
+  Menu,
+  X
 } from 'lucide-react';
 import { projects } from '../data/projects';
 import { writing } from '../data/writing';
@@ -13,6 +15,11 @@ import { motion } from 'framer-motion';
 function Home() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllWriting, setShowAllWriting] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
   const displayedWriting = showAllWriting ? writing : writing.slice(0, 3);
@@ -67,19 +74,51 @@ function Home() {
 
   return (
     <main>
-      {/* HEADER */}
-      <header>
-        <FallingGlyphsBackground />
+      <FallingGlyphsBackground />
 
-<div className="logo">
-  <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
+
+
+
+{/* ************************** */}
+{/* ===== HEADER ===== */}
+{/* ************************** */}
+
+<header className="home-header">
+
+<div className="home-header-nav">
+  <nav className={`mobile-nav ${isMenuOpen ? 'nav-open' : ''}`}>
+    <Link to="/#about" className="nav-link">About</Link>
+    <Link to="/#design" className="nav-link">Design</Link>
+    <Link to="/#writing" className="nav-link">Writing</Link>
+    <Link to="/#speaking" className="nav-link">Speaking</Link>
+    <Link to="/#contact" className="nav-link">Contact</Link>
+  </nav>
+
+  <button 
+    className="hamburger-menu" 
+    onClick={toggleMenu}
+    aria-label="Toggle navigation menu"
+  >
+    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+  </button>
 </div>
-<div>
-        <h1>Rebecca L. Hemstad</h1>
-        <p>Currently leading design system architecture and AI/ML UI design, I specialize in creating cohesive visual languages that make artificial intelligence accessible and empowering across complex product ecosystems.</p>
 
-        </div>
-      </header>
+
+<div className="home-header-title">
+  <div className="logo">
+    <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
+  </div>
+  <div className="home-header-title-text">
+    <h1>Rebecca L. Hemstad</h1>
+    <p>Currently leading design system architecture and AI/ML UI design, I specialize in creating cohesive visual languages that make artificial intelligence accessible and empowering across complex product ecosystems.</p>
+  </div>
+</div>
+
+</header>
+
+
+
+
 
 {/* ************************** */}
 {/* ===== DESIGN ===== */}
@@ -121,12 +160,12 @@ function Home() {
         viewport={{ once: true, amount: 0.3 }}
         variants={writingSectionVariants}
       >
-        <motion.div variants={writingCardVariants} className="writing-header">
+        <motion.div variants={writingCardVariants}>
           <h2>Writing &amp; Speaking</h2>
-          <p>
+         {/* <p>
             Insights on design-system architecture, AI/ML UI design, and scalable
             design languages—shared through articles and talks.
-          </p>
+          </p>*/}
         </motion.div>
 
         <div className="writing-cards">
