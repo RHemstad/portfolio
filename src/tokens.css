@@ -37,7 +37,7 @@
   /* *********************************** */
   /* ********* COLORS SURFACE ********** */
   /* *********************************** */
-
+  --color-surface-black: #000000;
   --color-surface-dark: #03161B;   /* Body background */
   --color-surface-subtle: #18292C;
   --color-surface-default: #2C3E42; /* Card background */

@@ -270,6 +270,7 @@
   min-height: var(--component-min); 
   display: flex;
   flex-direction: column;
+  border: 1px solid red;
 }
 
 .design-card-image {
@@ -279,7 +280,7 @@
   margin-block-end: var(--space-4);
 }
 
-.design-card .link {
+.design-card .link-generic {
   margin-block-start: auto;
 }
 
@@ -320,7 +321,6 @@
   gap: var(--space-4);
   border-radius: var(--radius-md);
   transition: transform .3s ease, box-shadow .3s ease;
-  background: transparent;
   color: var(--color-text-primary);
   padding-block: 2rem;
   padding-inline: 2rem;
@@ -486,7 +486,7 @@
   font-size: var(--font-size-xs);
   text-transform: uppercase;
   font-weight: var(--font-weight-medium);
-  background: var(--color-surface-dark);
+  background: var(--color-surface-alt);
 }
 
 

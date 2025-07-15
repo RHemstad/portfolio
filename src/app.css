@@ -5,7 +5,7 @@ body {
   line-height: 1.6;
   font-size: var(--font-size-base);
   background: var(--color-surface-dark);
-  background: url('/images/back.png') repeat-x scroll left top var(--color-surface-dark);
+  background: url('/images/back.png') repeat-x scroll left top var(--color-surface-black);
 }
 
 .wrapper {
