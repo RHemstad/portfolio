@@ -310,20 +310,18 @@
   gap: var(--space-4);
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 
+  padding-bottom: var(--space-4);
 }
 
 /* Card */
 .writing-card {
   display: flex;
-  flex: 1 1 var(--component-card);          /* flexible width cards that can wrap */
-
+  flex: 1 1 var(--component-card); /* flexible width cards that can wrap */
   gap: var(--space-4);
   border-radius: var(--radius-md);
   transition: transform .3s ease, box-shadow .3s ease;
-  background: var(--color-surface-alt);
+  background: transparent;
   color: var(--color-text-primary);
-
   padding-block: 2rem;
   padding-inline: 2rem;
   box-shadow: var(--shadow-card);
@@ -529,7 +527,7 @@
 }
 
 .link-generic:visited:hover {
-  color: var(--color-accent-warm-hover);
+  color: var(--color-link-generic-hover);
 }
 
 .link__icon {
