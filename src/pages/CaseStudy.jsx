@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { ExternalLink, Calendar, Users, Target, Award, ChevronRight, Menu, X, Mail, Linkedin } from 'lucide-react';
 import { caseStudyData } from '../data/caseStudies';
 import { useState } from 'react';
+import BackToTop from '../components/BackToTop';
+import { AnimatePresence } from 'framer-motion';
 
 function CaseStudy() {
   const { id } = useParams();
@@ -52,7 +54,9 @@ function CaseStudy() {
 
     <Link to="/" className="case-study-header-link">
       <div className="case-study-header-title">
-        <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
+        <div className="logo">
+          <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
+        </div>
         <h1>Rebecca L. Hemstad</h1>
       </div>
     </Link>
@@ -107,6 +111,7 @@ function CaseStudy() {
 <img 
   src={caseStudy.heroImage}
   alt={caseStudy.title}
+  className="case-study-details-image"
   />
 
 <div>
@@ -284,7 +289,7 @@ function CaseStudy() {
 
        </footer>
 
-
+      <BackToTop />
 
     </>
 

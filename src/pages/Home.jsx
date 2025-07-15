@@ -10,7 +10,8 @@ import {
 import { projects } from '../data/projects';
 import { writing } from '../data/writing';
 import FallingGlyphsBackground from './FallingGlyphsBackground';
-import { motion } from 'framer-motion';
+import BackToTop from '../components/BackToTop';
+import { motion, AnimatePresence } from 'framer-motion';
 
 /* ────────────────────────────────────────────────
    Re‑usable Show‑More / Show‑Less toggle button
@@ -299,6 +300,7 @@ function Home() {
           </p>
         </section>
       </footer>
+      <BackToTop />
     </main>
   );
 }

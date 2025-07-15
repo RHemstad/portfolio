@@ -103,14 +103,12 @@ button {
   cursor: pointer;
 }
 
-
-
 .button-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background: none;
+  background: var(--color-surface-alt);
   border: 0;
   border-radius: var(--radius-md);
   color: var(--color-link-nav-default); /* #D7C042 */
@@ -304,7 +302,9 @@ button {
 
 
 
-
+/* ***************************** */
+/* ********* HAMBURGER ********** */
+/* ***************************** */
 
 
 .hamburger-menu {
@@ -326,5 +326,37 @@ button {
 
 .hamburger-menu:focus {
   outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
+}
+
+/* ***************************** */
+/* ********* BACK TO TOP ********** */
+/* ***************************** */
+
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  width: 48px;
+  height: 48px;
+  background: var(--color-link-body-default);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  transition: background-color 0.2s ease;
+}
+
+.back-to-top:hover {
+  background: var(--color-link-body-hover);
+}
+
+.back-to-top:focus {
+  outline: 2px solid var(--color-link-body-hover);
   outline-offset: 2px;
 }
