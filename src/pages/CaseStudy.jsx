@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ExternalLink, Calendar, Users, Target, Award, ChevronRight, Menu, X } from 'lucide-react';
+import { ExternalLink, Calendar, Users, Target, Award, ChevronRight, Menu, X, Mail, Linkedin } from 'lucide-react';
 import { caseStudyData } from '../data/caseStudies';
 import { useState } from 'react';
 
@@ -58,11 +58,13 @@ function CaseStudy() {
     </Link>
 
     <nav className={`mobile-nav ${isMenuOpen ? 'nav-open' : ''}`}>
-      <Link to="/#about" className="nav-link">About</Link>
-      <Link to="/#design" className="nav-link">Design</Link>
-      <Link to="/#writing" className="nav-link">Writing</Link>
-      <Link to="/#speaking" className="nav-link">Speaking</Link>
-      <Link to="/#contact" className="nav-link">Contact</Link>
+      <ul>
+        <li><Link to="/#about" className="nav-link">About</Link></li>
+        <li><Link to="/#design" className="nav-link">Design</Link></li>
+        <li><Link to="/#writing" className="nav-link">Writing</Link></li>
+        <li><Link to="/#speaking" className="nav-link">Speaking</Link></li>
+        <li><Link to="/#contact" className="nav-link">Contact</Link></li>
+      </ul>
     </nav>
 
     <button 
@@ -136,7 +138,7 @@ function CaseStudy() {
 {/* ************************** */}
 
       <section id="challenge">
-        <Target style={{ width: 'var(--icon-lg)', height: 'var(--icon-lg)', color: 'var(--color-primary)', marginBottom: 'var(--space-4)' }} />
+        <Target style={{ width: 'var(--icon-lg)', height: 'var(--icon-lg)', color: 'var(--color-accent-primary)', marginBottom: 'var(--space-4)' }} />
         <h2>The Challenge</h2>
         <p className="text--large">{caseStudy.challenge}</p>
  
@@ -163,7 +165,7 @@ function CaseStudy() {
                   width: '60px', 
                   height: '60px', 
                   borderRadius: '50%', 
-                  background: 'var(--color-primary)', 
+                  background: 'var(--color-accent-primary)', 
                   color: '#fff', 
                   display: 'flex', 
                   alignItems: 'center', 
@@ -254,12 +256,31 @@ function CaseStudy() {
 
       {/* Next Steps Section */}
       <footer>
-            <h2>Ready to Work Together?</h2>
-            <p className="text--large" style={{ color: '#e5e5e5' }}>I'm always interested in discussing new opportunities and collaborative projects that push the boundaries of what's possible.</p>
-            <div className="flex" style={{ justifyContent: 'center', marginTop: 'var(--space-8)' }}>
-              <a href="mailto:rebecca@hemstad.design" className="button-primary">Get in Touch</a>
-              <Link to="/" className="button-secondary">View More Work</Link>
+
+      <section className="footer-main">
+            <div className="footer-content-left">
+              <h3>Let's Connect</h3>
+              <p>I’m currently seeking my next UI design role or academic teaching opportunity. If my work resonates with you, drop me a note or ping me on LinkedIn—I'd love to talk.</p>
             </div>
+
+            <div className="footer-content-right">
+              <div className="social-links">
+                <a href="mailto:rebecca@example.com" className="social-link" aria-label="Email Rebecca">
+                  <Mail className="social-icon" />
+                </a>
+                <a href="https://linkedin.com/in/rebeccahemstad" className="social-link" aria-label="LinkedIn Profile">
+                  <Linkedin className="social-icon" />
+                </a>
+              </div>
+            </div>
+
+
+          </section>
+
+          <section className="footer-bottom">
+            <p className="copyright">© 2025 Rebecca L. Hemstad. All rights reserved.</p>
+          </section>
+
 
        </footer>
 

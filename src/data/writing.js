@@ -20,7 +20,7 @@ export const writing = [
   {
     id: 3,
     title: "Refactoring Token Names for Seamless Design System Maintenance",
-    type: "ARticle",
+    type: "article",
     publication: "Medium",
     date: "September 2023",
     description: "A practical blueprint for refactoring design tokens illustrates how establishing a clear, semantic naming convention—backed by Figma Variables and a centralized Token Depot—streamlines collaboration, eases maintenance, and keeps a design system scalable across themes, densities, and languages.",

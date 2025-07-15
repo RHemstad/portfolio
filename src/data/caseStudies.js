@@ -7,7 +7,7 @@ export const caseStudyData = {
     duration: "18 months",
     team: "8 designers, 12 developers",
     role: "Principal Designer & Design Systems Lead",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop",
+    heroImage: "https://placehold.co/320x200",
     overview: "Led the architecture and implementation of a comprehensive design system that scales across 50+ products, featuring AI-assisted component generation and automated accessibility testing.",
     challenge: "The organization had grown through acquisitions, resulting in fragmented user experiences across their product portfolio. Each product team was working in isolation, creating inconsistent interfaces that confused users and increased development costs.",
     solution: "Developed a unified design system called 'Meridian' that included a component library, design tokens, documentation site, and governance framework. The system was built with scalability in mind, supporting both web and mobile platforms.",

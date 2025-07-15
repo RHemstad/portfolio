@@ -1,35 +1,82 @@
 :root {
-  --color-primary: #14b8a6;
-  --color-secondary: #64748b;
-  --color-bg: #222;
-  --color-text: #fff;
-  --color-accent: #fbbf24;
-  --color-tertiary: rgb(13 148 136);
+
+
+  --color-primary: #0C8A9C;
+  --color-secondary: #D7C042;
+  --color-tertiary: #7A6B36;
+
+  /* *********************************** */
+  /* ********* COLORS ACCENT ********** */
+  /* *********************************** */
+
+  --color-accent-primary: var(--color-primary);
+  --color-accent-warm: var(--color-secondary);
+  --color-accent-warm-hover: #7A6B36;
+
+  /* *********************************** */
+  /* ********* COLORS TEXT ********** */
+  /* *********************************** */
+
+  --color-text-primary: #EBEDED;
+  --color-text-muted: rgba(255, 255, 255, 0.7);
+  --color-text-muted-dark: rgba(255, 255, 255, 0.9);
+
+  /* *********************************** */
+  /* ********* COLORS BORDER ********** */
+  /* *********************************** */
+
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border-medium: rgba(255, 255, 255, 0.2);
+  --color-surface-border: #fff; 
+
+  --color-footer-bg: #353c41;
+  --color-overlay: rgba(25, 39, 46, 0.9);
+
+
+
+  /* *********************************** */
+  /* ********* COLORS SURFACE ********** */
+  /* *********************************** */
+
+  --color-surface-dark: #03161B;   /* Body background */
+  --color-surface-subtle: #18292C;
+  --color-surface-default: #2C3E42; /* Card background */
+  /*--color-surface-alt: #425457; *//* Card background */
+  --color-surface-alt: #394A51;
+  --color-surface-alt-muted: rgba(57, 74, 81, 0.05);
+
+
+
+/* ************************** */
+/* ********* BORDER RADIUS ********** */
+/* ************************** */
+
+--radius-sm: 4px;
+--radius-md: 12px;
+--radius-lg: 32px;
+
+
+/* ************************** */
+/* ********* BORDER WIDTH ********** */
+/* ************************** */
+
+/* Border Widths */
+--border-width-thin: 1px;
+--border-width-medium: 2px;
+  
+
+/* ************************** */
+/* ********* FONTS ********** */
+/* ************************** */
 
   --font-serif: 'Merriweather', serif;
   --font-sans: 'Inter', sans-serif;
 
---color-link-primary-default: #D7C042;
---color-link-primary-hover: #BBA64A;
---color-link-primary-active:  #7A6B36; /* pressed */
---color-link-primary-stroke: #7A6B36;
---transition-fast: 180ms cubic-bezier(.4,0,.2,1);
-
-
---color-link-toc-default: #EBEDED;
---color-link-toc-hover: #FFFFFF;
---color-link-toc-active:  #D7C042; /* pressed */
---color-link-toc-stroke: #425457;
---space-toc-v:            0.375rem;   /* vertical padding */
---radius-toc:             0.375rem;
---transition-fast:        200ms cubic-bezier(.4,0,.2,1);
-
-
 /* ************************** */
-/* ********* SPACING ********** */
+/* ********* FONT SIZE ********** */
 /* ************************** */
 
-  /* Perfect Fourth Typescale (1.333 ratio) */
+    /* Perfect Fourth Typescale (1.333 ratio) */
   /* Base: 16px */
   --font-size-xs: 0.75rem;    /* 12px */
   --font-size-sm: 0.875rem;   /* 14px */
@@ -41,8 +88,9 @@
   --font-size-4xl: 2.25rem;   /* 36px */
   --font-size-5xl: 3rem;      /* 48px */
 
+
 /* ************************** */
-/* ********* FONT SIZE ********** */
+/* ********* FONT WEIGHT ********** */
 /* ************************** */
 
   /* Font Weight System */
@@ -52,6 +100,55 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
+
+
+
+/* ************************** */
+/* ********* LINE HEIGHT ********** */
+/* ************************** */
+
+  /* Line Height System */
+  --line-height-tight: 1.1;    /* For main headings */
+  --line-height-heading: 1.2;  /* For section headings */
+  --line-height-normal: 1.6;   /* Baseline for body text */
+  --line-height-relaxed: 1.7;  /* For feature descriptions */
+
+
+/* ************************** */
+/* ********* LINKS ********** */
+/* ************************** */
+
+--color-link-nav-default: #D7C042;
+--color-link-nav-hover: #BBA64A;
+--color-link-nav-active:  #7A6B36; /* pressed */
+--color-link-nav-stroke: #7A6B36;
+--transition-fast: 180ms cubic-bezier(.4,0,.2,1);
+
+
+--color-link-toc-default: #EBEDED;
+--color-link-toc-hover: #FFFFFF;
+--color-link-toc-active:  #D7C042; /* pressed */
+--color-link-toc-stroke: #425457;
+--space-toc-v:            0.375rem;   /* vertical padding */
+--radius-toc:             0.375rem;
+--transition-fast:        200ms cubic-bezier(.4,0,.2,1);
+
+--color-link-generic-default: #D7C042;
+--color-link-generic-hover: #BBA64A;
+--color-link-generic-active:  #7A6B36; /* pressed */
+--color-link-generic-stroke: #7A6B36;
+
+--color-link-body-default:  #0C8A9C;  /* teal idle */
+  --color-link-body-hover:    #247489;  /* darker teal */
+  --color-link-body-active:   #D7C042;  /* warm flash */
+  --color-link-body-visited:  #4F8587;  /* desat teal */
+  --color-link-body-stroke:   #4F8587;  /* underline */
+  --transition-link-fast:     180ms cubic-bezier(.4,0,.2,1);
+
+
+/* ************************** */
+/* ********* SPACING ********** */
+/* ************************** */
 
   /* 4px-based Spacing System */
   --space-0: 0px;
@@ -69,32 +166,9 @@
   --space-24: 96px;
   --space-32: 128px;
 
-
-
-/* ************************** */
-/* ********* RADIUS ********** */
-/* ************************** */
-
-  --radius-sm: 4px;
-  --radius-md: 12px;
-  --radius-lg: 32px;
-
-
-
-/* ************************** */
-/* ********* LINE HEIGHT ********** */
-/* ************************** */
-
-  /* Line Height System */
-  --line-height-tight: 1.1;    /* For main headings */
-  --line-height-heading: 1.2;  /* For section headings */
-  --line-height-normal: 1.6;   /* Baseline for body text */
-  --line-height-relaxed: 1.7;  /* For feature descriptions */
-
-
-/* ************************** */
-/* ********* CONTAINER ********** */
-/* ************************** */
+/* ************************************** */
+/* ********* SIZING CONTAINER ********** */
+/* ************************************** */
 
   /* Container Widths */
   --container-xl: 1200px;      /* Main containers */
@@ -103,20 +177,25 @@
   --container-sm: 600px;       /* Narrow content */
 
 
-/* ************************** */
-/* ********* CARDS ********** */
-/* ************************** */
+/* ************************************** */
+/* ********* SIZING COMPONENTS ********** */
+/* ************************************** */
 
   /* Component Dimensions */
-  --component-card: 300px;     /* Card widths */
   --component-min: 300px;      /* Minimum flex widths */
-  --component-process: 48px;   /* Process indicators */
-  --component-impact: 400px;   /* Impact card max width */
+  --component-card: 300px;     /* Card widths */
+  --component-card-min: 200px; /* Card widths */
+  --component-card-max: 320px; /* Card widths */
+  --component-social: 48px; /* Social icons */
+
 
 
 /* ************************** */
 /* ********* IMAGES ********** */
 /* ************************** */
+
+    /* Background Sizes */
+    --bg-size-wrapper: 500px;
 
   /* Image Heights */
   --image-hero: 384px;         /* Hero images */
@@ -134,28 +213,12 @@
   --icon-md: 24px;             /* Large icons (section icons, social) */
 
 
+
+
+
 /* ************************** */
-/* ********* COLORS ********** */
+/* ********* SHADOWS ********** */
 /* ************************** */
-
-  /* Additional Colors */
-      /* Surface/background color */
-
-  --color-border-light: rgba(255, 255, 255, 0.1);
-  --color-border-medium: rgba(255, 255, 255, 0.2);
-  --color-text-muted: rgba(255, 255, 255, 0.7);
-  --color-text-muted-dark: rgba(255, 255, 255, 0.9);
-  --color-footer-bg: #353c41;
-  --color-overlay: rgba(25, 39, 46, 0.9);
-
-
-  --color-surface-dark: #03161B;   /* Body background */
-  --color-surface-subtle: #18292C;
-  --color-surface-default: #2C3E42; /* Card background */
-  --color-surface-alt: #425457; /* Card background */
-
-
-  --color-surface-border: #fff;    
 
   /* Shadow System */
   --shadow-sm: 0 2px 8px rgba(20, 184, 166, 0.10);
@@ -164,21 +227,17 @@
   --shadow-xl: 0 6px 18px rgba(0, 0, 0, 0.08);
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.05);
 
+
+/* ************************** */
+/* ********* TRANSFORM ********** */
+/* ************************** */
+
   /* Transform Values */
   --transform-lift-sm: translateY(-2px);
   --transform-lift-md: translateY(-4px);
 
-  /* Border Widths */
-  --border-width-thin: 1px;
-  --border-width-medium: 2px;
 
-  /* Component Sizes */
-  --component-social: 48px;
-  --component-card-min: 200px;
-  --component-card-max: 320px;
 
-  /* Background Sizes */
-  --bg-size-wrapper: 500px;
 
   /* Breakpoints */
   --breakpoint-mobile: 768px;
