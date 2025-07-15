@@ -23,4 +23,12 @@ export const projects = [
     image: "https://placehold.co/320x200",
     link: "/case-study/ai-design-system"
   },
+  {
+    id: 4,
+    title: "Enterprise Design Systems",
+    category: "Design System",
+    description: "Building comprehensive design systems for large-scale enterprise applications that support multiple product teams and maintain consistency across complex ecosystems.",
+    image: "https://placehold.co/320x200",
+    link: "/case-study/ai-design-system"
+  },
 ]; 

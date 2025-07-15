@@ -175,11 +175,14 @@ function Home() {
       >
         <motion.h2 variants={cardVariants}>Design</motion.h2>
         <div className="cards">
-          {displayedProjects.map((project) => (
+          {displayedProjects.map((project, index) => (
             <motion.article
               key={project.id}
               className="design-card"
+              initial="hidden"
+              animate="visible"
               variants={cardVariants}
+              transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
             >
               <img
                 className="design-card-image"
@@ -194,6 +197,14 @@ function Home() {
             </motion.article>
           ))}
         </div>
+
+        {/* Show‑More / Show‑Less toggle */}
+        {projects.length > 3 && (
+          <WritingToggle
+            isOpen={showAllProjects}
+            onToggle={() => setShowAllProjects((prev) => !prev)}
+          />
+        )}
       </motion.section>
 
       {/* ************************** */}
