@@ -209,7 +209,8 @@
   padding-inline: var(--space-4);
   box-shadow: var(--shadow-card);
   width: var(--component-card);
-  max-width: 100%;
+  /*max-width: 100%;*/
+  max-width: var(--component-card-max);
   min-height: var(--component-min); 
 }
 
@@ -691,6 +692,10 @@ a.link-body:visited {
 
    .home-header-title-text p {
     /*font-size: var(--font-size-sm);*/
+   }
+
+   .card {
+    max-width: 100%;
    }
 
 
