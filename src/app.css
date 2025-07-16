@@ -24,8 +24,8 @@ header, footer, section {
 }
 
 header {
-  padding-block: var(--space-16);
   padding-inline: var(--space-8);
+  padding-inline-start: 0;
   max-width: var(--container-xl);
   margin: 0 auto;
   display: flex;
@@ -38,11 +38,6 @@ header {
 }
 
 section {
-  /*
-  padding-block: var(--space-8);
-  padding-inline: var(--space-8);
-  */
-
   padding-block: var(--space-6);
   padding-inline: var(--space-32);
   /*max-width: var(--container-xl);*/

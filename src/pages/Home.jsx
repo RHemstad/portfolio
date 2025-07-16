@@ -178,22 +178,26 @@ function Home() {
             {displayedProjects.map((project, index) => (
               <motion.article
                 key={project.id}
-                className="card"
+                className="card design-card"
                 initial="hidden"
                 animate="visible"
                 variants={cardVariants}
                 transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
               >
-                <img
-                  className="design-card-image"
-                  src={project.image}
-                  alt={project.title}
-                />
-                <h3>{project.title}</h3>
-                <p className="text">{project.description}</p>
+                              <Link to={project.link} className="card-link">
+                  <img
+                    className="design-card-image"
+                    src={project.image}
+                    alt={project.title}
+                  />
+                  <h3>{project.title}</h3>
+                  <p className="text">{project.description}</p>
+                </Link>
                 <Link to={project.link} className="link-generic">
                   View Case Study <ExternalLink className="link__icon" />
                 </Link>
+
+
               </motion.article>
             ))}
           </div>
@@ -220,10 +224,7 @@ function Home() {
       >
        {/*  <FloatingImages />*/}
         <div className="section-content">
-          <motion.div variants={writingCardVariants}>
-            <h2>Writing &amp; Speaking</h2>
-          </motion.div>
-
+          <motion.h2 variants={cardVariants}>Writing &amp; Speaking</motion.h2>
           <div className="cards">
             {displayedWriting.map((item, index) => (
               <motion.article
@@ -231,23 +232,20 @@ function Home() {
                 className="card writing-card"
                 initial="hidden"
                 animate="visible"
-                variants={writingCardVariants}
+                variants={cardVariants}
                 transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
               >
-                <a href={item.link} className="card-link">
+                <Link to={item.link} className="card-link">
                   <div className="writing-card-meta">
                     <span className="badge">{getTypeLabel(item.type)}</span>
                     <span className="date">{item.date}</span>
                   </div>
-
                   <h3>{item.title}</h3>
-
-                  <p>{item.description}</p>
-
-                  <span className="link-generic">
-                    {item.type === 'article' ? 'Read' : 'Details'}
-                    <ExternalLink className="link__icon" />
-                  </span>
+                  <p className="text">{item.description}</p>
+                </Link>
+                <a href={item.link} className="link-generic">
+                  {item.type === 'article' ? 'Read' : 'Details'}
+                  <ExternalLink className="link__icon" />
                 </a>
               </motion.article>
             ))}
