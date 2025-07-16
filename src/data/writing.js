@@ -5,7 +5,7 @@ export const writing = [
     type: "article",
     publication: "Smashing Magazine",
     date: "May 2025",
-    description: "A hands-on case study reveals how leveraging Figma Variables and semantic design tokens empowered the SAS Filament Design System to seamlessly switch languages, themes, and densities while overcoming text overflow, RTL layouts, and other localization challenges.",
+    description: "Semantic tokens & Figma Variables for seamless localization across languages, themes, and densities.",
     link: "https://www.smashingmagazine.com/2025/05/integrating-localization-into-design-systems/"
   },
   {
@@ -14,7 +14,7 @@ export const writing = [
     type: "article",
     publication: "Medium",
     date: "July 2024",
-    description: "A case study shows how re-architecting token JSONs to add independent density variants—alongside themes and languages—transforms a design system into a truly multidimensional framework, giving users control over compact or comfortable layouts without sacrificing consistency or accessibility.",
+    description: "Density, theme, and language variants empower a multidimensional, accessible design system.",
     link: "https://medium.com/@rebecca.hemstad/refactoring-design-system-tokens-for-a-multidimensional-future-22a1957b6a5e"
   },
   {
@@ -23,7 +23,7 @@ export const writing = [
     type: "article",
     publication: "Medium",
     date: "September 2023",
-    description: "A practical blueprint for refactoring design tokens illustrates how establishing a clear, semantic naming convention—backed by Figma Variables and a centralized Token Depot—streamlines collaboration, eases maintenance, and keeps a design system scalable across themes, densities, and languages.",
+    description: "Semantic token naming with Figma Variables and a centralized Token Depot for scalable design systems.",
     link: "https://medium.com/@rebecca.hemstad/refactoring-token-names-for-seamless-design-system-maintenance-dda22ef7bf66"
   },
   {

@@ -27,6 +27,7 @@
 
   --color-border-light: rgba(255, 255, 255, 0.1);
   --color-border-medium: rgba(255, 255, 255, 0.2);
+  --color-border-card: rgba(255, 255, 255, 0.3);
   --color-surface-border: #fff; 
 
   --color-footer-bg: #353c41;
