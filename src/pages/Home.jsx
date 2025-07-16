@@ -9,8 +9,9 @@ import {
 } from 'lucide-react';
 import { projects } from '../data/projects';
 import { writing } from '../data/writing';
-import FallingGlyphsBackground from './FallingGlyphsBackground';
+import FallingGlyphsBackground from '../components/FallingGlyphsBackground';
 import BackToTop from '../components/BackToTop';
+import FloatingImages from '../components/FloatingImages';
 import { motion, AnimatePresence } from 'framer-motion';
 
 /* ────────────────────────────────────────────────
@@ -171,38 +172,40 @@ function Home() {
         viewport={{ once: true, amount: 0.3 }}
         variants={sectionVariants}
       >
-        <motion.h2 variants={cardVariants}>Design</motion.h2>
-        <div className="cards">
-          {displayedProjects.map((project, index) => (
-            <motion.article
-              key={project.id}
-              className="card"
-              initial="hidden"
-              animate="visible"
-              variants={cardVariants}
-              transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
-            >
-              <img
-                className="design-card-image"
-                src={project.image}
-                alt={project.title}
-              />
-              <h3>{project.title}</h3>
-              <p className="text">{project.description}</p>
-              <Link to={project.link} className="link-generic">
-                View Case Study <ExternalLink className="link__icon" />
-              </Link>
-            </motion.article>
-          ))}
-        </div>
+        <div className="section-content">
+          <motion.h2 variants={cardVariants}>Design</motion.h2>
+          <div className="cards">
+            {displayedProjects.map((project, index) => (
+              <motion.article
+                key={project.id}
+                className="card"
+                initial="hidden"
+                animate="visible"
+                variants={cardVariants}
+                transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
+              >
+                <img
+                  className="design-card-image"
+                  src={project.image}
+                  alt={project.title}
+                />
+                <h3>{project.title}</h3>
+                <p className="text">{project.description}</p>
+                <Link to={project.link} className="link-generic">
+                  View Case Study <ExternalLink className="link__icon" />
+                </Link>
+              </motion.article>
+            ))}
+          </div>
 
-        {/* Show‑More / Show‑Less toggle */}
-        {projects.length > 3 && (
-          <WritingToggle
-            isOpen={showAllProjects}
-            onToggle={() => setShowAllProjects((prev) => !prev)}
-          />
-        )}
+          {/* Show‑More / Show‑Less toggle */}
+          {projects.length > 3 && (
+            <WritingToggle
+              isOpen={showAllProjects}
+              onToggle={() => setShowAllProjects((prev) => !prev)}
+            />
+          )}
+        </div>
       </motion.section>
 
       {/* ************************** */}
@@ -215,46 +218,49 @@ function Home() {
         viewport={{ once: true, amount: 0.3 }}
         variants={writingSectionVariants}
       >
-        <motion.div variants={writingCardVariants}>
-          <h2>Writing &amp; Speaking</h2>
-        </motion.div>
+       {/*  <FloatingImages />*/}
+        <div className="section-content">
+          <motion.div variants={writingCardVariants}>
+            <h2>Writing &amp; Speaking</h2>
+          </motion.div>
 
-        <div className="cards">
-          {displayedWriting.map((item, index) => (
-            <motion.article
-              key={item.id}
-              className="card writing-card"
-              initial="hidden"
-              animate="visible"
-              variants={writingCardVariants}
-              transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
-            >
-              <div className="writing-card-meta">
-                <span className="badge">{getTypeLabel(item.type)}</span>
-                <span className="date">{item.date}</span>
-              </div>
+          <div className="cards">
+            {displayedWriting.map((item, index) => (
+              <motion.article
+                key={item.id}
+                className="card writing-card"
+                initial="hidden"
+                animate="visible"
+                variants={writingCardVariants}
+                transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
+              >
+                <a href={item.link} className="card-link">
+                  <div className="writing-card-meta">
+                    <span className="badge">{getTypeLabel(item.type)}</span>
+                    <span className="date">{item.date}</span>
+                  </div>
 
-              <h3>
-                <a href={item.link} className="link-body">{item.title}</a>
-              </h3>
+                  <h3>{item.title}</h3>
 
-              <p>{item.description}</p>
+                  <p>{item.description}</p>
 
-              <a href={item.link} className="link-generic">
-                {item.type === 'article' ? 'Read' : 'Details'}
-                <ExternalLink className="link__icon" />
-              </a>
-            </motion.article>
-          ))}
+                  <span className="link-generic">
+                    {item.type === 'article' ? 'Read' : 'Details'}
+                    <ExternalLink className="link__icon" />
+                  </span>
+                </a>
+              </motion.article>
+            ))}
+          </div>
+
+          {/* Show‑More / Show‑Less toggle */}
+          {writing.length > 3 && (
+            <WritingToggle
+              isOpen={showAllWriting}
+              onToggle={() => setShowAllWriting((prev) => !prev)}
+            />
+          )}
         </div>
-
-        {/* Show‑More / Show‑Less toggle */}
-        {writing.length > 3 && (
-          <WritingToggle
-            isOpen={showAllWriting}
-            onToggle={() => setShowAllWriting((prev) => !prev)}
-          />
-        )}
       </motion.section>
 
       {/* ************************** */}

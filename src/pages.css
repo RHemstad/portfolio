@@ -215,10 +215,8 @@
 }
 
 .card:hover {
-  /*
   box-shadow: var(--shadow-lg);
   transform: var(--transform-lift-md);
-  */
 }
 
 .cards {
@@ -240,6 +238,13 @@
 .design {
   position: relative;
   overflow: hidden; /* prevents cards from spilling during animation */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.section-content {
+  max-width: var(--container-xl);
+  margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
@@ -275,8 +280,12 @@
 .writing {
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
  /*background-color: var(--color-surface-alt-muted);*/
 }
+
+
 
 .writing h2 {
   margin-block-end: var(--space-4); /* optically needs more space than design section */
@@ -292,13 +301,29 @@
 .writing-card {
  /* Don't need anything right now see .card class */
  /* From https://css.glass */
-background: var(--color-surface-alt-muted);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+ background: var(--color-surface-alt-muted);
+ backdrop-filter: blur(5px);
+ -webkit-backdrop-filter: blur(5px);
+ border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Card Link Styling */
+.card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 .writing-card:hover {
+  border-color: var(--color-accent-primary);
   transform: var(--transform-lift-md);
   box-shadow: var(--shadow-xl);
 }
@@ -538,6 +563,7 @@ a.link-body:visited {
 
 
 
+
 /* ************************** */
 /* ===== CASE STUDY ===== */
 /* ************************** */
@@ -668,6 +694,47 @@ a.link-body:visited {
   border-radius: var(--radius-md);
   max-height: 400px;
   object-fit: cover;
+}
+
+
+/* ************************** */
+/* ===== FLOATING IMAGES ===== */
+/* ************************** */
+
+
+/* Floating Images */
+.floating-img {
+  position: absolute;
+  will-change: transform;
+  transition: transform 1s ease-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floating-img img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  opacity: 0.6;
+  filter: blur(0.5px);
+}
+
+.img1 {
+  top: 20%;
+  left: 5%;
+  width: 150px;
+}
+
+.img2 {
+  top: 40%;
+  right: 20%;
+  width: 100px;
+}
+
+.img3 {
+  bottom: 10%;
+  left: 50%;
+  width: 120px;
 }
 
 

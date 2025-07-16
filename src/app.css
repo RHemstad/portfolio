@@ -35,7 +35,6 @@ header {
   gap: 1rem;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid blue;
 }
 
 section {
@@ -46,9 +45,8 @@ section {
 
   padding-block: var(--space-6);
   padding-inline: var(--space-32);
-
   /*max-width: var(--container-xl);*/
-  margin: 0 auto;
+ margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 
