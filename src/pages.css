@@ -221,6 +221,16 @@
   */
 }
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  justify-content: center;
+  flex-direction: row;
+  padding-block-end: var(--space-4);
+  padding-block-start: var(--space-4);
+}
+
 
 
 /* ************************** */
@@ -237,15 +247,7 @@
 .design h2 {
 }
 
-.design .cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-4);
-  justify-content: center;
-  flex-direction: row;
-  padding-block-end: var(--space-4);
-  padding-block-start: var(--space-4);
-}
+
 
 .design-card {
  /* Don't need anything right now see .card class */
@@ -283,16 +285,7 @@
   max-width: 65ch;
 }
 
-/* Container */
-.writing .cards {
-  display: flex;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-direction: row;
-  padding-block-end: var(--space-4);
-  padding-block-start: var(--space-4);
-}
+
 
 /* Card */
 .writing-card {
@@ -315,6 +308,11 @@
 .date     { 
   font-size: var(--font-size-xs); 
   color: var(--text-muted); 
+}
+
+/* Push links to bottom of writing/speaking cards */
+.card .link-body {
+  margin-block-start: auto;
 }
 
 .button-center {
