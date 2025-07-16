@@ -121,7 +121,7 @@ h6 {
   }
 
   h2 {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
   }
 
   h3 {
@@ -397,7 +397,7 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-lg);
-  z-index: 1000;
+  z-index: 1000000000;
   transition: background-color 0.2s ease;
 }
 
