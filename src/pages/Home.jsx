@@ -155,10 +155,7 @@ function Home() {
           <div className="home-header-title-text">
             <h1>Rebecca L. Hemstad</h1>
             <p>
-              Currently leading design system architecture and AI/ML UI design, I
-              specialize in creating cohesive visual languages that make
-              artificial intelligence accessible and empowering across complex
-              product ecosystems.
+              Currently leading design system architecture and AI/ML UI design, I specialize in creating cohesive visual languages that make artificial intelligence accessible and empowering across complex product ecosystems.
             </p>
           </div>
         </div>
@@ -179,7 +176,7 @@ function Home() {
           {displayedProjects.map((project, index) => (
             <motion.article
               key={project.id}
-              className="design-card"
+              className="card"
               initial="hidden"
               animate="visible"
               variants={cardVariants}
@@ -222,11 +219,11 @@ function Home() {
           <h2>Writing &amp; Speaking</h2>
         </motion.div>
 
-        <div className="writing-cards">
+        <div className="cards">
           {displayedWriting.map((item, index) => (
             <motion.article
               key={item.id}
-              className="writing-card"
+              className="card"
               initial="hidden"
               animate="visible"
               variants={writingCardVariants}
@@ -266,11 +263,9 @@ function Home() {
       <footer>
         <section className="footer-main">
           <div className="footer-content-left">
-            <h3>Let’s connect</h3>
+            <h2>Let's connect</h2>
             <p>
-              I craft scalable design systems and human-centered AI interfaces,
-              and I’m currently looking for my next role. If that matches what
-              you need, let’s talk.
+              I craft scalable design systems and human-centered AI interfaces,and I’m currently looking for my next role. If that matches what you need, let’s talk.
             </p>
           </div>
 

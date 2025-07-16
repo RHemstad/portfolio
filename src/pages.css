@@ -20,9 +20,6 @@
   gap: var(--space-4);
 }
 
-
-
-
 .home-header-link {
   text-decoration: none;
   color: inherit;
@@ -66,10 +63,7 @@
 }
 
 .home-header-title-text h1 {
-  font-size: 4rem;
-  color: var(--color-text-primary);
-  margin-block-start: 0;
-  margin-inline: 0;
+
 }
 
 .home-header-title-text p {
@@ -204,19 +198,26 @@
 /* ***************************** */
 
 .card {
-  border-radius: var(--radius-md);
-  /*box-shadow: 0 2px 8px rgba(100,116,139,0.08);*/
-  /*padding-block: var(--space-8);
-  padding-inline: var(--space-8);
-  margin-bottom: var(--space-8);*/
-  /*transition: box-shadow 0.2s, transform 0.2s;*/
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  flex: 1 1 var(--component-card); /* flexible width cards that can wrap */
+  gap: var(--space-4);
+  border-radius: var(--radius-md);
+  /*transition: transform .3s ease, box-shadow .3s ease;*/
+  color: var(--color-text-primary);
+  padding-block: var(--space-4);
+  padding-inline: var(--space-4);
+  box-shadow: var(--shadow-card);
+  width: var(--component-card);
+  max-width: 100%;
+  min-height: var(--component-min); 
 }
 
 .card:hover {
+  /*
   box-shadow: var(--shadow-lg);
   transform: var(--transform-lift-md);
+  */
 }
 
 
@@ -233,7 +234,6 @@
 }
 
 .design h2 {
-  margin-bottom: var(--space-8);
 }
 
 .design .cards {
@@ -242,18 +242,12 @@
   gap: var(--space-4);
   justify-content: center;
   flex-direction: row;
+  padding-block-end: var(--space-4);
+  padding-block-start: var(--space-4);
 }
 
 .design-card {
-  padding-block: 2rem;
-  padding-inline: 2rem;
-  box-shadow: var(--shadow-card);
-  transition: box-shadow 0.3s ease;
-  width: var(--component-card);
-  max-width: 100%;
-  min-height: var(--component-min); 
-  display: flex;
-  flex-direction: column;
+ /* Don't need anything right now see .card class */
 }
 
 .design-card-image {
@@ -281,7 +275,7 @@
 }
 
 .writing h2 {
-  margin-bottom: var(--space-8);
+  margin-block-end: var(--space-4); /* optically needs more space than design section */
 }
 
 .writing p {
@@ -289,29 +283,19 @@
 }
 
 /* Container */
-.writing-cards {
+.writing .cards {
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: var(--space-4);
+  flex-direction: row;
+  padding-block-end: var(--space-4);
+  padding-block-start: var(--space-4);
 }
 
 /* Card */
 .writing-card {
-  display: flex;
-  flex: 1 1 var(--component-card); /* flexible width cards that can wrap */
-  gap: var(--space-4);
-  border-radius: var(--radius-md);
-  transition: transform .3s ease, box-shadow .3s ease;
-  color: var(--color-text-primary);
-  padding-block: 2rem;
-  padding-inline: 2rem;
-  box-shadow: var(--shadow-card);
-  width: var(--component-card);
-  max-width: 100%;
-  min-height: var(--component-min); 
-  flex-direction: column;
+ /* Don't need anything right now see .card class */
 }
 
 .writing-card:hover {
@@ -324,31 +308,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.writing-card p {
-  margin-block-end: 0;
-  margin-block-start: 0;
-  margin-inline-end: 0;
-  margin-inline-start: 0;
-  padding-block-end: 0;
-  padding-block-start: 0;
-  padding-inline-end: 0;
-  padding-inline-start: 0;
+  margin-block-end: var(--space-4);
 }
 
 .date     { 
   font-size: var(--font-size-xs); 
-  color: var(--text-muted); 
-}
-
-.writing-card h3 { 
-  font-size: var(--font-size-md);
-  margin-block-end: 0;
-}
-
-.meta     { 
-  font-size: .8rem; 
   color: var(--text-muted); 
 }
 
@@ -357,15 +321,6 @@
   justify-content: center;
   margin-block-start: var(--space-8);
 }
-
-/* Badge styles consolidated with the main .badge definition below */
-
-/*
-.date     { font-size: .75rem; color: var(--text-muted); }
-.title    { font-size: 1.1rem; line-height: 1.3; }
-.meta     { font-size: .8rem; color: var(--text-muted); }
-.cta      { margin-top: auto; font-size: .85rem; display: inline-flex; align-items: center; gap: .25rem; }
-*/
 
 
 /* ************************** */
@@ -392,8 +347,7 @@
 }
 
 .footer-content-left h3 {
-  margin-block-end: var(--space-4);
-  font-size: var(--font-size-4xl);
+
 }
 
 .footer-content-left p {
@@ -439,8 +393,8 @@
 
 .footer-bottom {
   border-top: var(--border-width-thin) solid var(--color-border-light);
+  padding-block-start: var(--space-4);
   padding-block-end: var(--space-4);
-  padding-inline: var(--space-8);
   width: 100%;
 }
 
@@ -626,8 +580,6 @@ a.link-body:visited {
 
 .case-study-header-title h1 {
   font-size: var(--font-size-3xl);
-  color: var(--color-text-primary);
-  margin-block: 0;
 }
 
 .case-study-main {
@@ -648,32 +600,40 @@ a.link-body:visited {
 .right-column {
   width: 20%;
   min-width: 100px;
+  padding-block: var(--space-4);
+  padding-inline: var(--space-4);
 }
 
 /* Table of Contents Navigation */
 .toc-navigation {
   position: sticky;
   top: var(--space-8);
-  padding: var(--space-4);
+  padding-block: var(--space-4);
   border: 1px solid rgba(100, 116, 139, 0.1);
 }
 
 .toc-navigation h3 {
   font-size: var(--font-size-lg);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-4);
-  padding-bottom: var(--space-2);
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--color-surface-border);
 }
 
 .toc-nav-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin-block: var(--space-4);
+  padding-inline-start: 0;
 }
 
 .toc-nav-list li {
-  margin-bottom: var(--space-1);
+  margin-block-end: var(--space-1);
+  margin-block-start: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+}
+
+
+.case-study-title-overview-section {
+  padding-block-end: 0;
 }
 
 .case-study-details {
@@ -683,10 +643,6 @@ a.link-body:visited {
 }
 
 .case-study-details h3 {
-  margin-block-end: 0;
-  margin-block-start: 0;
-  margin-inline-end: 0;
-  margin-inline-start: 0;
 }
 
 .case-study-details p {
@@ -701,7 +657,6 @@ a.link-body:visited {
   width: 100%;
   height: auto;
   border-radius: var(--radius-md);
-  border: 1px solid red;
   max-height: 400px;
   object-fit: cover;
 }
@@ -731,11 +686,11 @@ a.link-body:visited {
    }
 
    .home-header-title-text h1 {
-    font-size: 2rem;
+    font-size: var(--font-size-4xl);
    }
 
    .home-header-title-text p {
-    font-size: 1rem;
+    /*font-size: var(--font-size-sm);*/
    }
 
 
@@ -808,6 +763,11 @@ a.link-body:visited {
     animation: navItemIn 360ms var(--delay, 0ms) forwards;
   }
 
+
+  .footer-content-left {
+    max-width: 100%;
+  }
+
   /* ************************** */
   /* ===== CASE STUDY ===== */
   /* ************************** */
@@ -833,8 +793,6 @@ a.link-body:visited {
 
    .case-study-header-title h1 {
     font-size: var(--font-size-3xl);
-    color: var(--color-text-primary);
-    margin-block: 0;
   }
 
 

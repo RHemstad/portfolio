@@ -95,10 +95,8 @@ function CaseStudy() {
 {/* ************************** */}
 
 <section id="overview" className="case-study-title-overview-section">
-<div>
 <h2>{caseStudy.title}</h2>
 <p>{caseStudy.overview}</p>
-</div>
 </section>
 
 
@@ -157,7 +155,7 @@ function CaseStudy() {
   {/* ************************** */}
 
   
-      <section id="process" className="section">
+      <section id="process">
         <div className="container">
           <div className="text-center mb-lg">
             <h2 className="heading heading--large">Process</h2>
@@ -264,7 +262,7 @@ function CaseStudy() {
 
       <section className="footer-main">
             <div className="footer-content-left">
-              <h3>Let's Connect</h3>
+              <h2>Let's Connect</h2>
               <p>I’m currently seeking my next UI design role or academic teaching opportunity. If my work resonates with you, drop me a note or ping me on LinkedIn—I'd love to talk.</p>
             </div>
 
