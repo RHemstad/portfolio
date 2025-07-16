@@ -275,6 +275,7 @@
 .writing {
   width: 100%;
   box-sizing: border-box;
+ /*background-color: var(--color-surface-alt-muted);*/
 }
 
 .writing h2 {
@@ -290,6 +291,11 @@
 /* Card */
 .writing-card {
  /* Don't need anything right now see .card class */
+ /* From https://css.glass */
+background: var(--color-surface-alt-muted);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .writing-card:hover {

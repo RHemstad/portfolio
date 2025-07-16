@@ -223,7 +223,7 @@ function Home() {
           {displayedWriting.map((item, index) => (
             <motion.article
               key={item.id}
-              className="card"
+              className="card writing-card"
               initial="hidden"
               animate="visible"
               variants={writingCardVariants}
