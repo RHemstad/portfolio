@@ -240,9 +240,9 @@ function Home() {
 
               <p>{item.description}</p>
 
-              <a href={item.link} className="link-body">
+              <a href={item.link} className="link-generic">
                 {item.type === 'article' ? 'Read' : 'Details'}
-                <ExternalLink size={16} />
+                <ExternalLink className="link__icon" />
               </a>
             </motion.article>
           ))}

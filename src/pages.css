@@ -315,6 +315,11 @@
   margin-block-start: auto;
 }
 
+/* Push generic links to bottom of cards */
+.card .link-generic {
+  margin-block-start: auto;
+}
+
 .button-center {
   display: flex;
   justify-content: center;
@@ -434,7 +439,7 @@
   font-weight: var(--font-weight-medium);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: var(--space-3);
   text-decoration: none;
   transition: all 0.2s ease;
   position: relative;
@@ -465,7 +470,6 @@
 }
 
 .link__icon {
-  margin-left: var(--space-1);
   width: var(--icon-xs);
   height: var(--icon-xs);
   transition: transform 0.2s ease;
