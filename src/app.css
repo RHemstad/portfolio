@@ -38,12 +38,18 @@ header {
 }
 
 section {
+  /*
   padding-block: var(--space-8);
   padding-inline: var(--space-8);
-  max-width: var(--container-xl);
-  margin: 0 auto;
+  */
+
+  padding-block: var(--space-6);
+  padding-inline: var(--space-32);
+  /*max-width: var(--container-xl);*/
+ margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+
 }
 
 footer {
@@ -140,6 +146,11 @@ h6 {
     font-size: var(--font-size-sm);
   }
 
+
+  section {
+    padding-block: var(--space-4);
+    padding-inline: var(--space-4);
+  }
 
 
 }

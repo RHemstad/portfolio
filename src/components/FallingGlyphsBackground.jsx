@@ -53,4 +53,4 @@ const FallingGlyphsBackground = () => {
   );
 };
 
-export default FallingGlyphsBackground;
+export default FallingGlyphsBackground; 

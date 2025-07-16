@@ -43,9 +43,9 @@
   --color-surface-default: #2C3E42; /* Card background */
   /*--color-surface-alt: #425457; *//* Card background */
   --color-surface-alt: #394A51;
-  --color-surface-alt-muted: rgba(57, 74, 81, 0.05);
+  --color-surface-alt-muted: rgba(57, 74, 81, 0.5);
 
-
+  --color-section-bg: #394A51;
 
 /* ************************** */
 /* ********* BORDER RADIUS ********** */
