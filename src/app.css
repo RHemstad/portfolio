@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'Testdisplay';
+  src: url('/fonts/test-domaine-display-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Test';
+  src: url('/fonts/test-domaine-sans-text-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -5,7 +24,7 @@ body {
   line-height: 1.5;
   font-size: 1rem;
   background: var(--color-surface-dark);
-  background: url('/images/back.png') repeat-x scroll left top var(--color-surface-black);
+  background: url('/images/backsmooth6.png') repeat-x scroll left top var(--color-surface-black);
 }
 
 .wrapper {
@@ -76,7 +95,7 @@ footer::after {
 /* ***************************** */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+  font-family: var(--font-headline);
 }
 
 h1 {

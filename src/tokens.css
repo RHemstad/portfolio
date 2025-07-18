@@ -70,8 +70,9 @@
 /* ********* FONTS ********** */
 /* ************************** */
 
-  --font-serif: 'Lora', 'Merriweather', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'TestDisplay', 'Prata', serif;
+  --font-headline: 'TestDisplay', 'Prata', serif;
+  --font-sans: 'Test', 'Open Sans', sans-serif;
 
 /* ************************** */
 /* ********* FONT SIZE ********** */
