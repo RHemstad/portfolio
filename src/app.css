@@ -24,7 +24,7 @@ body {
   line-height: 1.5;
   font-size: 1rem;
   background: var(--color-surface-dark);
-  background: url('/images/backsmooth6.png') repeat-x scroll left top var(--color-surface-black);
+  background: url('/images/backsmooth5.png') repeat-x scroll left top var(--color-surface-black);
 }
 
 .wrapper {
