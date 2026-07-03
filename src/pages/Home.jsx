@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {
   ExternalLink,
   Mail,
-  Linkedin,
   Menu,
   X,
 } from 'lucide-react';
@@ -13,6 +12,8 @@ import FallingGlyphsBackground from '../components/FallingGlyphsBackground';
 import BackToTop from '../components/BackToTop';
 import FloatingImages from '../components/FloatingImages';
 import { motion, AnimatePresence } from 'framer-motion';
+
+import LinkedinIcon from '../components/LinkedinIcon';
 
 /* ────────────────────────────────────────────────
    Re‑usable Show‑More / Show‑Less toggle button
@@ -287,7 +288,7 @@ function Home() {
                 className="social-link"
                 aria-label="LinkedIn Profile"
               >
-                <Linkedin className="social-icon" />
+                <LinkedinIcon className="social-icon" />
               </a>
             </div>
           </div>

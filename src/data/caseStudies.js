@@ -36,9 +36,9 @@ export const caseStudyData = {
       }
     ],
     images: [
-      "https://images.unsplash.com/photo-196644/pexels-photo-196644.jpeg?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-590016/pexels-photo-590016.jpg?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-265087/pexels-photo-265087.jpeg?w=800&h=500&fit=crop"
+      "https://placehold.co/800x500",
+      "https://placehold.co/800x500",
+      "https://placehold.co/800x500"
     ]
   },
   'ml-interface': {
@@ -72,9 +72,9 @@ export const caseStudyData = {
       }
     ],
     images: [
-      "https://images.unsplash.com/photo-4386466/pexels-photo-4386466.jpeg?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-4386431/pexels-photo-4386431.jpeg?w=800&h=500&fit=crop",
-      "https://images.unsplash.com/photo-4386370/pexels-photo-4386370.jpeg?w=800&h=500&fit=crop"
+      "https://placehold.co/800x500",
+      "https://placehold.co/800x500",
+      "https://placehold.co/800x500"
     ]
   }
 }; 

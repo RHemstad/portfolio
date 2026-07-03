@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom';
-import { ExternalLink, Calendar, Users, Target, Award, ChevronRight, Menu, X, Mail, Linkedin } from 'lucide-react';
+import { ExternalLink, Calendar, Users, Target, Award, ChevronRight, Menu, X, Mail } from 'lucide-react';
 import { caseStudyData } from '../data/caseStudies';
 import { useState } from 'react';
 import BackToTop from '../components/BackToTop';
+import LinkedinIcon from '../components/LinkedinIcon';
 import { AnimatePresence } from 'framer-motion';
 
 function CaseStudy() {
@@ -272,7 +273,7 @@ function CaseStudy() {
                   <Mail className="social-icon" />
                 </a>
                 <a href="https://linkedin.com/in/rebeccahemstad" className="social-link" aria-label="LinkedIn Profile">
-                  <Linkedin className="social-icon" />
+                  <LinkedinIcon className="social-icon" />
                 </a>
               </div>
             </div>
