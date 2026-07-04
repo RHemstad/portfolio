@@ -1,19 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
-import { ExternalLink, Calendar, Users, Target, Award, ChevronRight, Menu, X, Mail } from 'lucide-react';
+import { Target } from 'lucide-react';
 import { caseStudyData } from '../data/caseStudies';
-import { useState } from 'react';
+import SiteHeader from '../components/SiteHeader';
+import SiteFooter from '../components/SiteFooter';
 import BackToTop from '../components/BackToTop';
-import LinkedinIcon from '../components/LinkedinIcon';
-import { AnimatePresence } from 'framer-motion';
 
 function CaseStudy() {
   const { id } = useParams();
   const caseStudy = caseStudyData[id];
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   // Navigation items for the case study sections
   const caseStudyNavItems = [
@@ -33,55 +27,25 @@ function CaseStudy() {
 
   if (!caseStudy) {
     return (
-      <div className="section">
-        <div className="container text-center">
-          <h1>Case Study Not Found</h1>
-          <Link to="/" className="link">
-            Return to Home
-          </Link>
-        </div>
-      </div>
+      <>
+        <SiteHeader variant="case-study" />
+        <main className="case-study-main">
+          <div className="section text-center">
+            <h1>Case Study Not Found</h1>
+            <Link to="/" className="link-generic">
+              Return to Home
+            </Link>
+          </div>
+        </main>
+        <SiteFooter />
+      </>
     );
   }
 
   return (
     <>
-  
-  {/* ************************** */}
-  {/* ===== HEADER ===== */}
-  {/* ************************** */}
 
-  <header className="case-study-header">
-
-    <Link to="/" className="case-study-header-link">
-      <div className="case-study-header-title">
-        <div className="logo">
-          <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
-        </div>
-        <h1>Rebecca L. Hemstad</h1>
-      </div>
-    </Link>
-
-    <nav className={`mobile-nav ${isMenuOpen ? 'nav-open' : ''}`}>
-      <ul>
-        <li><Link to="/#about" className="nav-link">About</Link></li>
-        <li><Link to="/#design" className="nav-link">Design</Link></li>
-        <li><Link to="/#writing" className="nav-link">Writing</Link></li>
-        <li><Link to="/#speaking" className="nav-link">Speaking</Link></li>
-        <li><Link to="/#contact" className="nav-link">Contact</Link></li>
-      </ul>
-    </nav>
-
-    <button 
-      className="hamburger-menu" 
-      onClick={toggleMenu}
-      aria-label="Toggle navigation menu"
-    >
-      {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-    </button>
-
-  </header>
-
+  <SiteHeader variant="case-study" />
 
 {/* ************************** */}
 {/* ===== CONTENT ===== */}
@@ -107,7 +71,7 @@ function CaseStudy() {
 
 <section id="details" className="case-study-details">
 
-<img 
+<img
   src={caseStudy.heroImage}
   alt={caseStudy.title}
   className="case-study-details-image"
@@ -142,20 +106,20 @@ function CaseStudy() {
 {/* ************************** */}
 
       <section id="challenge">
-        <Target style={{ width: 'var(--icon-lg)', height: 'var(--icon-lg)', color: 'var(--color-accent-primary)', marginBottom: 'var(--space-4)' }} />
+        <Target style={{ width: 'var(--icon-md)', height: 'var(--icon-md)', color: 'var(--color-accent-primary)', marginBottom: 'var(--space-4)' }} />
         <h2>The Challenge</h2>
         <p className="text--large">{caseStudy.challenge}</p>
- 
+
       <h2>The Solution</h2>
       <p className="text--large">{caseStudy.solution}</p>
-       
+
       </section>
 
   {/* ************************** */}
   {/* ===== PROCESS ===== */}
   {/* ************************** */}
 
-  
+
       <section id="process">
         <div className="container">
           <div className="text-center mb-lg">
@@ -165,14 +129,14 @@ function CaseStudy() {
           <div>
             {caseStudy.process.map((step, index) => (
               <div key={index} className="flex" style={{ marginBottom: 'var(--space-8)' }}>
-                <div style={{ 
-                  width: '60px', 
-                  height: '60px', 
-                  borderRadius: '50%', 
-                  background: 'var(--color-accent-primary)', 
-                  color: '#fff', 
-                  display: 'flex', 
-                  alignItems: 'center', 
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  borderRadius: '50%',
+                  background: 'var(--color-accent-primary)',
+                  color: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
                   justifyContent: 'center',
                   fontSize: 'var(--font-size-lg)',
                   fontWeight: 'var(--font-weight-bold)',
@@ -205,12 +169,12 @@ function CaseStudy() {
           <div className="grid">
             {caseStudy.images.map((image, index) => (
               <div key={index}>
-                <img 
+                <img
                   src={image}
                   alt={`${caseStudy.title} - Image ${index + 1}`}
-                  style={{ 
-                    width: '100%', 
-                    height: 'auto', 
+                  style={{
+                    width: '100%',
+                    height: 'auto',
                     borderRadius: 'var(--radius-md)',
                     boxShadow: '0 4px 24px rgba(100,116,139,0.16)'
                   }}
@@ -254,41 +218,9 @@ function CaseStudy() {
 
       </main>
 
-    {/* ************************** */}
-    {/* ===== FOOTER ===== */}
-    {/* ************************** */}
+    <SiteFooter />
 
-      {/* Next Steps Section */}
-      <footer>
-
-      <section className="footer-main">
-            <div className="footer-content-left">
-              <h2>Let's Connect</h2>
-              <p>I’m currently seeking my next UI design role or academic teaching opportunity. If my work resonates with you, drop me a note or ping me on LinkedIn—I'd love to talk.</p>
-            </div>
-
-            <div className="footer-content-right">
-              <div className="social-links">
-                <a href="mailto:rebecca@example.com" className="social-link" aria-label="Email Rebecca">
-                  <Mail className="social-icon" />
-                </a>
-                <a href="https://linkedin.com/in/rebeccahemstad" className="social-link" aria-label="LinkedIn Profile">
-                  <LinkedinIcon className="social-icon" />
-                </a>
-              </div>
-            </div>
-
-
-          </section>
-
-          <section className="footer-bottom">
-            <p className="copyright">© 2025 Rebecca L. Hemstad. All rights reserved.</p>
-          </section>
-
-
-       </footer>
-
-      <BackToTop />
+    <BackToTop />
 
     </>
 
