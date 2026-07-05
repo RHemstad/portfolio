@@ -243,5 +243,112 @@
 
   /* Breakpoints */
   --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1100px;
 
-} 
+
+
+/* ************************************************ */
+/* ===== HOMEPAGE REDESIGN (2a, approved) ===== */
+/* ************************************************ */
+/* Homepage-specific layout tokens. Values come from the approved design
+   handoff (2026-07-04). Most properties only differ mobile vs. non-mobile;
+   a few (marked below) also have a distinct tablet value at 1100px. */
+
+  --home-container-max: 1400px;
+  --color-surface-panel: rgba(24, 41, 44, 0.88); /* Teaching section panel */
+
+  /* Desktop (>=1100px) values */
+  --home-container-pad: 64px;      /* tablet/mobile override below */
+  --home-intro-top-pad: 88px;      /* tablet/mobile override below */
+  --home-intro-bottom-pad: 72px;   /* constant across breakpoints */
+  --home-hero-gap-bottom: 128px;
+  --home-logo-height: 58px;        /* tablet/mobile override below */
+  --home-logo-name-gap: 18px;
+  --home-name-size: 27px;          /* tablet/mobile override below */
+  --home-hero-size: 54px;          /* tablet/mobile override below */
+  --home-hero-body-size: 19px;
+  --home-h2-size: 40px;            /* tablet/mobile override below */
+  --home-section-pad-block: 88px;  /* tablet/mobile override below */
+  --home-teach-pad-block: 80px;    /* tablet/mobile override below */
+  --home-teach-grid-cols: repeat(3, minmax(190px, 1fr));
+  --home-teach-gap: 56px;
+  --home-teach-intro-size: 20px;
+  --home-work-num-col: 64px;
+  --home-work-num-pad-left: 12px;
+  --home-work-grid-gap: 28px;
+  --home-work-featured-cols: 1.2fr 1fr;
+  --home-work-featured-pad: 28px;
+  --home-work-featured-inner-gap: 36px;
+  --home-work-title-size: 32px;
+  --home-work-row-dir: row;
+  --home-work-row-align: center;
+  --home-work-row-gap: 24px;
+  --home-writing-featured-title-size: 34px;
+  --home-writing-body-size: 17px;
+  --home-writing-secondary-cols: 150px 1fr;
+  --home-writing-row-gap: 28px;
+  --home-about-grid-cols: 1fr 1fr;
+  --home-about-gap: 64px;
+  --home-about-pad-top: 96px;
+  --home-about-pad-bottom: 80px;
+  --home-about-body-size: 18px;
+  --home-connect-size: 44px;
+  --home-texture-width: 620px;
+  --home-texture-height: 760px;
+}
+
+/* Tablet (768px–1099px): only these properties have a distinct tablet value */
+@media (max-width: 1099px) {
+  :root {
+    --home-container-pad: 40px;
+    --home-intro-top-pad: 64px;
+    --home-logo-height: 48px;
+    --home-name-size: 23px;
+    --home-hero-size: 42px;
+    --home-h2-size: 32px;
+    --home-section-pad-block: 64px;
+    --home-teach-pad-block: 64px;
+  }
+}
+
+/* Mobile (<768px): everything collapses to a single column */
+@media (max-width: 767px) {
+  :root {
+    --home-container-pad: 20px;
+    --home-intro-top-pad: 36px;
+    --home-hero-gap-bottom: 56px;
+    --home-logo-height: 38px;
+    --home-logo-name-gap: 12px;
+    --home-name-size: 19px;
+    --home-hero-size: 30px;
+    --home-hero-body-size: 16px;
+    --home-h2-size: 26px;
+    --home-section-pad-block: 48px;
+    --home-teach-pad-block: 48px;
+    --home-teach-grid-cols: 1fr;
+    --home-teach-gap: 32px;
+    --home-teach-intro-size: 17px;
+    --home-work-num-col: 32px;
+    --home-work-num-pad-left: 0px;
+    --home-work-grid-gap: 14px;
+    --home-work-featured-cols: 1fr;
+    --home-work-featured-pad: 18px;
+    --home-work-featured-inner-gap: 20px;
+    --home-work-title-size: 24px;
+    --home-work-row-dir: column;
+    --home-work-row-align: flex-start;
+    --home-work-row-gap: 8px;
+    --home-writing-featured-title-size: 26px;
+    --home-writing-body-size: 15px;
+    --home-writing-secondary-cols: 1fr;
+    --home-writing-row-gap: 8px;
+    --home-about-grid-cols: 1fr;
+    --home-about-gap: 40px;
+    --home-about-pad-top: 56px;
+    --home-about-pad-bottom: 56px;
+    --home-about-body-size: 16px;
+    --home-connect-size: 30px;
+    --home-texture-width: 260px;
+    --home-texture-height: 320px;
+  }
+}

@@ -1,65 +1,55 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { projects } from '../../data/projects';
-import ShowMoreToggle from '../../components/ShowMoreToggle';
-import { sectionVariants, cardVariants } from './motionVariants';
 
-/* Selected Work section — previously "Design" in the old monolithic
-   Home.jsx. Content, data source (src/data/projects.js), and markup are
-   unchanged; only the section id/heading were updated to match the new
-   homepage structure. */
+/* Selected Work section — data source (src/data/projects.js) and case
+   study links unchanged. Per the approved design, only the first three
+   projects are surfaced here (a 4th, "Enterprise Design Systems", exists
+   in the data but isn't shown — see design_handoff README); the former
+   "Show More" toggle is replaced with a static "View all" link pointing
+   nowhere yet, since there's no dedicated Work page/route to send it to. */
 function SelectedWorkSection() {
-  const [showAllProjects, setShowAllProjects] = useState(false);
-  const displayedProjects = showAllProjects ? projects : projects.slice(0, 3);
+  const [featured, ...secondary] = projects.slice(0, 3);
 
   return (
-    <motion.section
-      id="work"
-      className="design"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={sectionVariants}
-    >
+    <section id="work" className="selected-work">
       <div className="section-content">
-        <motion.h2 variants={cardVariants}>Selected Work</motion.h2>
-        <div className="cards">
-          {displayedProjects.map((project, index) => (
-            <motion.article
-              key={project.id}
-              className="card design-card"
-              initial="hidden"
-              animate="visible"
-              variants={cardVariants}
-              transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
-            >
-              <Link to={project.link} className="card-link">
-                <img
-                  className="design-card-image"
-                  src={project.image}
-                  alt={project.title}
-                />
-                <h3>{project.title}</h3>
-                <p className="text">{project.description}</p>
-              </Link>
-              <Link to={project.link} className="link-generic">
-                View Case Study <ExternalLink className="link__icon" />
-              </Link>
-            </motion.article>
-          ))}
+        <h2>Selected Work</h2>
+
+        <div className="work-row work-row--featured">
+          <span className="work-number work-number--featured">01</span>
+          <Link to={featured.link} className="work-featured-panel">
+            <img src={featured.image} alt={featured.title} className="work-featured-image" />
+            <div>
+              <span className="work-kicker">{featured.category}</span>
+              <h3 className="work-featured-title">{featured.title}</h3>
+              <p className="work-featured-description">{featured.description}</p>
+              <span className="link-editorial">View Case Study →</span>
+            </div>
+          </Link>
         </div>
 
-        {/* Show‑More / Show‑Less toggle */}
-        {projects.length > 3 && (
-          <ShowMoreToggle
-            isOpen={showAllProjects}
-            onToggle={() => setShowAllProjects((prev) => !prev)}
-          />
-        )}
+        {secondary.map((project, index) => (
+          <Link key={project.id} to={project.link} className="work-row work-row--secondary">
+            <span className="work-number">{String(index + 2).padStart(2, '0')}</span>
+            <div className="work-row-content">
+              <div>
+                <span className="work-kicker">{project.category}</span>
+                <h3 className="work-row-title">{project.title}</h3>
+              </div>
+              <span className="link-editorial link-editorial--nowrap">View Case Study →</span>
+            </div>
+          </Link>
+        ))}
+
+        <a
+          href="#"
+          className="link-editorial link-editorial--block"
+          onClick={(e) => e.preventDefault()}
+        >
+          View all selected work →
+        </a>
       </div>
-    </motion.section>
+    </section>
   );
 }
 

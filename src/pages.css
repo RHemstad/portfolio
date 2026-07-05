@@ -12,14 +12,6 @@
   padding-block: var(--space-4);
 }
 
-.home-header-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--space-4);
-}
-
 .home-header-link {
   text-decoration: none;
   color: inherit;
@@ -49,52 +41,7 @@
   align-items: center;
 }
 
-.home-header-title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--space-4);
-  padding-block: var(--space-4);
-
-}
-
-.home-header-title-text {
-}
-
-.home-header-title-text h1 {
-
-}
-
-.home-header-title-text p {
-  color: var(--color-text-primary);
-  margin-block-end: 0;
-  margin-block-start: 0;
-  margin-inline-end: 0;
-  margin-inline-start: 0;
-  max-width: 65ch;
-}
-
 /* ***************************** */
-/* ********* LOGO ********** */
-/* ***************************** */
-
-
-.home-header-title .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-  .home-header-title .logo img {
-    height: 150px;
-    width: auto;
-    filter: brightness(0) invert(1);
-  }
-
-
- /* ***************************** */
 /* ********* HERO ********** */
 /* ***************************** */
 
@@ -321,10 +268,11 @@
 }
 
 .section-content {
-  max-width: var(--container-xl);
+  max-width: var(--home-container-max);
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+  padding-inline: var(--home-container-pad);
 }
 
 .design h2 {
@@ -472,66 +420,506 @@
 }
 
 
-/* ************************** */
-/* ===== INTRO SECTION ===== */
-/* ************************** */
+/* ***************************************** */
+/* ===== HOMEPAGE REDESIGN (2a, approved) ===== */
+/* ***************************************** */
+/* Selectors below implement design_handoff_homepage_redesign/README.md
+   ("2a", approved). Scoped so the shared SiteHeader/SiteFooter/.nav-link
+   styling used on the case-study page is untouched. */
 
-/* Matches the container the intro paragraph used to sit in inside
-   .home-header, so moving it into its own section doesn't shift it. */
+/* ----- Header (home variant only) ----- */
+
+.home-header {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  max-height: none;
+  max-width: var(--home-container-max);
+  padding-block-start: var(--home-intro-top-pad);
+  padding-block-end: 0;
+  padding-inline: var(--home-container-pad);
+}
+
+.home-header-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: var(--space-5);
+  width: 100%;
+}
+
+.home-header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--home-logo-name-gap);
+}
+
+.home-header-brand .logo img {
+  height: var(--home-logo-height);
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.home-header-name {
+  font-size: var(--home-name-size);
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+/* Subordinate, muted nav treatment — desktop/tablet row context only.
+   Case-study's nav (outside .home-header) keeps its existing style. */
+.home-header .nav-link {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-normal);
+  color: rgba(235, 237, 237, 0.55);
+}
+.home-header .nav-link:hover,
+.home-header .nav-link:focus-visible {
+  color: var(--color-text-primary);
+}
+.home-header .nav-link::after {
+  display: none;
+}
+.home-header .mobile-nav ul {
+  gap: var(--space-6);
+}
+.home-header .mobile-nav a {
+  color: var(--color-link-nav-default);
+  font-size: 19px;
+  font-weight: var(--font-weight-medium);
+}
+
+/* ----- Intro ----- */
+
 .intro-section {
-  max-width: var(--container-xl);
+  max-width: var(--home-container-max);
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
-  padding-block: var(--space-4);
-  padding-inline: var(--space-8);
-  padding-inline-start: 0;
+  padding-inline: var(--home-container-pad);
+  padding-block-start: var(--home-hero-gap-bottom);
+  padding-block-end: var(--home-intro-bottom-pad);
 }
 
-/* ************************** */
-/* ===== TEACHING / ABOUT & CONTACT (new sections) ===== */
-/* ************************** */
+.intro-statement {
+  font-family: var(--font-serif);
+  font-size: var(--home-hero-size);
+  line-height: 1.24;
+  margin: 0 0 var(--space-8);
+  max-width: 30ch;
+  color: var(--color-text-primary);
+}
+
+.intro-support {
+  font-size: var(--home-hero-body-size);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  max-width: 58ch;
+}
+
+/* ----- Shared section shell (Teaching / Selected Work / Writing / About) ----- */
 
 .teaching,
-.about-contact {
+.about-contact,
+.selected-work,
+.writing-speaking {
   position: relative;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
 }
 
+.teaching {
+  background: var(--color-surface-panel);
+}
+
+.writing-speaking,
+.about-contact {
+  border-top: var(--border-width-thin) solid rgba(255, 255, 255, 0.1);
+}
+
+.selected-work .section-content,
+.writing-speaking .section-content {
+  padding-block: var(--home-section-pad-block);
+}
+
+.teaching .section-content {
+  padding-block: var(--home-teach-pad-block);
+}
+
+.about-contact .section-content {
+  padding-block-start: var(--home-about-pad-top);
+  padding-block-end: var(--home-about-pad-bottom);
+}
+
+.teaching h2,
+.selected-work h2,
+.writing-speaking h2,
 .about-contact h2 {
-  margin-block-end: var(--space-4);
+  font-size: var(--home-h2-size);
+  margin: 0 0 var(--space-10);
 }
 
-.provisional-block {
-  margin-block-end: var(--space-8);
-}
-
-.provisional-note {
-  color: var(--color-text-muted);
-  font-style: italic;
-}
+/* Shared "Placeholder" pill tag and provisional/italic note text */
 
 .provisional-tag {
   display: inline-block;
-  margin-inline-start: var(--space-3);
-  padding-block: var(--space-1);
+  padding-block: 3px;
   padding-inline: var(--space-2);
-  font-size: var(--font-size-xs);
+  font-size: 12px;
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-text-muted);
-  border: var(--border-width-thin) solid var(--color-border-medium);
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.45);
+  border: var(--border-width-thin) solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-sm);
   vertical-align: middle;
 }
 
-/* Dashed border distinguishes provisional cards from finished content */
-.provisional-card {
-  background: transparent;
-  border: var(--border-width-medium) dashed var(--color-border-medium);
+.provisional-note {
+  font-style: italic;
+}
+
+/* Shared gold editorial text link ("View Case Study →", "Read →", etc.) */
+
+.link-editorial {
+  display: inline-block;
+  color: var(--color-link-nav-default);
+  font-size: 15px;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-bottom: var(--border-width-thin) solid rgba(215, 192, 66, 0.4);
+  padding-bottom: 2px;
+}
+.link-editorial:hover,
+.link-editorial:focus-visible {
+  color: var(--color-link-nav-hover);
+  border-bottom-color: var(--color-link-nav-hover);
+}
+.link-editorial--nowrap {
+  white-space: nowrap;
+}
+.link-editorial--block {
+  margin-top: var(--space-10);
+}
+
+/* ----- Teaching ----- */
+
+.teaching-heading-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  flex-wrap: wrap;
+}
+.teaching-heading-row h2 {
+  margin: 0;
+}
+
+.teaching-intro {
+  font-style: italic;
+  font-size: var(--home-teach-intro-size);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 var(--space-10);
+  max-width: 60ch;
+}
+
+.teaching-grid {
+  display: grid;
+  grid-template-columns: var(--home-teach-grid-cols);
+  gap: var(--home-teach-gap);
+}
+
+.teaching-column {
+  border-top: var(--border-width-thin) solid rgba(255, 255, 255, 0.2);
+  padding-top: var(--space-5);
+}
+
+.teaching-number {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: rgba(215, 192, 66, 0.85);
+}
+
+.teaching-column h3 {
+  font-size: 21px;
+  margin: 14px 0 10px;
+  color: var(--color-text-primary);
+}
+
+.teaching-column .provisional-note {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+.teaching .link-editorial {
+  margin-top: var(--space-10);
+}
+
+/* ----- Selected Work ----- */
+
+.work-row {
+  display: grid;
+  grid-template-columns: var(--home-work-num-col) 1fr;
+  gap: var(--home-work-grid-gap);
+  text-decoration: none;
+  color: inherit;
+}
+
+.work-row--featured {
+  margin-bottom: var(--space-12);
+}
+
+.work-number {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: rgba(215, 192, 66, 0.8);
+  padding-left: var(--home-work-num-pad-left);
+}
+
+.work-number--featured {
+  font-size: 28px;
+  color: rgba(215, 192, 66, 0.85);
+}
+
+.work-featured-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  padding: var(--home-work-featured-pad);
+  display: grid;
+  grid-template-columns: var(--home-work-featured-cols);
+  gap: var(--home-work-featured-inner-gap);
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.work-featured-image {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+.work-kicker {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.work-featured-title {
+  font-size: var(--home-work-title-size);
+  margin: 12px 0 14px;
+  color: var(--color-text-primary);
+  line-height: 1.15;
+}
+
+.work-featured-description {
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 var(--space-4);
+  max-width: 42ch;
+}
+
+.work-row--secondary {
+  align-items: var(--home-work-row-align);
+  padding-block: var(--space-6);
+  margin-top: var(--space-2);
+  border-top: var(--border-width-thin) solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: var(--radius-sm);
+}
+
+.work-row-content {
+  display: flex;
+  flex-direction: var(--home-work-row-dir);
+  justify-content: space-between;
+  align-items: var(--home-work-row-align);
+  gap: var(--home-work-row-gap);
+  padding-right: var(--space-6);
+}
+
+.work-row-title {
+  font-size: 23px;
+  margin: 6px 0;
+  color: var(--color-text-primary);
+}
+
+/* ----- Writing & Speaking ----- */
+
+.writing-featured {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: var(--space-12);
+  border-bottom: var(--border-width-thin) solid rgba(255, 255, 255, 0.15);
+  margin-bottom: var(--space-12);
+}
+
+.writing-featured-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.writing-type-tag {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  border: var(--border-width-thin) solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+}
+
+.writing-publication {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.writing-meta-dot {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.writing-date {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.writing-featured-title {
+  font-size: var(--home-writing-featured-title-size);
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  max-width: 30ch;
+}
+
+.writing-featured-description {
+  font-size: var(--home-writing-body-size);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 var(--space-5);
+  max-width: 62ch;
+}
+
+.writing-secondary-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.writing-row {
+  display: grid;
+  grid-template-columns: var(--home-writing-secondary-cols);
+  gap: var(--home-writing-row-gap);
+  text-decoration: none;
+  color: inherit;
+  padding-block: var(--space-6);
+  border-bottom: var(--border-width-thin) solid rgba(255, 255, 255, 0.1);
+}
+
+.writing-row-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.writing-row-meta .writing-publication {
+  margin-bottom: 4px;
+}
+
+.writing-row-title {
+  font-size: 22px;
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-primary);
+  line-height: 1.25;
+}
+
+.writing-row-description {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+  max-width: 58ch;
+}
+
+/* ----- About & Contact ----- */
+
+.about-contact-grid {
+  display: grid;
+  grid-template-columns: var(--home-about-grid-cols);
+  gap: var(--home-about-gap);
+}
+
+.about-contact-label {
+  font-size: 20px;
+  margin: 0 0 14px;
+  color: var(--color-text-primary);
+}
+
+.about-contact-bio {
+  font-style: italic;
+  font-size: var(--home-about-body-size);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  max-width: 48ch;
+}
+
+.connect-heading {
+  font-size: var(--home-connect-size);
+  margin: 0 0 var(--space-5);
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+.about-contact-body {
+  font-size: var(--home-about-body-size);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 var(--space-8);
+  max-width: 46ch;
+}
+
+.pill-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.pill-action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-surface-alt);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  padding: 13px 22px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: var(--font-weight-medium);
+  transition: background-color 0.2s ease;
+}
+.pill-action:hover {
+  background: var(--color-border-medium);
+}
+.pill-action:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 2px;
 }
 
 
@@ -922,30 +1310,6 @@ a.link-body:visited {
 
 @media (max-width: 768px) {
 
-.home-header {
-     flex-direction: column;
-     justify-content: center;
-   }
-
-   .home-header-title {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-   }
-
-   .home-header-title-text {
-    text-align: center;
-   }
-
-   .home-header-title-text h1 {
-    font-size: var(--font-size-4xl);
-   }
-
-   .home-header-title-text p {
-    /*font-size: var(--font-size-sm);*/
-   }
-
    .card {
     max-width: 100%;
    }
@@ -991,7 +1355,11 @@ a.link-body:visited {
     transition:
       transform 300ms cubic-bezier(.4,0,.2,1),
       opacity   300ms cubic-bezier(.4,0,.2,1);
-    z-index: 1000;
+    /* Must clear the app.css "header, footer, section { z-index: 10000001 }"
+       rule: section elements are flex-item children of <main>, and z-index
+       applies to flex items even when position is static, so sections can
+       otherwise outrank this fixed overlay and swallow nav-link clicks. */
+    z-index: 10000010;
   }
 
 .mobile-nav.nav-open {
@@ -1056,12 +1424,6 @@ a.link-body:visited {
    /* ************************** */
    /* ===== LOGO ===== */
    /* ************************** */
-
-   .home-header-title .logo img {
-    width: 75px;
-    height: auto;
-    filter: brightness(0) invert(1);
-  }
 
    .case-study-header-title .logo img {
     width: 50px;

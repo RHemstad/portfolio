@@ -48,17 +48,15 @@ function SiteHeader({ variant = 'home' }) {
 
   return (
     <header className="home-header">
-      <div className="home-header-nav">
-        {navAndToggle}
-      </div>
+      <div className="home-header-row">
+        <div className="home-header-brand">
+          <div className="logo">
+            <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
+          </div>
+          <h1 className="home-header-name">Rebecca L. Hemstad</h1>
+        </div>
 
-      <div className="home-header-title">
-        <div className="logo">
-          <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
-        </div>
-        <div className="home-header-title-text">
-          <h1>Rebecca L. Hemstad</h1>
-        </div>
+        {navAndToggle}
       </div>
     </header>
   );

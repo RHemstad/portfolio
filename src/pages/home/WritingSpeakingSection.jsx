@@ -1,10 +1,4 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ExternalLink } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { writing } from '../../data/writing';
-import ShowMoreToggle from '../../components/ShowMoreToggle';
-import { sectionVariants, cardVariants } from './motionVariants';
 
 const getTypeLabel = (type) => {
   const labels = {
@@ -16,60 +10,58 @@ const getTypeLabel = (type) => {
   return labels[type] || type;
 };
 
-/* Writing & Speaking section — content and data source
-   (src/data/writing.js) unchanged from the previous Home.jsx, including
-   the three real entries and the three "Lorem Ipsum" placeholder entries
-   already present in the data file (not introduced by this refactor). */
+/* Writing & Speaking section — data source (src/data/writing.js)
+   unchanged; the three real entries (Smashing Magazine + two Medium
+   pieces) keep their exact titles, dates, and links per the approved
+   design. Per that design, the "Lorem Ipsum" placeholder entries already
+   in writing.js are not surfaced in this editorial layout (the former
+   "Show More" toggle that revealed them is replaced with a static "View
+   all" link, so they're no longer reachable from the UI at all — see
+   design_handoff README, "not shown in the new default view"). */
 function WritingSpeakingSection() {
-  const [showAllWriting, setShowAllWriting] = useState(false);
-  const displayedWriting = showAllWriting ? writing : writing.slice(0, 3);
+  const [featured, ...secondary] = writing.slice(0, 3);
 
   return (
-    <motion.section
-      id="writing-speaking"
-      className="writing"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={sectionVariants}
-    >
+    <section id="writing-speaking" className="writing-speaking">
       <div className="section-content">
-        <motion.h2 variants={cardVariants}>Writing &amp; Speaking</motion.h2>
-        <div className="cards">
-          {displayedWriting.map((item, index) => (
-            <motion.article
-              key={item.id}
-              className="card writing-card"
-              initial="hidden"
-              animate="visible"
-              variants={cardVariants}
-              transition={{ delay: index >= 3 ? (index - 3) * 0.1 : 0 }}
-            >
-              <Link to={item.link} className="card-link">
-                <div className="writing-card-meta">
-                  <span className="badge">{getTypeLabel(item.type)}</span>
-                  <span className="date">{item.date}</span>
-                </div>
-                <h3>{item.title}</h3>
-                <p className="text">{item.description}</p>
-              </Link>
-              <a href={item.link} className="link-generic">
-                {item.type === 'article' ? 'Read' : 'Details'}
-                <ExternalLink className="link__icon" />
-              </a>
-            </motion.article>
+        <h2>Writing &amp; Speaking</h2>
+
+        <a href={featured.link} className="writing-featured">
+          <div className="writing-featured-meta">
+            <span className="writing-type-tag">{getTypeLabel(featured.type)}</span>
+            <span className="writing-publication">{featured.publication}</span>
+            <span className="writing-meta-dot">·</span>
+            <span className="writing-date">{featured.date}</span>
+          </div>
+          <h3 className="writing-featured-title">{featured.title}</h3>
+          <p className="writing-featured-description">{featured.description}</p>
+          <span className="link-editorial">Read →</span>
+        </a>
+
+        <div className="writing-secondary-list">
+          {secondary.map((item) => (
+            <a key={item.id} href={item.link} className="writing-row">
+              <div className="writing-row-meta">
+                <span className="writing-publication">{item.publication}</span>
+                <span className="writing-date">{item.date}</span>
+              </div>
+              <div>
+                <h3 className="writing-row-title">{item.title}</h3>
+                <p className="writing-row-description">{item.description}</p>
+              </div>
+            </a>
           ))}
         </div>
 
-        {/* Show‑More / Show‑Less toggle */}
-        {writing.length > 3 && (
-          <ShowMoreToggle
-            isOpen={showAllWriting}
-            onToggle={() => setShowAllWriting((prev) => !prev)}
-          />
-        )}
+        <a
+          href="#"
+          className="link-editorial link-editorial--block"
+          onClick={(e) => e.preventDefault()}
+        >
+          View all writing &amp; speaking →
+        </a>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
