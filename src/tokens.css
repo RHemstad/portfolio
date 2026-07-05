@@ -316,11 +316,11 @@
   :root {
     --home-container-pad: 20px;
     --home-intro-top-pad: 36px;
-    --home-hero-gap-bottom: 56px;
+    --home-hero-gap-bottom: 64px;
     --home-logo-height: 38px;
     --home-logo-name-gap: 12px;
     --home-name-size: 19px;
-    --home-hero-size: 30px;
+    --home-hero-size: 27px;
     --home-hero-body-size: 16px;
     --home-h2-size: 26px;
     --home-section-pad-block: 48px;
@@ -337,15 +337,15 @@
     --home-work-title-size: 24px;
     --home-work-row-dir: column;
     --home-work-row-align: flex-start;
-    --home-work-row-gap: 8px;
+    --home-work-row-gap: 14px;
     --home-writing-featured-title-size: 26px;
     --home-writing-body-size: 15px;
     --home-writing-secondary-cols: 1fr;
-    --home-writing-row-gap: 8px;
+    --home-writing-row-gap: 16px;
     --home-about-grid-cols: 1fr;
-    --home-about-gap: 40px;
+    --home-about-gap: 48px;
     --home-about-pad-top: 56px;
-    --home-about-pad-bottom: 56px;
+    --home-about-pad-bottom: 72px;
     --home-about-body-size: 16px;
     --home-connect-size: 30px;
     --home-texture-width: 260px;

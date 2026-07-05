@@ -1310,6 +1310,55 @@ a.link-body:visited {
 
 @media (max-width: 768px) {
 
+  /* ----- Mobile readability/spacing pass (homepage redesign) ----- */
+  /* Hero: rebalanced line-height (size/gap handled via tokens.css) */
+  .intro-statement {
+    line-height: 1.4;
+  }
+
+  /* Metadata legibility floor */
+  .work-kicker {
+    font-size: 13px;
+  }
+  .writing-type-tag {
+    font-size: 12px;
+  }
+  .writing-publication,
+  .writing-date {
+    font-size: 14px;
+  }
+  .provisional-tag {
+    font-size: 13px;
+  }
+  .copyright {
+    font-size: var(--font-size-base);
+  }
+
+  /* Selected Work secondary rows: more presence */
+  .work-row-title {
+    font-size: 24px;
+  }
+  .work-row--secondary {
+    padding-block: 32px;
+  }
+
+  /* Writing & Speaking secondary rows: more breathing room */
+  .writing-row {
+    padding-block: 32px;
+  }
+  .writing-row-title {
+    line-height: 1.35;
+  }
+  .writing-row-meta {
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  /* About & Contact: more closing space before the buttons */
+  .about-contact-body {
+    margin-bottom: var(--space-10);
+  }
+
    .card {
     max-width: 100%;
    }
@@ -1335,7 +1384,7 @@ a.link-body:visited {
   }
 
   .hamburger-menu {
-    display: block !important;
+    display: flex !important;
     position: relative;
     z-index: 1001;
   }

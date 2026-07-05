@@ -36,6 +36,11 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  /* Contains the absurd z-index:10000001 on <section> (below) within
+     <main>'s own stacking context, so it can't out-rank unrelated fixed
+     overlays elsewhere on the page (e.g. the mobile nav) that live
+     outside <main>. */
+  isolation: isolate;
 }
 
 header, footer, section, .home-header-row {
@@ -383,6 +388,10 @@ button {
 
 .hamburger-menu {
   display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: none;
   color: var(--color-text-primary);
@@ -398,7 +407,7 @@ button {
   color: var(--color-accent-primary);
 }
 
-.hamburger-menu:focus {
+.hamburger-menu:focus-visible {
   outline: 2px solid var(--color-accent-primary);
   outline-offset: 2px;
 }
