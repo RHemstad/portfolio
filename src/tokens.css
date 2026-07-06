@@ -120,10 +120,14 @@
 /* ********* LINKS ********** */
 /* ************************** */
 
---color-link-nav-default: #D7C042;
---color-link-nav-hover: #BBA64A;
---color-link-nav-active:  #7A6B36; /* pressed */
---color-link-nav-stroke: #7A6B36;
+/* Global site navigation — subdued neutral, per the approved design.
+   Was gold (#D7C042 etc.) until this color-role cleanup; nav and
+   editorial actions were incorrectly sharing one token family. See
+   --color-link-editorial-* below for the (still-gold) action role. */
+--color-link-nav-default: rgba(235, 237, 237, 0.55);
+--color-link-nav-hover: #EBEDED;
+--color-link-nav-active:  rgba(235, 237, 237, 0.4); /* pressed */
+--color-link-nav-stroke: rgba(235, 237, 237, 0.4);
 --transition-fast: 180ms cubic-bezier(.4,0,.2,1);
 
 
@@ -135,10 +139,14 @@
 --radius-toc:             0.375rem;
 --transition-fast:        200ms cubic-bezier(.4,0,.2,1);
 
---color-link-generic-default: #D7C042;
---color-link-generic-hover: #BBA64A;
---color-link-generic-active:  #7A6B36; /* pressed */
---color-link-generic-stroke: #7A6B36;
+/* Gold editorial actions (View Case Study, Read, View all..., numerals,
+   accent rules) — renamed from --color-link-generic-* for clarity now
+   that nav has its own separate neutral role above. Same values, just
+   a name that matches what this token actually represents. */
+--color-link-editorial-default: #D7C042;
+--color-link-editorial-hover: #BBA64A;
+--color-link-editorial-active:  #7A6B36; /* pressed */
+--color-link-editorial-stroke: #7A6B36;
 
 --color-link-body-default:  #0C8A9C;  /* teal idle */
   --color-link-body-hover:    #247489;  /* darker teal */
@@ -243,5 +251,254 @@
 
   /* Breakpoints */
   --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1100px;
 
-} 
+
+
+/* ************************************************ */
+/* ===== HOMEPAGE REDESIGN (2a, approved) ===== */
+/* ************************************************ */
+/* Homepage-specific layout tokens. Values come from the approved design
+   handoff (2026-07-04). Most properties only differ mobile vs. non-mobile;
+   a few (marked below) also have a distinct tablet value at 1100px. */
+
+  --home-container-max: 1400px;
+  --color-surface-panel: rgba(24, 41, 44, 0.88); /* Teaching section panel */
+
+  /* Desktop (>=1100px) values */
+  --home-container-pad: 64px;      /* tablet/mobile override below */
+  --home-intro-top-pad: 88px;      /* tablet/mobile override below */
+  --home-intro-bottom-pad: 72px;   /* constant across breakpoints */
+  --home-hero-gap-bottom: 128px;
+  --home-logo-height: 58px;        /* tablet/mobile override below */
+  --home-logo-name-gap: 18px;
+  --home-name-size: 27px;          /* tablet/mobile override below */
+  --home-hero-size: 54px;          /* tablet/mobile override below */
+  --home-hero-body-size: 19px;
+  --home-h2-size: 40px;            /* tablet/mobile override below */
+  --home-section-pad-block: 88px;  /* tablet/mobile override below */
+  --home-teach-pad-block: 80px;    /* tablet/mobile override below */
+  --home-teach-grid-cols: repeat(3, minmax(190px, 1fr));
+  --home-teach-gap: 56px;
+  --home-teach-intro-size: 20px;
+  --home-work-num-col: 64px;
+  --home-work-num-pad-left: 12px;
+  --home-work-grid-gap: 28px;
+  --home-work-featured-cols: 1.2fr 1fr;
+  --home-work-featured-pad: 28px;
+  --home-work-featured-inner-gap: 36px;
+  --home-work-title-size: 32px;
+  --home-work-row-dir: row;
+  --home-work-row-align: center;
+  --home-work-row-gap: 24px;
+  --home-writing-featured-title-size: 34px;
+  --home-writing-body-size: 17px;
+  --home-writing-secondary-cols: 150px 1fr;
+  --home-writing-row-gap: 28px;
+  --home-about-grid-cols: 1fr 1fr;
+  --home-about-gap: 64px;
+  --home-about-pad-top: 96px;
+  --home-about-pad-bottom: 80px;
+  --home-about-body-size: 18px;
+  --home-connect-size: 44px;
+  --home-texture-width: 620px;
+  --home-texture-height: 760px;
+}
+
+/* Tablet (768px–1099px): only these properties have a distinct tablet value */
+@media (max-width: 1099px) {
+  :root {
+    --home-container-pad: 40px;
+    --home-intro-top-pad: 64px;
+    --home-logo-height: 48px;
+    --home-name-size: 23px;
+    --home-hero-size: 42px;
+    --home-h2-size: 32px;
+    --home-section-pad-block: 64px;
+    --home-teach-pad-block: 64px;
+  }
+}
+
+/* Mobile (<768px): everything collapses to a single column */
+@media (max-width: 767px) {
+  :root {
+    --home-container-pad: 20px;
+    --home-intro-top-pad: 36px;
+    --home-hero-gap-bottom: 64px;
+    --home-logo-height: 38px;
+    --home-logo-name-gap: 12px;
+    --home-name-size: 19px;
+    --home-hero-size: 27px;
+    --home-hero-body-size: 16px;
+    --home-h2-size: 26px;
+    --home-section-pad-block: 48px;
+    --home-teach-pad-block: 48px;
+    --home-teach-grid-cols: 1fr;
+    --home-teach-gap: 32px;
+    --home-teach-intro-size: 17px;
+    --home-work-num-col: 32px;
+    --home-work-num-pad-left: 0px;
+    --home-work-grid-gap: 14px;
+    --home-work-featured-cols: 1fr;
+    --home-work-featured-pad: 18px;
+    --home-work-featured-inner-gap: 20px;
+    --home-work-title-size: 24px;
+    --home-work-row-dir: column;
+    --home-work-row-align: flex-start;
+    --home-work-row-gap: 14px;
+    --home-writing-featured-title-size: 26px;
+    --home-writing-body-size: 15px;
+    --home-writing-secondary-cols: 1fr;
+    --home-writing-row-gap: 16px;
+    --home-about-grid-cols: 1fr;
+    --home-about-gap: 48px;
+    --home-about-pad-top: 56px;
+    --home-about-pad-bottom: 72px;
+    --home-about-body-size: 16px;
+    --home-connect-size: 30px;
+    --home-texture-width: 260px;
+    --home-texture-height: 320px;
+  }
+}
+
+/* ************************************************ */
+/* ===== TEACHING PAGE (2a, approved) ===== */
+/* ************************************************ */
+/* Second-level page tokens, from the approved design handoff
+   (design_handoff_teaching_page, 2026-07-04). A distinct --teach-*
+   prefix keeps these independent of the homepage's --home-* tokens,
+   even where the visual system is shared (background, panel color,
+   fonts, colors — those keep using the existing shared tokens/rules).
+   Only header/container padding have a distinct tablet value; every
+   other property steps directly from desktop to mobile. */
+
+:root {
+  --teach-header-pad-top: 52px;
+  --teach-hero-pad-bottom: 40px;
+  --teach-container-pad: 64px;
+  --teach-hero-gap-bottom: 64px;
+  --teach-logo-height: 34px;
+  --teach-name-size: 17px;
+  --teach-h1-size: 52px;
+  --teach-intro-size: 19px;
+  --teach-grid-cols: 1fr 190px;
+  --teach-philosophy-pad: 48px 64px 52px;
+  --teach-num-size: 22px;
+  --teach-h2-size: 26px;
+  --teach-body-size: 17px;
+  --teach-quote-size: 23px;
+  --teach-section-gap: 60px;
+  --teach-appt-cols: 2fr 1.3fr 1fr 1fr;
+  --teach-row-pad: 18px;
+  --teach-appt-name-size: 17px;
+  --teach-appt-field-size: 15px;
+  --teach-course-cols: 40px 1fr auto;
+  --teach-course-title-size: 18px;
+  --teach-pull-quote-size: 22px;
+  --teach-assignment-dir: row;
+  --teach-assignment-align: baseline;
+  --teach-gallery-wrap: nowrap;
+  --teach-gallery-min-width: 0;
+  --teach-closing-size: 32px;
+  --teach-closing-body-size: 22px;
+  --teach-areas-pad-top: 44px;
+  --teach-areas-pad-bottom: 88px;
+}
+
+@media (max-width: 1099px) {
+  :root {
+    --teach-header-pad-top: 48px;
+    --teach-hero-pad-bottom: 32px;
+    --teach-container-pad: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --teach-header-pad-top: 32px;
+    --teach-hero-pad-bottom: 24px;
+    --teach-container-pad: 20px;
+    --teach-hero-gap-bottom: 40px;
+    --teach-logo-height: 30px;
+    --teach-name-size: 15px;
+    --teach-h1-size: 34px;
+    --teach-intro-size: 15px;
+    --teach-grid-cols: 1fr;
+    --teach-philosophy-pad: 36px 20px;
+    --teach-num-size: 17px;
+    --teach-h2-size: 20px;
+    --teach-body-size: 15px;
+    --teach-quote-size: 17px;
+    --teach-section-gap: 36px;
+    --teach-appt-cols: 1fr;
+    --teach-row-pad: 12px;
+    --teach-appt-name-size: 15px;
+    --teach-appt-field-size: 13.5px;
+    --teach-course-cols: 24px 1fr;
+    --teach-course-title-size: 14px;
+    --teach-pull-quote-size: 17px;
+    --teach-assignment-dir: column;
+    --teach-assignment-align: flex-start;
+    --teach-gallery-wrap: wrap;
+    --teach-gallery-min-width: 38%;
+    --teach-closing-size: 22px;
+    --teach-closing-body-size: 15px;
+    --teach-areas-pad-top: 32px;
+    --teach-areas-pad-bottom: 64px;
+  }
+}
+
+/* ************************************************ */
+/* ===== SELECTED WORK PAGE (2a, approved) ===== */
+/* ************************************************ */
+/* Second-level page tokens, from the approved design handoff
+   (design_handoff_selected_work_page, 2026-07-05). Distinct
+   --work-page-* prefix: keeps these independent of both --teach-* and
+   the homepage's own .work-* classes (a different, pre-existing
+   namespace used by the homepage's Selected Work section). */
+
+:root {
+  --work-page-masthead-pad-top: 64px;
+  --work-page-masthead-pad-inline: 64px;
+  --work-page-masthead-pad-bottom: 48px;
+  --work-page-brand-gap-bottom: 36px;
+  --work-page-logo-height: 34px;
+  --work-page-name-size: 17px;
+  --work-page-breadcrumb-size: 12px;
+  --work-page-h1-size: 52px;
+  --work-page-intro-size: 18px;
+  --work-page-intro-gap-bottom: 32px;
+  --work-page-pill-size: 11px;
+  --work-page-pill-pad: 5px 12px;
+  --work-page-content-pad-top: 56px;
+  --work-page-content-pad-inline: 64px;
+  --work-page-content-pad-bottom: 48px;
+  --work-page-section-gap: 56px;
+  --work-page-row-pad: 26px;
+  --work-page-row-num-size: 22px;
+  --work-page-featured-num-size: 28px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --work-page-masthead-pad-top: 28px;
+    --work-page-masthead-pad-inline: 20px;
+    --work-page-masthead-pad-bottom: 24px;
+    --work-page-brand-gap-bottom: 24px;
+    --work-page-logo-height: 28px;
+    --work-page-name-size: 14px;
+    --work-page-breadcrumb-size: 11px;
+    --work-page-h1-size: 32px;
+    --work-page-intro-size: 15px;
+    --work-page-intro-gap-bottom: 22px;
+    --work-page-pill-size: 10.5px;
+    --work-page-pill-pad: 4px 10px;
+    --work-page-content-pad-top: 32px;
+    --work-page-content-pad-inline: 20px;
+    --work-page-content-pad-bottom: 40px;
+    --work-page-section-gap: 32px;
+    --work-page-row-pad: 22px;
+    --work-page-row-num-size: 18px;
+    --work-page-featured-num-size: 20px;
+  }
+}
