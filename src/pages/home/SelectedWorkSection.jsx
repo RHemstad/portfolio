@@ -4,9 +4,8 @@ import { projects } from '../../data/projects';
 /* Selected Work section — data source (src/data/projects.js) and case
    study links unchanged. Per the approved design, only the first three
    projects are surfaced here (a 4th, "Enterprise Design Systems", exists
-   in the data but isn't shown — see design_handoff README); the former
-   "Show More" toggle is replaced with a static "View all" link pointing
-   nowhere yet, since there's no dedicated Work page/route to send it to. */
+   in the data but isn't shown — see design_handoff README); "View all"
+   now links to the dedicated /selected-work page, which shows all four. */
 function SelectedWorkSection() {
   const [featured, ...secondary] = projects.slice(0, 3);
 
@@ -41,13 +40,9 @@ function SelectedWorkSection() {
           </Link>
         ))}
 
-        <a
-          href="#"
-          className="link-editorial link-editorial--block"
-          onClick={(e) => e.preventDefault()}
-        >
+        <Link to="/selected-work" className="link-editorial link-editorial--block">
           View all selected work →
-        </a>
+        </Link>
       </div>
     </section>
   );

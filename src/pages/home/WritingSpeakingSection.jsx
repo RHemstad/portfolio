@@ -53,13 +53,13 @@ function WritingSpeakingSection() {
           ))}
         </div>
 
-        <a
-          href="#"
-          className="link-editorial link-editorial--block"
-          onClick={(e) => e.preventDefault()}
-        >
-          View all writing &amp; speaking →
-        </a>
+        {/* No dedicated Writing & Speaking page exists yet (unlike
+            Teaching and Selected Work) — rendered as inert, non-gold
+            text rather than a link pointing nowhere real. Swap for a
+            real <Link> once that page exists. */}
+        <span className="writing-more-note link-editorial--block">
+          More writing &amp; speaking — coming soon
+        </span>
       </div>
     </section>
   );

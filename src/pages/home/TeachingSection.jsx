@@ -3,6 +3,8 @@
    for content that hasn't been finalized yet (see project constraints:
    do not invent teaching history, courses, or credentials). Layout is
    the approved "numbered column" treatment — no card/border boxes. */
+import { Link } from 'react-router-dom';
+
 function TeachingSection() {
   return (
     <section id="teaching" className="teaching">
@@ -36,13 +38,9 @@ function TeachingSection() {
           </div>
         </div>
 
-        <a
-          href="#"
-          className="link-editorial"
-          onClick={(e) => e.preventDefault()}
-        >
-          Full teaching page — coming soon
-        </a>
+        <Link to="/teaching" className="link-editorial">
+          View full teaching page →
+        </Link>
       </div>
     </section>
   );
