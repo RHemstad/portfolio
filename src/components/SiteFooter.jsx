@@ -1,6 +1,6 @@
 /* Shared, minimal site-wide footer (used on both the homepage and
    case-study pages). The substantive "let's connect" content now lives
-   in the homepage's About & Contact section (see
+   in the homepage's About section (see
    src/pages/home/AboutContactSection.jsx) so it isn't duplicated here. */
 function SiteFooter() {
   return (

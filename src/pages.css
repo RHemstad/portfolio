@@ -884,18 +884,21 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* ----- About & Contact ----- */
+/* ----- About / contact ----- */
 
 .about-contact-grid {
   display: grid;
   grid-template-columns: var(--home-about-grid-cols);
   gap: var(--home-about-gap);
+  align-items: start;
 }
 
-.about-contact-label {
-  font-size: 20px;
-  margin: 0 0 14px;
-  color: var(--color-text-primary);
+/* "About" lives inside the left column so it shares row one with "Let's
+   connect" — the two headings read as one aligned pair. Its bottom margin
+   matches .connect-heading so both columns' body copy starts on the same
+   line. */
+.about-contact-grid > div > h2 {
+  margin-bottom: var(--space-5);
 }
 
 .about-contact-bio {
@@ -907,11 +910,12 @@
   max-width: 48ch;
 }
 
+/* Same size and line box as the section h2 it sits beside, so the two
+   headings share a baseline rather than merely a top edge. */
 .connect-heading {
-  font-size: var(--home-connect-size);
+  font-size: var(--home-h2-size);
   margin: 0 0 var(--space-5);
   color: var(--color-text-primary);
-  line-height: 1.1;
 }
 
 .about-contact-body {
@@ -1381,7 +1385,7 @@ a.link-body:visited {
     margin-bottom: var(--space-2);
   }
 
-  /* About & Contact: more closing space before the buttons */
+  /* Let's connect: more closing space before the buttons */
   .about-contact-body {
     margin-bottom: var(--space-10);
   }

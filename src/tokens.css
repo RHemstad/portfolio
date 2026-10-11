@@ -300,7 +300,6 @@
   --home-about-pad-top: 96px;
   --home-about-pad-bottom: 80px;
   --home-about-body-size: 18px;
-  --home-connect-size: 44px;
   --home-texture-width: 620px;
   --home-texture-height: 760px;
 }
@@ -355,7 +354,6 @@
     --home-about-pad-top: 56px;
     --home-about-pad-bottom: 72px;
     --home-about-body-size: 16px;
-    --home-connect-size: 30px;
     --home-texture-width: 260px;
     --home-texture-height: 320px;
   }

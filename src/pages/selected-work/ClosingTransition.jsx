@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 
 /* Closing transition — thin rule, one line of connective copy, links
-   back to the homepage's Writing & Speaking and About & Contact
-   sections. Deliberately not a repeat of the full About & Contact
-   section itself. */
+   back to the homepage's Writing & Speaking and About sections.
+   Deliberately not a repeat of the full About section itself. */
 function ClosingTransition() {
   return (
     <div className="work-page-closing">
