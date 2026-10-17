@@ -9,7 +9,8 @@ import SiteNav from './SiteNav';
    case studies, a breadcrumb + "Download CV" treatment on the teaching
    page, and a breadcrumb-only masthead on the selected-work page) so
    all pages keep their own appearance while sharing one component. */
-function SiteHeader({ variant = 'home' }) {
+function SiteHeader({ variant = 'home', titleAsHeading = true }) {
+  const CaseStudyBrand = titleAsHeading ? 'h1' : 'span';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
@@ -39,7 +40,7 @@ function SiteHeader({ variant = 'home' }) {
             <div className="logo">
               <img src="/images/logo.svg" alt="Rebecca Hemstad Logo" />
             </div>
-            <h1>Rebecca L. Hemstad</h1>
+            <CaseStudyBrand className="case-study-brand-name">Rebecca L. Hemstad</CaseStudyBrand>
           </div>
         </Link>
 

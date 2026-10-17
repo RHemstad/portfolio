@@ -1209,7 +1209,8 @@ a.link-body:visited {
   filter: brightness(0) invert(1);
 }
 
-.case-study-header-title h1 {
+.case-study-header-title .case-study-brand-name {
+  font-family: var(--font-headline);
   font-size: var(--font-size-3xl);
 }
 
@@ -1501,7 +1502,7 @@ a.link-body:visited {
     position: relative;
   }
 
-   .case-study-header-title h1 {
+   .case-study-header-title .case-study-brand-name {
     font-size: var(--font-size-3xl);
   }
 
