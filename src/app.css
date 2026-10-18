@@ -24,7 +24,7 @@ body {
   line-height: 1.5;
   font-size: 1rem;
   background: var(--color-surface-dark);
-  background: url('/images/backsmooth5.png') repeat-x scroll left top var(--color-surface-black);
+  background: url('/images/backsmooth-2.webp') repeat-x scroll left top var(--color-surface-black);
 }
 
 .wrapper {
@@ -79,7 +79,7 @@ section {
 }
 
 footer {
-  background: url('/images/colophon.png') repeat center top var(--color-footer-bg);
+  background: url('/images/colophon.webp') repeat center top var(--color-footer-bg);
   color: var(--color-text-primary);
   display: flex;
   justify-content: space-between;
@@ -197,7 +197,7 @@ button {
   background: var(--color-surface-alt);
   border: 0;
   border-radius: var(--radius-md);
-  color: var(--color-link-editorial-default); /* #D7C042 */
+  color: var(--color-link-default); /* #D7C042 */
   font: var(--font-weight-medium) var(--font-size-sm)/1 var(--font-family-body);
   cursor: pointer;
   transition: color 200ms, background-color 200ms;
@@ -205,12 +205,12 @@ button {
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: rgba(255,255,255,0.05);
-  color: var(--color-link-editorial-hover);     /* #BBA64A */
+  background: var(--color-surface-hover);
+  color: var(--color-link-hover);     /* #BBA64A */
 }
 
 .button-primary.open {
-  color: var(--color-link-editorial-stroke);    /* #7A6B36 */
+  color: var(--color-link-active);    /* #7A6B36 */
 }
 
 .button-primary .chevron {
@@ -358,7 +358,7 @@ button {
 .toc-nav-link:hover,
 .toc-nav-link:focus-visible {
   color: var(--color-link-toc-hover);
-  background-color: rgba(255, 255, 255, 0.06);  /* subtle highlight */
+  background-color: var(--color-surface-hover);  /* subtle highlight */
 }
 
 .toc-nav-link:hover::before,
@@ -410,7 +410,7 @@ button {
 }
 
 .hamburger-menu:hover {
-  background: var(--color-surface-border);
+  background: var(--color-white);
   color: var(--color-accent-primary);
 }
 
@@ -429,7 +429,7 @@ button {
   right: var(--space-6);
   width: 48px;
   height: 48px;
-  background: var(--color-link-body-default);
+  background: var(--color-link-default);
   color: var(--color-text-primary);
   border: none;
   border-radius: 50%;
@@ -443,10 +443,10 @@ button {
 }
 
 .back-to-top:hover {
-  background: var(--color-link-body-hover);
+  background: var(--color-link-hover);
 }
 
 .back-to-top:focus {
-  outline: 2px solid var(--color-link-body-hover);
+  outline: 2px solid var(--color-link-hover);
   outline-offset: 2px;
 }

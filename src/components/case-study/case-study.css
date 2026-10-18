@@ -93,7 +93,7 @@
   max-width: 35ch;
   margin: var(--space-10) 0;
   padding-inline-start: var(--space-6);
-  border-inline-start: 2px solid var(--color-accent-warm);
+  border-inline-start: 2px solid var(--color-accent-secondary);
   font-family: var(--font-headline);
   font-size: 1.375rem;
   font-style: normal;
@@ -121,6 +121,89 @@
   color: var(--color-text-muted);
 }
 
+/* The stage owns the wide footprint; its figures own the smaller image scale.
+   Add sibling figures to compose a row; they wrap when space is limited. */
+.cs-media-stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  padding: clamp(24px, 5vw, 64px);
+  background: var(--color-surface-subtle);
+  border: var(--border-width-thin) solid var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+.cs-media-stage > .cs-figure {
+  flex: 1 1 24rem;
+  min-width: 0;
+  max-width: 48rem;
+  margin: 0;
+}
+
+.cs-media-stage .cs-figure img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 32rem;
+  margin-inline: auto;
+}
+
+.cs-media-sequence {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-10) var(--space-6);
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cs-media-sequence > li { grid-column: span 2; min-width: 0; }
+.cs-media-sequence > li:nth-child(4):nth-last-child(2) { grid-column: 2 / span 2; }
+.cs-media-sequence .cs-figure { margin: 0; max-width: none; }
+.cs-media-sequence .cs-figure img { width: 100%; max-height: none; }
+.cs-media-sequence .cs-figure-caption { color: var(--color-text-primary); }
+
+.cs-media-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-10) var(--space-6);
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cs-media-comparison > li { min-width: 0; }
+.cs-media-comparison .cs-figure { margin: 0; max-width: none; }
+.cs-media-comparison .cs-figure img { width: 100%; max-height: none; }
+.cs-media-comparison .cs-figure-caption { color: var(--color-text-primary); }
+
+@media (min-width: 1100px) {
+  /* Two comparison columns at the same width as the flow's three columns. */
+  .cs-media-comparison { width: calc((200% - var(--space-6)) / 3); }
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  .cs-media-sequence { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cs-media-sequence > li:nth-child(4):nth-last-child(2) { grid-column: span 2; }
+  .cs-media-sequence > li:last-child:nth-child(odd) { grid-column: 2 / span 2; }
+}
+
+@media (max-width: 767px) {
+  .cs-media-comparison { grid-template-columns: minmax(0, 1fr); }
+  .cs-media-sequence { grid-template-columns: minmax(0, 1fr); }
+  .cs-media-sequence > li,
+  .cs-media-sequence > li:nth-child(4):nth-last-child(2) { grid-column: 1; }
+  .cs-media-stage {
+    padding: var(--space-4);
+    gap: var(--space-6);
+    margin-top: var(--space-6);
+  }
+}
+
 .cs-index {
   position: sticky;
   top: var(--space-8);
@@ -138,7 +221,7 @@
   line-height: 1.5;
   text-decoration: none;
 }
-.cs-index-list a:hover { color: var(--color-link-editorial-default); }
+.cs-index-list a:hover { color: var(--color-link-default); }
 .cs-index-list a:focus-visible { outline: 2px solid var(--color-accent-primary); outline-offset: 4px; }
 .cs-content, .cs-index-list a, .cs-eyebrow { overflow-wrap: anywhere; }
 

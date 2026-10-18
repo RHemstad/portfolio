@@ -1,52 +1,69 @@
 :root {
+  /* Color system: choose a role, not an opacity, in component styles. */
 
-
+  /* Brand palette */
   --color-primary: #0C8A9C;
-  --color-secondary: #D7C042;
-  --color-tertiary: #7A6B36;
+  --color-secondary: var(--color-neutral-600);
+  --color-tertiary: #529EC8;
+  --color-white: #FFFFFF;
+  --color-transparent: transparent;
 
-  /* *********************************** */
-  /* ********* COLORS ACCENT ********** */
-  /* *********************************** */
+  /* Brand neutrals: a blue-gray family shared by text and surfaces.
+     Components use the semantic roles below, rather than these steps directly. */
+  --color-neutral-50: #EBEDED;
+  --color-neutral-100: #D8E1E6;
+  --color-neutral-200: #B9CBD5;
+  --color-neutral-300: #A5BBC8;
+  --color-neutral-warm: #C4C1BA;
+  --color-neutral-600: #4E6B7B;
+  --color-neutral-800: #394A51;
+  --color-neutral-900: #182429;
+  --color-neutral-950: #03161B;
 
+  /* Accents: interactive, supporting, and editorial highlight roles. */
   --color-accent-primary: var(--color-primary);
-  --color-accent-warm: var(--color-secondary);
-  --color-accent-warm-hover: #7A6B36;
+  --color-accent-secondary: var(--color-secondary);
+  --color-accent-highlight: var(--color-tertiary); /* Large text and decorative accents. */
 
-  /* *********************************** */
-  /* ********* COLORS TEXT ********** */
-  /* *********************************** */
+  /* Text hierarchy: primary, supporting copy, metadata, quiet labels. */
+  --color-text-primary: var(--color-neutral-50);
+  --color-text-secondary: var(--color-neutral-100);
+  --color-text-muted: var(--color-neutral-200);
+  --color-text-subtle: var(--color-neutral-300);
+  --color-text-metadata: var(--color-neutral-warm);
 
-  --color-text-primary: #EBEDED;
-  --color-text-muted: rgba(255, 255, 255, 0.7);
-  --color-text-muted-dark: rgba(255, 255, 255, 0.9);
+  /* Borders: dividers, controls, and emphasized boundaries. */
+  --color-border-light: color-mix(in srgb, var(--color-neutral-50) 10%, transparent);
+  --color-border-medium: color-mix(in srgb, var(--color-neutral-50) 20%, transparent);
+  --color-border-card: color-mix(in srgb, var(--color-neutral-50) 30%, transparent);
+  --color-border-accent: color-mix(in srgb, var(--color-accent-highlight) 40%, transparent);
 
-  /* *********************************** */
-  /* ********* COLORS BORDER ********** */
-  /* *********************************** */
-
-  --color-border-light: rgba(255, 255, 255, 0.1);
-  --color-border-medium: rgba(255, 255, 255, 0.2);
-  --color-border-card: rgba(255, 255, 255, 0.3);
-  --color-surface-border: #fff; 
-
-  --color-footer-bg: #353c41;
-  --color-overlay: rgba(25, 39, 46, 0.9);
-
-
-
-  /* *********************************** */
-  /* ********* COLORS SURFACE ********** */
-  /* *********************************** */
+  /* Surfaces: page, panels, cards, and subtle interaction feedback. */
   --color-surface-black: #000000;
-  --color-surface-dark: #03161B;   /* Body background */
-  --color-surface-subtle: #18292C;
-  --color-surface-default: #2C3E42; /* Card background */
-  /*--color-surface-alt: #425457; *//* Card background */
-  --color-surface-alt: #394A51;
-  --color-surface-alt-muted: rgba(57, 74, 81, 0.5);
+  --color-surface-dark: var(--color-neutral-950);
+  --color-surface-subtle: var(--color-neutral-900);
+  --color-surface-alt: var(--color-neutral-800);
+  --color-surface-alt-muted: color-mix(in srgb, var(--color-surface-alt) 50%, transparent);
+  --color-surface-panel: color-mix(in srgb, var(--color-surface-subtle) 88%, transparent);
+  --color-surface-highlight: color-mix(in srgb, var(--color-neutral-50) 3%, transparent);
+  --color-surface-hover: color-mix(in srgb, var(--color-neutral-50) 5%, transparent);
+  --color-surface-nav-overlay: color-mix(in srgb, var(--color-surface-alt) 80%, transparent);
+  --color-footer-bg: var(--color-surface-alt);
+  --color-overlay: color-mix(in srgb, var(--color-surface-subtle) 90%, transparent);
 
-  --color-section-bg: #394A51;
+  /* Shared link states; navigation and section indexes keep distinct roles. */
+  --color-link-default: var(--color-accent-primary);
+  --color-link-hover: #247489;
+  --color-link-active: #4F8587;
+  --color-link-nav-default: var(--color-neutral-warm);
+  --color-link-nav-hover: var(--color-text-primary);
+  --color-link-nav-active: var(--color-text-subtle);
+  --color-link-nav-stroke: var(--color-border-card);
+  --color-link-toc-default: var(--color-text-primary);
+  --color-link-toc-hover: var(--color-white);
+  --color-link-toc-active: var(--color-text-primary);
+  --color-link-toc-stroke: var(--color-secondary);
+
 
 /* ************************** */
 /* ********* BORDER RADIUS ********** */
@@ -120,40 +137,11 @@
 /* ********* LINKS ********** */
 /* ************************** */
 
-/* Global site navigation — subdued neutral, per the approved design.
-   Was gold (#D7C042 etc.) until this color-role cleanup; nav and
-   editorial actions were incorrectly sharing one token family. See
-   --color-link-editorial-* below for the (still-gold) action role. */
---color-link-nav-default: rgba(235, 237, 237, 0.55);
---color-link-nav-hover: #EBEDED;
---color-link-nav-active:  rgba(235, 237, 237, 0.4); /* pressed */
---color-link-nav-stroke: rgba(235, 237, 237, 0.4);
---transition-fast: 180ms cubic-bezier(.4,0,.2,1);
-
-
---color-link-toc-default: #EBEDED;
---color-link-toc-hover: #FFFFFF;
---color-link-toc-active:  #D7C042; /* pressed */
---color-link-toc-stroke: #425457;
---space-toc-v:            0.375rem;   /* vertical padding */
---radius-toc:             0.375rem;
---transition-fast:        200ms cubic-bezier(.4,0,.2,1);
-
-/* Gold editorial actions (View Case Study, Read, View all..., numerals,
-   accent rules) — renamed from --color-link-generic-* for clarity now
-   that nav has its own separate neutral role above. Same values, just
-   a name that matches what this token actually represents. */
---color-link-editorial-default: #D7C042;
---color-link-editorial-hover: #BBA64A;
---color-link-editorial-active:  #7A6B36; /* pressed */
---color-link-editorial-stroke: #7A6B36;
-
---color-link-body-default:  #0C8A9C;  /* teal idle */
-  --color-link-body-hover:    #247489;  /* darker teal */
-  --color-link-body-active:   #D7C042;  /* warm flash */
-  --color-link-body-visited:  #4F8587;  /* desat teal */
-  --color-link-body-stroke:   #4F8587;  /* underline */
-  --transition-link-fast:     180ms cubic-bezier(.4,0,.2,1);
+/* Link geometry and motion; color roles are defined with the palette above. */
+--space-toc-v: 0.375rem;
+--radius-toc: 0.375rem;
+--transition-fast: 200ms cubic-bezier(.4,0,.2,1);
+--transition-link-fast: 180ms cubic-bezier(.4,0,.2,1);
 
 
 /* ************************** */
@@ -233,7 +221,7 @@
   /* Shadow System */
   --shadow-sm: 0 2px 8px rgba(20, 184, 166, 0.10);
   --shadow-md: 0 4px 16px rgba(20, 184, 166, 0.15);
-  --shadow-lg: 0 4px 24px rgba(100, 116, 139, 0.16);
+  --shadow-lg: 0 4px 24px color-mix(in srgb, var(--color-neutral-600) 16%, transparent);
   --shadow-xl: 0 6px 18px rgba(0, 0, 0, 0.08);
   --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.05);
 
@@ -263,7 +251,6 @@
    a few (marked below) also have a distinct tablet value at 1100px. */
 
   --home-container-max: 1400px;
-  --color-surface-panel: rgba(24, 41, 44, 0.88); /* Teaching section panel */
 
   /* Desktop (>=1100px) values */
   --home-container-pad: 64px;      /* tablet/mobile override below */

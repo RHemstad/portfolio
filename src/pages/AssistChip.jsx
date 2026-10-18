@@ -2,6 +2,9 @@ import CaseStudyLayout from '../components/case-study/CaseStudyLayout';
 import CaseStudyIntro from '../components/case-study/CaseStudyIntro';
 import CaseStudySection from '../components/case-study/CaseStudySection';
 import CaseStudyFigure from '../components/case-study/CaseStudyFigure';
+import CaseStudyMediaStage from '../components/case-study/CaseStudyMediaStage';
+import CaseStudySequence from '../components/case-study/CaseStudySequence';
+import CaseStudyComparison from '../components/case-study/CaseStudyComparison';
 import CaseStudyIndex from '../components/case-study/CaseStudyIndex';
 import CaseStudyPullQuote from '../components/case-study/CaseStudyPullQuote';
 
@@ -38,11 +41,12 @@ export default function AssistChip() {
 
 </CaseStudyIntro>
     }>
+      <CaseStudyMediaStage>
       <CaseStudyFigure
-        wide
         src="/images/portfolio/portfolio-assist-chip-hero.png"
         alt="Assist Chip interface design overview for SAS Viya Copilot."
       />
+      </CaseStudyMediaStage>
 
 {/* ********************************************** */}
 {/* A Small component raised much bigger questions */}
@@ -150,12 +154,35 @@ What should I understand?</CaseStudyPullQuote>
 
 <CaseStudyPullQuote>The goal was to define the complete interaction—not just the appearance of the control.</CaseStudyPullQuote>
 
-        <CaseStudyFigure
-          wide
-          src="/images/portfolio/portfolio-assist-chip-flow-01-options.png"
-          alt="Assist Chip specification showing the initial suggested options in a Copilot interaction."
-          caption="Structural preview: the first of five interaction-flow figures, showing suggested options. The complete flow and explanation will follow."
-        />
+        <CaseStudyMediaStage>
+          <CaseStudySequence>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-flow-01-options.png"
+              alt="Copilot offers three Assist Chips beneath its response."
+              caption={<><strong>1. Suggested options</strong><br />Assist Chips offer optional ways to continue the conversation.</>}
+            /></li>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-flow-02-select.png"
+              alt="The suggestion ‘What changed since last month?’ is highlighted in blue."
+              caption={<><strong>2. Selection</strong><br />The user selects “What changed since last month?”</>}
+            /></li>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-flow-03-message.png"
+              alt="The selected suggestion appears as a user message; the Assist Chips are no longer displayed."
+              caption={<><strong>3. User message</strong><br />The selected suggestion becomes a message in the conversation.</>}
+            /></li>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-flow-04-processing.png"
+              alt="Copilot displays a three-dot processing indicator beneath the user's message."
+              caption={<><strong>4. Processing</strong><br />A visible indicator shows that Copilot is preparing its response.</>}
+            /></li>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-flow-05-response.png"
+              alt="Copilot responds with a summary of changes in revenue, accounts, deal size, and churn."
+              caption={<><strong>5. Response</strong><br />Copilot adds its answer to the conversation.</>}
+            /></li>
+          </CaseStudySequence>
+        </CaseStudyMediaStage>
       </CaseStudySection>
 
 {/* ********************************************** */}
@@ -227,12 +254,30 @@ Instead of allowing each product to invent its own version of Assist Chip, we br
 
 <p className="cs-prose">That work helped move Assist Chip from a visual pattern in Figma toward a component whose meaning could be communicated consistently to designers, developers, and the AI tools increasingly participating in implementation.</p>
 
-<CaseStudyFigure
-          wide
-          src="/images/portfolio/portfolio-assist-chip-variant-standard.png"
-          alt="Standard Assist Chip visual variant."
-          caption="Structural preview: the standard variant, shown alone to review image sizing before the full comparison is composed."
-        />
+<CaseStudyMediaStage>
+          <CaseStudyComparison>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-variant-standard.png"
+              alt="Standard Assist Chips displayed as three rounded, raised suggestion controls."
+              caption={<><strong>Standard</strong><br />Rounded suggestion controls with a raised visual treatment.</>}
+            /></li>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-variant-slim.png"
+              alt="Slim Assist Chips displayed with flatter borders and less vertical padding."
+              caption={<><strong>Slim</strong><br />A flatter treatment with reduced vertical padding.</>}
+            /></li>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-variant-small.png"
+              alt="Small Assist Chips displayed as three compact suggestion controls."
+              caption={<><strong>Small</strong><br />Compact controls with a tighter vertical arrangement.</>}
+            /></li>
+            <li><CaseStudyFigure
+              src="/images/portfolio/portfolio-assist-chip-variant-subtle.png"
+              alt="Subtle Assist Chips displayed as text suggestions with leading arrows and no surrounding boxes."
+              caption={<><strong>Subtle</strong><br />Text-led suggestions with directional cues instead of surrounding boxes.</>}
+            /></li>
+          </CaseStudyComparison>
+        </CaseStudyMediaStage>
       </CaseStudySection>
 
 {/* ********************************************** */}
