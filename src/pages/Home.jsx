@@ -18,9 +18,9 @@ function Home() {
 
       <main>
         <IntroSection />
-        <TeachingSection />
         <SelectedWorkSection />
         <WritingSpeakingSection />
+        <TeachingSection />
         <AboutContactSection />
       </main>
 

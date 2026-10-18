@@ -27,7 +27,8 @@ function ScrollManager() {
     if (hash) {
       const id = hash.slice(1);
       const raf = requestAnimationFrame(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+        document.getElementById(id)?.scrollIntoView({ behavior, block: 'start' });
       });
       return () => cancelAnimationFrame(raf);
     }

@@ -13,7 +13,7 @@ export const projects = [
     category: "Design System",
     description: "Creating intuitive interfaces for artificial intelligence features that make complex capabilities accessible and empowering for users.",
     image: "https://placehold.co/320x200",
-    link: "/case-study/ai-design-system"
+    link: "/case-study/assist-chip"
   },
   {
     id: 3,
