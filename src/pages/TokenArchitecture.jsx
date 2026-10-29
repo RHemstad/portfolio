@@ -39,6 +39,12 @@ export default function TokenArchitecture() {
   return (
     <CaseStudyLayout index={<CaseStudyIndex sections={sections} />} intro={
       <CaseStudyIntro eyebrow="Token Architecture · SAS · 2021–present" title="Building a Shared Language for Design and Development">
+        <blockquote className="cs-epigraph">
+          <p>I learn by going where I have to go.</p>
+          <p className="cs-epigraph-attribution">
+            — Theodore Roethke, <cite>The Waking</cite>
+          </p>
+        </blockquote>
         <p className="cs-prose">In 2021, I was asked to document the naming conventions for our product design tokens. The problem was that we didn't have a consistent convention to document.</p>
         <p className="cs-prose">What began as an effort to make sense of nearly 1,000 tokens eventually led to a new naming system, a shared infrastructure for managing and distributing tokens, and a tool for exploring them. Along the way, the work also changed how our designers and developers collaborated. What started as a relatively straightforward assignment has continued to expand and evolve as the needs of our design system have grown.</p>
       </CaseStudyIntro>

@@ -7,7 +7,6 @@ const NAV_ITEMS = [
   { id: 'work', label: 'Work' },
   { id: 'writing-speaking', label: 'Writing & Speaking' },
   { id: 'teaching', label: 'Teaching' },
-  { id: 'about-contact', label: 'About' },
 ];
 
 function SiteNav({ onNavigate }) {

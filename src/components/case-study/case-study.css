@@ -72,6 +72,22 @@
 .cs-intro-copy p { margin: 0; }
 .cs-intro-copy > p + p { margin-top: var(--space-4); }
 
+.cs-epigraph {
+  margin: 0 0 var(--space-8);
+  font-family: var(--font-headline);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.cs-epigraph .cs-epigraph-attribution {
+  margin-top: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-style: normal;
+  color: var(--color-text-muted);
+}
+
 .cs-section {
   padding: 0;
   margin: var(--cs-section-gap) 0 0;

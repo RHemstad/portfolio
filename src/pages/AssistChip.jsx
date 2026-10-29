@@ -28,6 +28,16 @@ export default function AssistChip() {
         eyebrow="AI/ML Interface Design · SAS Viya Copilot · 2024–2026"
         title="Designing the Boundary Between Suggestion and Action"
       >
+        <blockquote className="cs-epigraph">
+          <p>
+            In a minute there is time
+            <br />
+            For decisions and revisions which a minute will reverse.
+          </p>
+          <p className="cs-epigraph-attribution">
+            — T. S. Eliot, <cite>The Love Song of J. Alfred Prufrock</cite>
+          </p>
+        </blockquote>
 
 <p className="cs-prose">In 2024, AI was suddenly everywhere in technology. Companies were moving quickly to understand what generative AI could do and how it might fit into existing products. SAS was no different. Developers were building rough Copilot prototypes, testing ideas, and trying to understand what this new technology might mean for our software.</p>
 

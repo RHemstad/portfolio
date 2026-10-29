@@ -510,11 +510,9 @@
 /* ----- Intro ----- */
 
 .intro-section {
-  max-width: var(--home-container-max);
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
-  padding-inline: var(--home-container-pad);
   padding-block-start: var(--home-hero-gap-bottom);
   padding-block-end: var(--home-intro-bottom-pad);
 }
@@ -536,7 +534,7 @@
   max-width: 58ch;
 }
 
-/* ----- Shared section shell (Teaching / Selected Work / Writing / About) ----- */
+/* ----- Shared section shell (Teaching / Selected Work / Writing / Contact) ----- */
 
 .teaching,
 .about-contact,
@@ -884,35 +882,9 @@
   color: var(--color-text-subtle);
 }
 
-/* ----- About / contact ----- */
+/* ----- Contact ----- */
 
-.about-contact-grid {
-  display: grid;
-  grid-template-columns: var(--home-about-grid-cols);
-  gap: var(--home-about-gap);
-  align-items: start;
-}
-
-/* "About" lives inside the left column so it shares row one with "Let's
-   connect" — the two headings read as one aligned pair. Its bottom margin
-   matches .connect-heading so both columns' body copy starts on the same
-   line. */
-.about-contact-grid > div > h2 {
-  margin-bottom: var(--space-5);
-}
-
-.about-contact-bio {
-  font-style: italic;
-  font-size: var(--home-about-body-size);
-  line-height: 1.65;
-  color: var(--color-text-primary);
-  margin: 0;
-  max-width: 48ch;
-}
-
-/* Same size and line box as the section h2 it sits beside, so the two
-   headings share a baseline rather than merely a top edge. */
-.connect-heading {
+.about-contact .connect-heading {
   font-size: var(--home-h2-size);
   margin: 0 0 var(--space-5);
   color: var(--color-text-primary);
@@ -1386,7 +1358,7 @@ a.link-body:visited {
     margin-bottom: var(--space-2);
   }
 
-  /* Let's connect: more closing space before the buttons */
+  /* Contact: more closing space before the buttons */
   .about-contact-body {
     margin-bottom: var(--space-10);
   }
