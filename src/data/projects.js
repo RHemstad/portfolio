@@ -5,7 +5,7 @@ export const projects = [
     category: "Design System",
     description: "Designing semantic token naming systems that scale across platforms and maintain consistency while supporting complex design requirements.",
     image: "https://placehold.co/320x200",
-    link: "/case-study/ai-design-system"
+    link: "/case-study/token-architecture"
   },
   {
     id: 2,

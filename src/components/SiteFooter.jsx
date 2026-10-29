@@ -6,7 +6,7 @@ function SiteFooter() {
   return (
     <footer>
       <section className="footer-bottom">
-        <p className="copyright">© 2025 Rebecca L. Hemstad. All rights reserved.</p>
+        <p className="copyright">© 2026 Rebecca L. Hemstad. All rights reserved.</p>
       </section>
     </footer>
   );
