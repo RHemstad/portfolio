@@ -7,7 +7,7 @@ function IntroSection() {
         Designer, writer, and educator.
       </p>
       <p className="intro-support">
-        With a career spanning graphic design, digital products, university teaching, and emerging AI experiences, I focus on making complex ideas understandable.
+        With a career spanning graphic design, digital products, teaching, and emerging AI experiences, I focus on making complex ideas understandable.
       </p>
     </section>
   );

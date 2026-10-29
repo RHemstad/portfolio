@@ -43,8 +43,9 @@ export default function AssistChip() {
     }>
       <CaseStudyMediaStage>
       <CaseStudyFigure
-        src="/images/portfolio/portfolio-assist-chip-hero.png"
-        alt="Assist Chip interface design overview for SAS Viya Copilot."
+        src="/images/portfolio/assist-chip-hero.png"
+        alt="SAS Visual Analytics report beside a Copilot response with two suggested follow-up actions."
+        caption="Assist Chips in SAS Visual Analytics offer suggested next steps beneath a Copilot response."
       />
       </CaseStudyMediaStage>
 
@@ -157,27 +158,27 @@ What should I understand?</CaseStudyPullQuote>
         <CaseStudyMediaStage>
           <CaseStudySequence>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-flow-01-options.png"
+              src="/images/portfolio/assist-chip-flow-01-options.png"
               alt="Copilot offers three Assist Chips beneath its response."
               caption={<><strong>1. Suggested options</strong><br />Assist Chips offer optional ways to continue the conversation.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-flow-02-select.png"
+              src="/images/portfolio/assist-chip-flow-02-select.png"
               alt="The suggestion ‘What changed since last month?’ is highlighted in blue."
               caption={<><strong>2. Selection</strong><br />The user selects “What changed since last month?”</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-flow-03-message.png"
+              src="/images/portfolio/assist-chip-flow-03-message.png"
               alt="The selected suggestion appears as a user message; the Assist Chips are no longer displayed."
               caption={<><strong>3. User message</strong><br />The selected suggestion becomes a message in the conversation.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-flow-04-processing.png"
+              src="/images/portfolio/assist-chip-flow-04-processing.png"
               alt="Copilot displays a three-dot processing indicator beneath the user's message."
               caption={<><strong>4. Processing</strong><br />A visible indicator shows that Copilot is preparing its response.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-flow-05-response.png"
+              src="/images/portfolio/assist-chip-flow-05-response.png"
               alt="Copilot responds with a summary of changes in revenue, accounts, deal size, and churn."
               caption={<><strong>5. Response</strong><br />Copilot adds its answer to the conversation.</>}
             /></li>
@@ -257,22 +258,22 @@ Instead of allowing each product to invent its own version of Assist Chip, we br
 <CaseStudyMediaStage>
           <CaseStudyComparison>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-variant-standard.png"
+              src="/images/portfolio/assist-chip-variant-standard.png"
               alt="Standard Assist Chips displayed as three rounded, raised suggestion controls."
               caption={<><strong>Standard</strong><br />Rounded suggestion controls with a raised visual treatment.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-variant-slim.png"
+              src="/images/portfolio/assist-chip-variant-slim.png"
               alt="Slim Assist Chips displayed with flatter borders and less vertical padding."
               caption={<><strong>Slim</strong><br />A flatter treatment with reduced vertical padding.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-variant-small.png"
+              src="/images/portfolio/assist-chip-variant-small.png"
               alt="Small Assist Chips displayed as three compact suggestion controls."
               caption={<><strong>Small</strong><br />Compact controls with a tighter vertical arrangement.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/portfolio-assist-chip-variant-subtle.png"
+              src="/images/portfolio/assist-chip-variant-subtle.png"
               alt="Subtle Assist Chips displayed as text suggestions with leading arrows and no surrounding boxes."
               caption={<><strong>Subtle</strong><br />Text-led suggestions with directional cues instead of surrounding boxes.</>}
             /></li>
