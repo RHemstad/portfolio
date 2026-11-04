@@ -6,21 +6,30 @@ import CaseStudyMediaStage from '../components/case-study/CaseStudyMediaStage';
 import CaseStudySequence from '../components/case-study/CaseStudySequence';
 import CaseStudyComparison from '../components/case-study/CaseStudyComparison';
 import CaseStudyIndex from '../components/case-study/CaseStudyIndex';
-import CaseStudyPullQuote from '../components/case-study/CaseStudyPullQuote';
 
 const sections = [
-  { id: 'context', title: 'A small component raised much bigger questions' },
-  { id: 'first-answer', title: "The first answer wasn't the final answer" },
-  { id: 'boundary', title: 'Finding the boundary' },
-  { id: 'usable', title: 'Making the distinction usable' },
-  { id: 'specification', title: 'Turning the idea into a specification' },
-  { id: 'product-adoption', title: 'Then products started using it' },
-  { id: 'invariants', title: 'What could change—and what could not' },
-  { id: 'reflection', title: 'What I learned' },
+  {
+    "id": "context",
+    "title": "Understanding its role in Copilot"
+  },
+  {
+    "id": "boundary",
+    "title": "Working out the difference"
+  },
+  {
+    "id": "specification",
+    "title": "Working through the UX flows"
+  },
+  {
+    "id": "product-adoption",
+    "title": "Responding to product needs"
+  },
+  {
+    "id": "reflection",
+    "title": "Looking back"
+  }
 ];
 
-// Structural preview only. Replace intro, section stubs, and example captions
-// with approved final copy after review; the index does not render the narrative.
 export default function AssistChip() {
   return (
     <CaseStudyLayout index={<CaseStudyIndex sections={sections} />} intro={
@@ -38,18 +47,11 @@ export default function AssistChip() {
             — T. S. Eliot, <cite>The Love Song of J. Alfred Prufrock</cite>
           </p>
         </blockquote>
-
-<p className="cs-prose">In 2024, AI was suddenly everywhere in technology. Companies were moving quickly to understand what generative AI could do and how it might fit into existing products. SAS was no different. Developers were building rough Copilot prototypes, testing ideas, and trying to understand what this new technology might mean for our software.</p>
-
-<p className="cs-prose">In the Product Experience division, Jessica and I were paired to help determine the UX and UI for SAS Viya Copilot.</p>
-
-<p className="cs-prose">Neither of us came into the work as an expert in AI interfaces. There really wasn't an established playbook to follow. We had to learn quickly: studying emerging products, looking at what developers were building, debating interaction models, creating specifications, and revising our thinking as product teams began putting the patterns into practice.</p>
-
-<p className="cs-prose">Between 2024 and the end of 2025, we developed UX and UI specifications for 15 Copilot components, including Chat Bubble, Copilot Pane, Chat History, Chat Input, Coding Assistant, File Uploader, and Assist Chip. We documented the evolving system in a shared Figma library that became a working reference for designers and developers. This is the story of how one of those components, Assist Chip, came to be for Copilot.</p>
-
-<CaseStudyPullQuote>Assist Chip was one of the components I worked on most deeply. And it became a good example of what it meant to design while the technology and our understanding of it was still changing.</CaseStudyPullQuote>
-
-</CaseStudyIntro>
+        <p className="cs-prose">In 2024, AI was suddenly everywhere in technology. Companies were moving quickly to understand what generative AI could do and how it might fit into existing products. SAS was no different. Developers were building rough Copilot prototypes, testing ideas, and trying to understand what this new technology might mean for our software.</p>
+        <p className="cs-prose">In the Product Experience division, I was paired with Jessica Peter, a colleague, to help determine the UX and UI for SAS Viya Copilot.</p>
+        <p className="cs-prose">Neither of us came into the work as an expert in AI interfaces. There really wasn’t an established playbook to follow. We had to learn quickly: studying emerging products, looking at what developers were building, debating interaction models, creating specifications, and revising our thinking as product teams began putting the patterns into practice.</p>
+        <p className="cs-prose">Between 2024 and the end of 2025, Jessica and I worked on the UX and UI specifications for 15 Copilot components, including Chat Bubble, Copilot Pane, Chat History, Chat Input, Coding Assistant, File Uploader, and Assist Chip. We documented the evolving system in a shared Figma library that became a working reference for designers and developers. This is the story of how one of those components, Assist Chip, came to be for Copilot and what it meant to design while the technology—and our understanding of it—was still changing.</p>
+      </CaseStudyIntro>
     }>
       <CaseStudyMediaStage>
       <CaseStudyFigure
@@ -58,113 +60,29 @@ export default function AssistChip() {
         caption="Assist Chips in SAS Visual Analytics offer suggested next steps beneath a Copilot response."
       />
       </CaseStudyMediaStage>
-
-{/* ********************************************** */}
-{/* A Small component raised much bigger questions */}
-{/* ********************************************** */}
-
       <CaseStudySection {...sections[0]}>
-        <p className="cs-prose">In essence Assist Chips are compact, AI-generated suggestion elements designed to surface quick micro-actions at key moments in a user's workflow. On the surface, it might seem like Assist Chip would be an easy AI component to design. How complicated could designing for a prompt suggestion be?</p>
-
-      <p className="cs-prose">But the more we worked on it, the more complicated the questions became:</p>
-
-        <ul className="cs-prose">
-          <li>What does it mean when the system proposes an action rather than the user initiating it?</li>
-          <li>When does a suggestion become an action?</li>
-          <li>How much visual authority should something generated by AI have?</li>
-          <li>When should an AI-generated possibility defer to a deliberate human action?</li>
-          <li>What happens when the interface makes a suggestion look more consequential than it really is?</li>
-        </ul>
-
-        <p className="cs-prose">
-          Those questions eventually mattered more than the shape of the component itself.
-        </p>
+        <p className="cs-prose">To understand the role of Assist Chip, Jessica and I started a discovery phase by looking at other AI products, including ChatGPT and Claude. From our own experience using those tools, we had a basic understanding of the idea, but we still needed to figure out how it would fit into our products.</p>
+        <p className="cs-prose">Our first attempt organized suggestions into three categories: Welcome, Tools, and Recommendations. We were trying to answer some practical questions: Where would a suggestion show up? In what context? What purpose would it serve? The problems became clearer when we started trying to fit those categories into real product requirements. “Welcome” described where a suggestion appeared rather than what kind of interaction it was. “Tools” and “Recommendations” could become subjective depending on the context. Basically, the same suggestion could belong to more than one category.</p>
+        <p className="cs-prose">The name changed along the way too. Initially, we called it Prompt Card. But we already had Card components, and they functioned quite differently. We then tried Prompt Tile, which introduced another problem: in Nova, Cards were called Tiles, while in FUI, they were called Cards. We were carrying the same confusion from one system into another. We settled on Assist Chip because the name seemed to better describe its purpose.</p>
+        <p className="cs-prose">Looking back, it’s obvious we had been thinking too much about the content and not enough about the behavior. Around this point, I took over the component work from Jessica and began looking more closely at how it should behave.</p>
       </CaseStudySection>
-
-{/* ********************************************** */}
-{/* The first answer wasn't the final answer */}
-{/* ********************************************** */}
       <CaseStudySection {...sections[1]}>
-         <p className="cs-prose">Our early thinking organized prompt interactions into three categories: Welcome, Tools, and Recommendations.</p>
-
-<p className="cs-prose">At the time, that seemed reasonable. We were looking at emerging AI products, examining the prototypes already being built, and trying to create enough structure to move forward.</p>
-
-<p className="cs-prose">Then real product requirements began to expose weaknesses in the model.</p>
-
-<p className="cs-prose">“Welcome” turned out to describe where a suggestion appeared, not what kind of interaction it was. “Tools” and “Recommendations” could become subjective depending on the context. The same suggestion could plausibly belong to more than one category.</p>
-
-<p className="cs-prose">The component's name changed along the way too. Initially we called it “Prompt Card” then changed the name to “Prompt Tile” and finally settled on “Assist Chip”.</p>
-
-<p className="cs-prose">Each name reflected a slightly different understanding of what we thought we were designing. “Prompt Card” didn't work because the card pattern didn't accurately describe the interaction. This was a single actionable element; a card generally organizes information and may contain separate controls.</p>
-
-<p className="cs-prose">“Prompt Tile” didn't work because that name introduced ambiguity within our existing component systems. Both Card and Tile were already established terms, and Filament Nova's Tile was essentially the equivalent of FUI's Card. Calling this a tile carried the same conceptual confusion across systems.</p>
-
-<p className="cs-prose">We ended with “Assist Chip” because the new name gave the interaction its own identity, allowing us to define its purpose and behavior without inheriting expectations from existing Card or Tile components.</p>
-
-<p className="cs-prose">Ultimately, the real breakthrough in terms of deciding the name was realizing that we had been asking the wrong question.</p>
-
-<CaseStudyPullQuote>We were classifying the content when we needed to classify the behavior.</CaseStudyPullQuote>
-
+        <p className="cs-prose">An Assist Chip behaves much like a button: selecting the whole element triggers a response. The distinction became clearer when I considered what each component helped someone do. A Button answered, “What action do I want to take?” A Card answered, “What should I understand?” An Assist Chip answered, “What could I try next?” These questions helped me define where Assist Chips belonged. An interaction wasn’t an Assist Chip if it changed a project or workflow state, required confirmation, navigated elsewhere, or initiated a recovery screen.</p>
+        <p className="cs-prose">To help other designers understand which component to use in their designs, I created a document comparing Assist Chips with Buttons, Cards, Token Input, and Tokenizer. It explained their different purposes, behaviors, levels of commitment, and common misuses, so designers could apply those distinctions in their own work.</p>
       </CaseStudySection>
-
-
-{/* ********************************************** */}
-{/* Finding the boundary */}   
-{/* ********************************************** */} 
       <CaseStudySection {...sections[2]}>
-<p className="cs-prose">A working conversation with a developer helped bring the distinction into focus.</p>
-
-<p className="cs-prose">Structurally, an Assist Chip behaved a little like a large button: the user selected the whole element and something happened.
-But semantically, the two controls meant very different things.</p>
-
-<CaseStudyPullQuote>An <strong>Assist Chip</strong> answered:<br/>
-What could I try next?</CaseStudyPullQuote>
-
-<p className="cs-prose">It represented an optional, AI-generated suggestion—a low-risk, reversible way to continue exploring.</p>
-
-<CaseStudyPullQuote>A <strong>Button</strong> answered:<br/>
-What action do I want to take?</CaseStudyPullQuote>
-
-<p className="cs-prose">It represented deliberate user intent and could perform an action with persistent consequences or commitment.</p>
-
-<CaseStudyPullQuote>A <strong>Card</strong> answered:<br/>
-What should I understand?</CaseStudyPullQuote>
-
-<p className="cs-prose">It organized information or contained other controls rather than acting as a single command.</p>
-
-<p className="cs-prose">That distinction became much more useful than our original categories.</p>
-
-<p className="cs-prose">If an interaction changed project or workflow state, required confirmation, navigated somewhere else, or initiated a recovery action, it should not be represented as an Assist Chip.</p>
-
-<p className="cs-prose">The design problem had changed.</p>
-
-<CaseStudyPullQuote>We were no longer deciding what a chip should simply look like. We were defining the boundary between an AI suggestion and a consequential human action.</CaseStudyPullQuote>
-</CaseStudySection>
-
-{/* ********************************************** */}
-{/* Mking the distinction usable */}
-{/* ********************************************** */}
-
-<CaseStudySection {...sections[3]}>
-<p className="cs-prose">As the model became clearer, we realized the distinction couldn't remain something Jessica and I simply understood between ourselves. Designers incorporating Copilot into SAS products needed to know which pattern to use, when to use it, and why.</p>
-
-<p className="cs-prose">I created pattern-selection guidance that compared Assist Chips with Buttons, Cards, Token Input, and Tokenizer. The guide documented their different purposes, behaviors, levels of commitment, and common misuses, translating the reasoning behind the components into something other designers could apply in their own product contexts.</p>
-
-<p className="cs-prose">Defining the component was only part of the work. We also had to make the reasoning behind it transferable.</p>
-</CaseStudySection>
-
-{/* ********************************************** */}
-{/* Turning the idea into a specification */}
-{/* ********************************************** */}
-      <CaseStudySection {...sections[4]}>
-<p className="cs-prose">Once we had a clearer model for what an Assist Chip was, and what it wasn't, I translated that reasoning into a full UX specification.</p>
-
-<p className="cs-prose">I created the interaction flows for how Assist Chips would behave across the Copilot experience: how suggestions appeared, what happened when a user selected one, how the selected suggestion became a user message, what happened when the user typed their own prompt instead, and how Assist Chips should behave through processing, subsequent responses, and different kinds of errors. I also translated the finalized behavior into a machine-readable Markdown specification so the component rules could be interpreted consistently by developers and AI-assisted development tools.</p>
-
-<p className="cs-prose">The first version used wireframes because the interaction model was still more important than the finished visual treatment. As the component matured, those wireframes were replaced with the styled components and the specification evolved with them.</p>
-
-<CaseStudyPullQuote>The goal was to define the complete interaction—not just the appearance of the control.</CaseStudyPullQuote>
-
+        <p className="cs-prose">The most challenging part for me was creating the UX flows. I had an initial UX and UI specification, but working through the flows showed how many decisions I still needed to make. It was easy enough to say that someone could select a suggestion. But what happened to the other suggestions alongside it? Did they disappear? Could someone return to them later? What happened if the person submitted their own prompt instead, or if Copilot encountered an error?</p>
+        <p className="cs-prose">Those decisions affected how the component worked within the whole Copilot experience. I had to document what caused suggestions to appear, what happened when someone selected one, and how the interface changed through processing, responses, and errors.</p>
+        <CaseStudyFigure
+          wide
+          src="/images/portfolio/assist-chip-ux-flows.webp"
+          alt="Eight annotated Assist Chip flows arranged in rows, covering welcome, selection, custom prompts, subsequent suggestions, and error handling."
+          caption="Overview of eight Assist Chip UX flows covering the welcome experience, suggestion selection, custom prompts, subsequent suggestions, and error handling. Each flow documents how the interface changes throughout the interaction."
+        />
+        <p className="cs-prose">I revised the specification as our understanding developed and designers started using the Figma component in their product designs. Sometimes I thought I had worked something out, only to encounter a requirement I hadn’t anticipated.</p>
+        <p className="cs-prose">At the same time, I was creating the UI specification and making sure the component fit our design system. I was moving back and forth between behavior and appearance, alongside my work on the other Copilot components.</p>
+        <p className="cs-prose">The first version used wireframes because I was still working out the interaction. As the component matured, I replaced the wireframes with styled components and continued updating the specification.</p>
+        <p className="cs-prose">I also created a template and accompanying prompt to help generate machine-readable Markdown specifications from the component documentation. This gave developers and AI-assisted development tools a consistent structure for interpreting the component rules.</p>
         <CaseStudyMediaStage>
           <CaseStudySequence>
             <li><CaseStudyFigure
@@ -195,77 +113,20 @@ What should I understand?</CaseStudyPullQuote>
           </CaseStudySequence>
         </CaseStudyMediaStage>
       </CaseStudySection>
-
-{/* ********************************************** */}
-{/* Then the products started using it */}
-{/* ********************************************** */}
-      <CaseStudySection {...sections[5]}>
- <p className="cs-prose">I had also created the initial visual treatment for Assist Chip, but that first styling pass was based on the contexts we understood at the time.</p>
-
-<p className="cs-prose">Once product teams began integrating Copilot, new requirements started to appear.</p>
-
-<p className="cs-prose">A UX designer working on Visual Analytics showed me screens where several Assist Chips were appearing together inside a narrow Copilot pane. The existing component was too tall. When multiple suggestions appeared, users could not see all of them without scrolling.</p>
-
-<p className="cs-prose">I opened a Jira story, created a more compact Slim variant, aligned it with our design system, and brought it back to the product designer for review.</p>
-
-<p className="cs-prose">Later, a designer working on Model Manager brought another need. Her early sketches explored suggestions that were even more compact and, in some contexts, visually quieter.</p>
-
-<p className="cs-prose">Those conversations resulted in two additional variants: Small and Subtle. I translated the product-level ideas into component specifications using the established FUI typography, spacing, states, tokens, and accessibility patterns.</p>
-
-<p className="cs-prose">The important part was not simply adding more sizes.
-Instead of allowing each product to invent its own version of Assist Chip, we brought those requirements back into the shared system.</p>
-
-<CaseStudyPullQuote>Product adoption became part of the design process.</CaseStudyPullQuote>
-
-<p className="cs-prose">The component library wasn't just something products consumed. Products were also teaching us what the library needed to become.</p>
-
-</CaseStudySection>
-
-{/* ********************************************** */}
-{/* What could change and what could not */}
-{/* ********************************************** */}
-<CaseStudySection {...sections[6]}>
-
-<p className="cs-prose">By this point, Assist Chip had four presentations:</p>
-
-<ul>
-  <li>Standard</li>
-  <li>Slim</li>
-  <li>Small</li>
-  <li>Subtle</li>
-</ul>
-
-<p className="cs-prose">Their appearance could vary. Their size could vary. Their density and prominence could vary.</p>
-
-<p className="cs-prose">Their meaning could not.</p>
-
-<p className="cs-prose">The component was also specified for light, dark, and high-contrast themes, so its visual treatment could adapt to different display contexts without changing the behavioral meaning of the pattern.</p>
-
-<p className="cs-prose">Every version still represented an optional, AI-generated, low-risk, reversible suggestion. Choosing a different variant could never make a more consequential action appropriate for an Assist Chip. That invariant became part of the specification itself.</p>
-
-<p className="cs-prose">I deliberately reused some conventions from the existing Button system because familiar terminology and state documentation made the component easier for designers and developers to understand.</p>
-
-<p className="cs-prose">But I did not copy the Button model wholesale.</p>
-
-<p className="cs-prose">One notable omission was Emphasis.</p>
-
-<p className="cs-prose">A Button can legitimately become the dominant action in a workflow. An AI-generated suggestion should not. Giving it the same visual authority could blur the distinction we had worked so hard to establish between what the system proposed and what the user intentionally chose to do.</p>
-
-<CaseStudyPullQuote>The presentation could evolve. The semantic boundary had to survive.</CaseStudyPullQuote>
-
-<p className="cs-prose">As the component matured, the specification had to describe much more than visual states.</p>
-
-<p className="cs-prose">Selecting an Assist Chip submits its text as a user message and begins processing immediately. The current group of suggestions disappears once the user acts, and old suggestions do not later become interactive again. If the user types a custom prompt instead, the unused group is removed as well.</p>
-
-<p className="cs-prose">Failure states provided another test of the model.</p>
-
-<p className="cs-prose">Controls such as Try Again, Request Access, and Contact Administrator could not suddenly become Assist Chips simply because they appeared inside a Copilot experience. Those were recovery or workflow actions and therefore remained Buttons or Links. Copilot could offer a new set of low-risk alternatives, but it could not disguise consequential actions as suggestions.</p>
-
-<p className="cs-prose">Later, I translated the component into a more structured, machine-readable specification covering purpose, use and non-use conditions, risk, required and forbidden behavior, component relationships, accessibility, failure modes, and explicit guidance for AI-assisted development.</p>
-
-<p className="cs-prose">That work helped move Assist Chip from a visual pattern in Figma toward a component whose meaning could be communicated consistently to designers, developers, and the AI tools increasingly participating in implementation.</p>
-
-<CaseStudyMediaStage>
+      <CaseStudySection {...sections[3]}>
+        <p className="cs-prose">I had also created the initial visual treatment for Assist Chip, based on the contexts I understood at the time. Once product teams began integrating Copilot, new requirements started to appear.</p>
+        <p className="cs-prose">A UX designer working on Visual Analytics showed me screens with several Assist Chips inside a narrow Copilot pane. The existing component was too tall. When multiple suggestions appeared, users couldn’t see all of them without scrolling.</p>
+        <p className="cs-prose">I opened a Jira story, created a more compact slim variant, aligned it with our design system, and brought it back to the product designer for review.</p>
+        <p className="cs-prose">Later, a designer working on Model Manager brought another need. Her early sketches explored suggestions that were even more compact and, in some contexts, visually quieter.</p>
+        <p className="cs-prose">Those conversations resulted in two additional variants: Small and Subtle. I developed the component specifications from those ideas, using the established FUI typography, spacing, states, tokens, and accessibility patterns.</p>
+        <p className="cs-prose">For the visual styling, I made a point of reusing some conventions from the existing Button system because they made the component easier for designers and developers to understand.</p>
+        <CaseStudyFigure
+          wide
+          src="/images/portfolio/assist-chip-tokens.webp"
+          alt="UI specifications for Standard, Slim, Small, and Subtle Assist Chips, showing annotated anatomy, interaction states, and design-token references."
+          caption="UI specification excerpt showing anatomy, interaction states, and design-token references for the Standard, Slim, Small, and Subtle Assist Chip variants."
+        />
+        <CaseStudyMediaStage>
           <CaseStudyComparison>
             <li><CaseStudyFigure
               src="/images/portfolio/assist-chip-variant-standard.png"
@@ -290,39 +151,11 @@ Instead of allowing each product to invent its own version of Assist Chip, we br
           </CaseStudyComparison>
         </CaseStudyMediaStage>
       </CaseStudySection>
-
-{/* ********************************************** */}
-{/* What I learned */}
-{/* ********************************************** */}
-      <CaseStudySection {...sections[7]}>
-        <p className="cs-prose">Reflection to follow.</p>
-
-<p className="cs-prose">Looking back, competitive research was extremely useful at the beginning because we needed somewhere to start. It showed us possibilities and gave Jessica and me material to question, compare, and build from.</p>
-
-<p className="cs-prose">But we initially expected external examples to tell us more than they could.</p>
-
-<p className="cs-prose">Other products could show us how they were solving emerging AI interactions. They could not tell us what would work inside SAS products, with our workflows, design system, technical constraints, and users.</p>
-
-<p className="cs-prose">Those examples were better treated as hypotheses.</p>
-
-<p className="cs-prose">Real implementation supplied another kind of evidence.</p>
-
-<p className="cs-prose">Assist Chip changed repeatedly as that evidence accumulated. The taxonomy changed. The name changed. New variants appeared. The interaction rules became more precise. The documentation became more rigorous.</p>
-
-<p className="cs-prose">That does not make the earlier work a failure. It is what designing for a genuinely emerging technology looked like.</p>
-
-<p className="cs-prose">By early 2026, additional UX designers had joined the AI component work. I moved off the team in July, while implementation continued from the component system and specifications we had established. The original Assist Chip had already shipped and was being used across multiple SAS Viya products.</p>
-
-<p className="cs-prose">The part of the design that proved most durable was not a particular size, style, or name.</p>
-
-
-
-
-
-
-
-
-
+      <CaseStudySection {...sections[4]}>
+        <p className="cs-prose">Looking back, Jessica and I approached the work more naively than we realized at the time. We were learning as quickly as we could, and a component that initially seemed straightforward turned out to involve far more decisions than we expected.</p>
+        <p className="cs-prose">When I took over the component, there were still requirements to work through. Questions surfaced as I developed the specifications, talked with developers, and saw designers use the components in their product designs. We had to keep revisiting decisions as we learned more.</p>
+        <p className="cs-prose">Assist Chip was one of 15 Copilot components I worked on, and I was frequently moving between them. Development was also at different stages across the components, even as there was considerable urgency to get AI capabilities into products.</p>
+        <p className="cs-prose">That is part of what I want this case study to convey: how the work actually developed, including the uncertainty, collaboration, and revisions along the way.</p>
       </CaseStudySection>
     </CaseStudyLayout>
   );
