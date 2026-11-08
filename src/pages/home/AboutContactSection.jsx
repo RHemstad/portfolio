@@ -10,10 +10,10 @@ function AboutContactSection() {
         </p>
         <div className="pill-actions">
           <a href="mailto:rhemstad@mac.com" className="pill-action">
-            ✉ Email
+            Email
           </a>
           <a href="https://linkedin.com/in/rebeccahemstad" className="pill-action">
-            in LinkedIn
+            LinkedIn
           </a>
         </div>
       </div>
