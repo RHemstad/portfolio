@@ -16,6 +16,13 @@ export const projects = [
     link: "/case-study/assist-chip"
   },
   {
+    id: 5,
+    title: "DS-Workbench",
+    category: "Design System",
+    description: "An investigation into AI, design knowledge, and enterprise design practice.",
+    link: "/case-study/ds-workbench"
+  },
+  {
     id: 3,
     title: "System Governance",
     category: "Design System",

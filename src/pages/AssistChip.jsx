@@ -34,7 +34,7 @@ export default function AssistChip() {
   return (
     <CaseStudyLayout index={<CaseStudyIndex sections={sections} />} intro={
       <CaseStudyIntro
-        eyebrow="AI/ML Interface Design · SAS Viya Copilot · 2024–2026"
+        eyebrow="Component Design"
         title="Designing the Boundary Between Suggestion and Action"
       >
         <blockquote className="cs-epigraph">
@@ -55,7 +55,7 @@ export default function AssistChip() {
     }>
       <CaseStudyMediaStage>
       <CaseStudyFigure
-        src="/images/portfolio/assist-chip-hero.png"
+        src="/images/portfolio/assist-chip-hero.webp"
         alt="SAS Visual Analytics report beside a Copilot response with two suggested follow-up actions."
         caption="Assist Chips in SAS Visual Analytics offer suggested next steps beneath a Copilot response."
       />
@@ -73,12 +73,14 @@ export default function AssistChip() {
       <CaseStudySection {...sections[2]}>
         <p className="cs-prose">The most challenging part for me was creating the UX flows. I had an initial UX and UI specification, but working through the flows showed how many decisions I still needed to make. It was easy enough to say that someone could select a suggestion. But what happened to the other suggestions alongside it? Did they disappear? Could someone return to them later? What happened if the person submitted their own prompt instead, or if Copilot encountered an error?</p>
         <p className="cs-prose">Those decisions affected how the component worked within the whole Copilot experience. I had to document what caused suggestions to appear, what happened when someone selected one, and how the interface changed through processing, responses, and errors.</p>
-        <CaseStudyFigure
-          wide
-          src="/images/portfolio/assist-chip-ux-flows.webp"
-          alt="Eight annotated Assist Chip flows arranged in rows, covering welcome, selection, custom prompts, subsequent suggestions, and error handling."
-          caption="Overview of eight Assist Chip UX flows covering the welcome experience, suggestion selection, custom prompts, subsequent suggestions, and error handling. Each flow documents how the interface changes throughout the interaction."
-        />
+        <CaseStudyMediaStage>
+          <CaseStudyFigure
+            src="/images/portfolio/assist-chip-ux-flows-preview.webp"
+            fullSrc="/images/portfolio/assist-chip-ux-flows.webp"
+            alt="Eight annotated Assist Chip flows arranged in rows, covering welcome, selection, custom prompts, subsequent suggestions, and error handling."
+            caption="Overview of eight Assist Chip UX flows covering the welcome experience, suggestion selection, custom prompts, subsequent suggestions, and error handling. Each flow documents how the interface changes throughout the interaction."
+          />
+        </CaseStudyMediaStage>
         <p className="cs-prose">I revised the specification as our understanding developed and designers started using the Figma component in their product designs. Sometimes I thought I had worked something out, only to encounter a requirement I hadn’t anticipated.</p>
         <p className="cs-prose">At the same time, I was creating the UI specification and making sure the component fit our design system. I was moving back and forth between behavior and appearance, alongside my work on the other Copilot components.</p>
         <p className="cs-prose">The first version used wireframes because I was still working out the interaction. As the component matured, I replaced the wireframes with styled components and continued updating the specification.</p>
@@ -86,27 +88,27 @@ export default function AssistChip() {
         <CaseStudyMediaStage>
           <CaseStudySequence>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-flow-01-options.png"
+              src="/images/portfolio/assist-chip-flow-01-options.webp"
               alt="Copilot offers three Assist Chips beneath its response."
               caption={<><strong>1. Suggested options</strong><br />Assist Chips offer optional ways to continue the conversation.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-flow-02-select.png"
+              src="/images/portfolio/assist-chip-flow-02-select.webp"
               alt="The suggestion ‘What changed since last month?’ is highlighted in blue."
               caption={<><strong>2. Selection</strong><br />The user selects “What changed since last month?”</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-flow-03-message.png"
+              src="/images/portfolio/assist-chip-flow-03-message.webp"
               alt="The selected suggestion appears as a user message; the Assist Chips are no longer displayed."
               caption={<><strong>3. User message</strong><br />The selected suggestion becomes a message in the conversation.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-flow-04-processing.png"
+              src="/images/portfolio/assist-chip-flow-04-processing.webp"
               alt="Copilot displays a three-dot processing indicator beneath the user's message."
               caption={<><strong>4. Processing</strong><br />A visible indicator shows that Copilot is preparing its response.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-flow-05-response.png"
+              src="/images/portfolio/assist-chip-flow-05-response.webp"
               alt="Copilot responds with a summary of changes in revenue, accounts, deal size, and churn."
               caption={<><strong>5. Response</strong><br />Copilot adds its answer to the conversation.</>}
             /></li>
@@ -120,31 +122,32 @@ export default function AssistChip() {
         <p className="cs-prose">Later, a designer working on Model Manager brought another need. Her early sketches explored suggestions that were even more compact and, in some contexts, visually quieter.</p>
         <p className="cs-prose">Those conversations resulted in two additional variants: Small and Subtle. I developed the component specifications from those ideas, using the established FUI typography, spacing, states, tokens, and accessibility patterns.</p>
         <p className="cs-prose">For the visual styling, I made a point of reusing some conventions from the existing Button system because they made the component easier for designers and developers to understand.</p>
-        <CaseStudyFigure
-          wide
-          src="/images/portfolio/assist-chip-tokens.webp"
-          alt="UI specifications for Standard, Slim, Small, and Subtle Assist Chips, showing annotated anatomy, interaction states, and design-token references."
-          caption="UI specification excerpt showing anatomy, interaction states, and design-token references for the Standard, Slim, Small, and Subtle Assist Chip variants."
-        />
+        <CaseStudyMediaStage>
+          <CaseStudyFigure
+            src="/images/portfolio/assist-chip-tokens.webp"
+            alt="UI specifications for Standard, Slim, Small, and Subtle Assist Chips, showing annotated anatomy, interaction states, and design-token references."
+            caption="UI specification excerpt showing anatomy, interaction states, and design-token references for the Standard, Slim, Small, and Subtle Assist Chip variants."
+          />
+        </CaseStudyMediaStage>
         <CaseStudyMediaStage>
           <CaseStudyComparison>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-variant-standard.png"
+              src="/images/portfolio/assist-chip-variant-standard.webp"
               alt="Standard Assist Chips displayed as three rounded, raised suggestion controls."
               caption={<><strong>Standard</strong><br />Rounded suggestion controls with a raised visual treatment.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-variant-slim.png"
+              src="/images/portfolio/assist-chip-variant-slim.webp"
               alt="Slim Assist Chips displayed with flatter borders and less vertical padding."
               caption={<><strong>Slim</strong><br />A flatter treatment with reduced vertical padding.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-variant-small.png"
+              src="/images/portfolio/assist-chip-variant-small.webp"
               alt="Small Assist Chips displayed as three compact suggestion controls."
               caption={<><strong>Small</strong><br />Compact controls with a tighter vertical arrangement.</>}
             /></li>
             <li><CaseStudyFigure
-              src="/images/portfolio/assist-chip-variant-subtle.png"
+              src="/images/portfolio/assist-chip-variant-subtle.webp"
               alt="Subtle Assist Chips displayed as text suggestions with leading arrows and no surrounding boxes."
               caption={<><strong>Subtle</strong><br />Text-led suggestions with directional cues instead of surrounding boxes.</>}
             /></li>

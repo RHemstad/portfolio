@@ -48,6 +48,18 @@
   min-width: 0;
 }
 
+.cs-layout--sidebar-index .cs-intro { margin-bottom: 0; }
+.cs-layout--sidebar-index .cs-content > .cs-section:first-child {
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 900px) {
+  .cs-layout--sidebar-index { grid-template-rows: auto 1fr; }
+  .cs-layout--sidebar-index .cs-content { grid-column: 1; }
+  .cs-layout--sidebar-index .cs-index-area { grid-row: 1 / span 2; }
+  .cs-layout--sidebar-index .cs-index { position: static; }
+}
+
 .cs-intro { margin-bottom: var(--space-8); }
 .cs-eyebrow {
   font-size: var(--font-size-sm);
@@ -230,6 +242,7 @@
 .cs-index-title { margin: 0 0 var(--space-4); font-size: var(--font-size-sm); }
 .cs-index-list { list-style: none; margin: 0; padding: 0; }
 .cs-index-list a {
+  position: relative;
   display: block;
   padding: var(--space-3) 0;
   color: var(--color-link-toc-default);
@@ -238,7 +251,15 @@
   text-decoration: none;
 }
 .cs-index-list a:hover { color: var(--color-link-default); }
-.cs-index-list a:focus-visible { outline: 2px solid var(--color-accent-primary); outline-offset: 4px; }
+.cs-index-list a:focus-visible { outline: none; }
+/* Fit the focus ring to the text block while preserving the link's hit area. */
+.cs-index-list a:focus-visible::after {
+  content: '';
+  position: absolute;
+  inset: calc(var(--space-3) - 2px) -2px;
+  border: 2px solid var(--color-accent-primary);
+  pointer-events: none;
+}
 .cs-content, .cs-index-list a, .cs-eyebrow { overflow-wrap: anywhere; }
 
 @media (max-width: 1099px) {

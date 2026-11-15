@@ -1,13 +1,21 @@
 import { Link } from 'react-router-dom';
 import { projects } from '../../data/projects';
 
-/* Selected Work section — data source (src/data/projects.js) and case
-   study links unchanged. Per the approved design, only the first three
-   projects are surfaced here (a 4th, "Enterprise Design Systems", exists
-   in the data but isn't shown — see design_handoff README); "View all"
-   now links to the dedicated /selected-work page, which shows all four. */
+const homepageTitles = {
+  5: 'AI-Powered Design Workflows',
+  1: 'From Tokens to Shared Infrastructure',
+  2: 'Conversational AI Design',
+};
+
 function SelectedWorkSection() {
-  const [featured, ...secondary] = projects.slice(0, 3);
+  const [featured, ...secondary] = [5, 1, 2].map((id) => {
+    const project = projects.find((project) => project.id === id);
+    return {
+      ...project,
+      title: homepageTitles[id] ?? project.title,
+      category: id === 2 ? 'Component Design' : project.category,
+    };
+  });
 
   return (
     <section id="work" className="selected-work">
@@ -17,7 +25,7 @@ function SelectedWorkSection() {
         <div className="work-row work-row--featured">
           <span className="work-number work-number--featured">01</span>
           <Link to={featured.link} className="work-featured-panel">
-            <img src={featured.image} alt={featured.title} className="work-featured-image" />
+            <img src={featured.image || 'https://placehold.co/320x200'} alt={featured.title} className="work-featured-image" />
             <div>
               <span className="work-kicker">{featured.category}</span>
               <h3 className="work-featured-title">{featured.title}</h3>

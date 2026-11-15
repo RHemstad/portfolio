@@ -1,0 +1,128 @@
+.wb-diagram {
+  box-sizing: border-box;
+  width: 100%;
+  margin: var(--space-8) 0;
+  padding: clamp(16px, 3vw, 32px);
+  border: var(--border-width-thin) solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-subtle);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.wb-diagram > h3 {
+  margin: 0 0 24px;
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.wb-diagram-steps,
+.wb-diagram-resources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wb-diagram-step { min-width: 0; }
+
+.wb-diagram-node {
+  padding: 18px;
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-dark);
+  text-align: center;
+}
+
+.wb-diagram-node h4 {
+  margin: 0;
+  font: inherit;
+  font-weight: 600;
+}
+
+.wb-diagram-node p { margin: 6px 0 0; color: var(--color-text-muted); }
+
+.wb-diagram-node--emphasis {
+  border-color: var(--color-border-accent);
+  background: color-mix(in srgb, var(--color-accent-primary) 12%, var(--color-surface-dark));
+}
+
+.wb-diagram-connector {
+  display: block;
+  margin: 12px auto;
+  color: var(--color-text-subtle);
+}
+
+.wb-diagram-resources {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.wb-diagram-resources--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.wb-diagram-resources > li {
+  min-width: 0;
+  padding: 14px 12px;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-subtle);
+}
+
+.wb-diagram-resources strong { display: block; font-weight: 600; }
+.wb-diagram-resources span { display: block; margin-top: 6px; color: var(--color-text-muted); }
+
+.wb-diagram-cycle { position: relative; }
+.wb-diagram-steps--cycle { position: relative; padding-inline-end: 32px; }
+
+/* The return path connects review to the designer; its meaning is also written below. */
+.wb-diagram-steps--cycle::after {
+  content: '';
+  position: absolute;
+  top: 46px;
+  bottom: 46px;
+  right: 0;
+  width: 26px;
+  border: 1px solid var(--color-accent-highlight);
+  border-left: 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.wb-diagram-return-arrow {
+  position: absolute;
+  top: 36px;
+  right: 17px;
+  color: var(--color-accent-highlight);
+}
+
+.wb-diagram-feedback {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 16px 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.wb-diagram-feedback svg { flex: none; color: var(--color-accent-highlight); }
+
+.wb-diagram figcaption {
+  margin-top: 20px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .wb-diagram-resources,
+  .wb-diagram-resources--three { grid-template-columns: minmax(0, 1fr); }
+  .wb-diagram-node { padding: 14px 12px; }
+  .wb-diagram-steps--cycle { padding-inline-end: 24px; }
+  .wb-diagram-steps--cycle::after { width: 18px; }
+  .wb-diagram-return-arrow { right: 9px; }
+}
