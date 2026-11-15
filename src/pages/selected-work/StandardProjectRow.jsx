@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
    src/data/projects.js. */
 function StandardProjectRow({ number, project, isLast = false }) {
   return (
-    <div className={`work-page-row work-page-index-row work-page-standard-row ${isLast ? 'work-page-index-row--last' : ''}`}>
+    <div className={`work-page-row work-page-index-row work-page-standard-row ${project.image ? '' : 'work-page-textonly-row'} ${isLast ? 'work-page-index-row--last' : ''}`}>
       <span className="work-page-row-num work-page-row-num--index">{number}</span>
-      <img src={project.image} alt={project.title} className="work-page-standard-image" />
+      {project.image && <img src={project.image} alt={project.title} className="work-page-standard-image" />}
       <div>
         <span className="work-page-index-kicker">{project.category}</span>
         <h3 className="work-page-index-title">{project.title}</h3>

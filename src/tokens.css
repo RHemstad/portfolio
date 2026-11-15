@@ -28,7 +28,7 @@
   /* Text hierarchy: primary, supporting copy, metadata, quiet labels. */
   --color-text-primary: var(--color-neutral-50);
   --color-text-secondary: var(--color-neutral-100);
-  --color-text-muted: var(--color-neutral-200);
+  --color-text-muted: var(--color-neutral-warm);
   --color-text-subtle: var(--color-neutral-300);
   --color-text-metadata: var(--color-neutral-warm);
 
