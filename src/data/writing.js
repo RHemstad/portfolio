@@ -1,5 +1,14 @@
 export const writing = [
   {
+    id: 5,
+    title: "Designing at Scale: Building and Evolving SAS’s Design System",
+    type: "talk",
+    publication: "NC State University",
+    date: "September 2025",
+    description: "A joint talk with Mark Malek on building and evolving SAS’s design system.",
+    link: "https://calendar.ncsu.edu/event/designing-at-scale-sas"
+  },
+  {
     id: 1,
     title: "Integrating Localization Into Design Systems",
     type: "article",
@@ -36,15 +45,6 @@ export const writing = [
     link: "#"
   },
   {
-    id: 5,
-    title: "Lorem Ipsum",
-    type: "presentation",
-    event: "North Carolina State University",
-    location: "Raleigh",
-    date: "August 2024",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
     id: 6,
     title: "Lorem Ipsum",
     type: "article",
@@ -52,4 +52,4 @@ export const writing = [
     date: "July 2024",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   }
-]; 
+];

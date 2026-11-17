@@ -546,10 +546,6 @@
   box-sizing: border-box;
 }
 
-.teaching {
-  background: var(--color-surface-panel);
-}
-
 .writing-speaking,
 .about-contact {
   border-top: var(--border-width-thin) solid var(--color-border-light);
