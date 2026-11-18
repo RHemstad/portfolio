@@ -6,10 +6,11 @@ function TeachingSection() {
       <div className="section-content">
         <div className="teaching-heading-row">
           <h2>Teaching</h2>
+          <span className="provisional-tag">Placeholder</span>
         </div>
 
         <p className="teaching-intro">
-          My teaching connects graphic design, web design, and user experience through hands-on projects, experimentation, and individual feedback.
+          [Placeholder — a short introduction to teaching philosophy and academic interests will go here.]
         </p>
 
         <div className="teaching-grid">
@@ -33,7 +34,7 @@ function TeachingSection() {
         </div>
 
         <Link to="/teaching" className="link-editorial">
-          Explore my teaching →
+          View teaching experience →
         </Link>
       </div>
     </section>
