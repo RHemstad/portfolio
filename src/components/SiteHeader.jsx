@@ -6,8 +6,8 @@ import SiteNav from './SiteNav';
 /* Shared header for the homepage, case-study pages, the teaching page,
    and the selected-work page. `variant` controls the layouts (large
    non-linked title on the homepage, a compact linked-back title on
-   case studies, a breadcrumb + "Download CV" treatment on the teaching
-   page, and a breadcrumb-only masthead on the selected-work page) so
+   case studies, a compact masthead on the teaching page,
+   and a breadcrumb masthead on the selected-work page) so
    all pages keep their own appearance while sharing one component. */
 function SiteHeader({ variant = 'home', titleAsHeading = true }) {
   const CaseStudyBrand = titleAsHeading ? 'h1' : 'span';
@@ -66,27 +66,14 @@ function SiteHeader({ variant = 'home', titleAsHeading = true }) {
 
           <div className="teaching-header-actions">
             {navAndToggle}
-
-            {/* Inert until a real CV file exists, same treatment as
-                other not-yet-real links on the site (e.g. the
-                homepage's "coming soon" links). */}
-            <a href="#" className="teaching-cv-link" onClick={(e) => e.preventDefault()}>
-              Download CV →
-            </a>
           </div>
         </div>
-
-        <span className="teaching-breadcrumb">
-          <Link to="/" className="teaching-breadcrumb-link">Home</Link> / Teaching
-        </span>
       </header>
     );
   }
 
   if (variant === 'selected-work') {
-    // No "Download CV" here (not relevant to this page), so brand and
-    // nav/hamburger can share one row at every breakpoint, same as the
-    // homepage's own header.
+    // Brand and nav/hamburger share one row at every breakpoint.
     return (
       <header className="work-page-header">
         <div className="work-page-header-row">
