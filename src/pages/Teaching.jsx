@@ -7,15 +7,11 @@ import PhilosophySection from './teaching/PhilosophySection';
 import AppointmentsSection from './teaching/AppointmentsSection';
 import CoursesSection from './teaching/CoursesSection';
 import DevelopmentSection from './teaching/DevelopmentSection';
-import AssignmentsSection from './teaching/AssignmentsSection';
-import StudentWorkSection from './teaching/StudentWorkSection';
 import EvaluationsSection from './teaching/EvaluationsSection';
 import AreasSection from './teaching/AreasSection';
 
-/* New second-level page (design_handoff_teaching_page, "2a" approved),
-   reached from the homepage's Teaching section. All body content below
-   the hero is placeholder per the handoff's content guidelines — do
-   not invent institutions, courses, dates, quotes, or credentials. */
+// Confirmed teaching records and feedback sit alongside remaining draft
+// placeholders. Do not invent institutions, dates, quotes, or credentials.
 function Teaching() {
   // Hash-scroll and top-of-page scroll on route change are now handled
   // globally by <ScrollManager /> (see App.jsx).
@@ -38,8 +34,6 @@ function Teaching() {
             <AppointmentsSection />
             <CoursesSection />
             <DevelopmentSection />
-            <AssignmentsSection />
-            <StudentWorkSection />
             <EvaluationsSection />
             <AreasSection />
           </div>

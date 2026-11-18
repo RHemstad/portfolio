@@ -1,5 +1,3 @@
-/* 04 Course Development — a single placeholder paragraph; no list
-   structure yet since the content doesn't exist to structure further. */
 function DevelopmentSection() {
   return (
     <div id="tp-development" className="teaching-development-section">
@@ -9,7 +7,7 @@ function DevelopmentSection() {
       </div>
 
       <p className="teaching-body teaching-development-body">
-        [Placeholder — new or redesigned courses, curriculum initiatives, or program contributions will be described here.]
+        I developed and taught GRDS783 — User Experience Theory, a graduate course at Savannah College of Art and Design. I taught the course in 2013, 2014, and 2015.
       </p>
     </div>
   );

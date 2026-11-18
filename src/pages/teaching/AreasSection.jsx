@@ -1,4 +1,4 @@
-/* 08 Areas Prepared to Teach — the closing section: gold top rule, and
+/* 06 Areas Prepared to Teach — the closing section: gold top rule, and
    the largest heading/body treatment of any placeholder list on the
    page, by design, so the page ends on this rather than trailing off.
    Five placeholder subject areas, separated by " · ". */
@@ -8,7 +8,7 @@ function AreasSection() {
   return (
     <div id="tp-areas" className="teaching-areas">
       <div className="teaching-section-heading">
-        <span className="teaching-section-number">08</span>
+        <span className="teaching-section-number">06</span>
         <h2 className="teaching-areas-heading">Areas Prepared to Teach</h2>
       </div>
 

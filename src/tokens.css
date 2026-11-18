@@ -377,7 +377,7 @@
   --teach-row-pad: 18px;
   --teach-appt-name-size: 17px;
   --teach-appt-field-size: 15px;
-  --teach-course-cols: 40px 1fr auto;
+  --teach-course-cols: minmax(0, 1fr) auto;
   --teach-course-title-size: 18px;
   --teach-pull-quote-size: 22px;
   --teach-assignment-dir: row;
@@ -419,7 +419,7 @@
     --teach-row-pad: 12px;
     --teach-appt-name-size: 15px;
     --teach-appt-field-size: 13.5px;
-    --teach-course-cols: 24px 1fr;
+    --teach-course-cols: 1fr;
     --teach-course-title-size: 14px;
     --teach-pull-quote-size: 17px;
     --teach-assignment-dir: column;

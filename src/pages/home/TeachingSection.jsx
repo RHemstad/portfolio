@@ -1,8 +1,3 @@
-/* Teaching section — new for the redesign, no prior content to migrate.
-   Everything bracketed below is a clearly-labeled placeholder standing in
-   for content that hasn't been finalized yet (see project constraints:
-   do not invent teaching history, courses, or credentials). Layout is
-   the approved "numbered column" treatment — no card/border boxes. */
 import { Link } from 'react-router-dom';
 
 function TeachingSection() {
@@ -11,35 +6,34 @@ function TeachingSection() {
       <div className="section-content">
         <div className="teaching-heading-row">
           <h2>Teaching</h2>
-          <span className="provisional-tag">Placeholder</span>
         </div>
 
         <p className="teaching-intro">
-          [Placeholder — a short introduction to teaching philosophy and academic interests will go here.]
+          My teaching connects graphic design, web design, and user experience through hands-on projects, experimentation, and individual feedback.
         </p>
 
         <div className="teaching-grid">
           <div className="teaching-column">
             <span className="teaching-number">01</span>
-            <h3>Selected Courses</h3>
-            <p className="provisional-note">[Placeholder — courses, institutions, terms taught.]</p>
+            <h3>Teaching Experience</h3>
+            <p>Undergraduate and graduate teaching at SCAD eLearning, and undergraduate teaching at NC State University.</p>
           </div>
 
           <div className="teaching-column">
             <span className="teaching-number">02</span>
-            <h3>Teaching Philosophy</h3>
-            <p className="provisional-note">[Placeholder — a short statement of approach and values.]</p>
+            <h3>Course Development</h3>
+            <p>Developed and taught User Experience Theory, a graduate course exploring the foundations of UX.</p>
           </div>
 
           <div className="teaching-column">
             <span className="teaching-number">03</span>
-            <h3>Guest Lectures</h3>
-            <p className="provisional-note">[Placeholder — guest lectures &amp; workshops.]</p>
+            <h3>Teaching Recognition</h3>
+            <p>Named a Distinguished eLearning Educator by the Instructional Technology Council in 2014.</p>
           </div>
         </div>
 
         <Link to="/teaching" className="link-editorial">
-          View full teaching page →
+          Explore my teaching →
         </Link>
       </div>
     </section>

@@ -3,10 +3,8 @@ const TOC_ITEMS = [
   { id: 'tp-appointments', label: '02 Appointments' },
   { id: 'tp-courses', label: '03 Courses' },
   { id: 'tp-development', label: '04 Development' },
-  { id: 'tp-assignments', label: '05 Assignments' },
-  { id: 'tp-studentwork', label: '06 Student Work' },
-  { id: 'tp-evals', label: '07 Evaluations' },
-  { id: 'tp-areas', label: '08 Areas Prepared' },
+  { id: 'tp-evals', label: '05 Feedback' },
+  { id: 'tp-areas', label: '06 Areas Prepared' },
 ];
 
 function scrollToSection(event, id) {
