@@ -1852,7 +1852,6 @@ a.link-body:visited {
      sticky TOC column (44px) is smaller than --teach-container-pad
      (64px on desktop), so a symmetric bleed would overshoot the gap
      and paint over the sticky TOC column. */
-  background: var(--color-surface-panel);
   margin-inline-start: calc(-1 * var(--teach-container-pad));
   margin-inline-end: 0;
   padding: var(--teach-philosophy-pad);
